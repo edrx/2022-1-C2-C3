@@ -1,0 +1,925 @@
+% (find-LATEX "2022-1-C2-somas-3.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-somas-3.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-somas-3.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-somas-3.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-somas-3.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-somas-3.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-somas-3.tex"))
+% (defun l () (interactive) (find-LATEX    "Piecewise1.lua"))
+% (defun l () (interactive) (find-angg "LUA/Piecewise1.lua"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-somas-3"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-somas-3.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-somas-3")
+% (find-pdf-page   "~/LATEX/2022-1-C2-somas-3.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-somas-3.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-somas-3.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-somas-3.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-somas-3.pdf
+%               file:///tmp/2022-1-C2-somas-3.pdf
+%           file:///tmp/pen/2022-1-C2-somas-3.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-somas-3.pdf
+% (find-LATEX "2019.mk")
+% (find-CN-aula-links "2022-1-C2-somas-3" "2" "c2m221somas3" "c2so3")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.links»			(to "links")
+% «.mountains»			(to "mountains")
+% «.exercicio-1»		(to "exercicio-1")
+% «.imagens-figuras»		(to "imagens-figuras")
+% «.imagens-figuras-2»		(to "imagens-figuras-2")
+% «.exercicio-2»		(to "exercicio-2")
+% «.sup-e-inf-informais»	(to "sup-e-inf-informais")
+% «.exercicio-3»		(to "exercicio-3")
+% «.exercicio-4»		(to "exercicio-4")
+% «.exercicio-5»		(to "exercicio-5")
+% «.exercicio-6»		(to "exercicio-6")
+% «.metodos-nomes»		(to "metodos-nomes")
+% «.exercicio-7»		(to "exercicio-7")
+% «.exercicio-7-figs»		(to "exercicio-7-figs")
+% «.exercicio-8»		(to "exercicio-8")
+% «.exercicio-8-figs»		(to "exercicio-8-figs")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221somas3" "2022-1-C2-somas-3")
+% (code-eevvideo      "c2m221somas3" "2022-1-C2-somas-3")
+% (code-eevlinksvideo "c2m221somas3" "2022-1-C2-somas-3")
+% (find-c2m221somas3video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221somas3p 1 "title")
+% (c2m221somas3a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Aula 11: somas de retângulos
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c2m221somas3p 2 "links")
+% (c2m221somas3a   "links")
+
+{\bf Links}
+
+Este PDF complementa estes três PDFs
+
+do semestre passado:
+
+\ssk
+
+{\footnotesize
+
+% (c2m212somas1a "title")
+% (c2m212somas1a "title" "Aula 4: integrais como somas de retângulos (1)")
+% (c2m212somas2a "title")
+% (c2m212somas2a "title" "Aula 13: integrais como somas de retângulos (2)")
+% (c2m212mt1p 1 "title")
+% (c2m212mt1a   "title")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf}
+
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf}
+
+%    http://angg.twu.net/LATEX/2021-2-C2-MT1.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-MT1.pdf}
+
+}
+
+\ssk
+
+
+%  __  __                   _        _           
+% |  \/  | ___  _   _ _ __ | |_ __ _(_)_ __  ___ 
+% | |\/| |/ _ \| | | | '_ \| __/ _` | | '_ \/ __|
+% | |  | | (_) | |_| | | | | || (_| | | | | \__ \
+% |_|  |_|\___/ \__,_|_| |_|\__\__,_|_|_| |_|___/
+%                                                
+% «mountains»  (to ".mountains")
+% (c2m221somas3p 3 "mountains")
+% (c2m221somas3a   "mountains")
+
+% (find-angg "LUA/Piecewise1.lua" "Xtoxytoy-test2")
+%
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(23,9))
+%L spec   = "(0,1)--(5,6)--(7,4)--(11,8)--(15,4)--(17,6)--(23,0)"
+%L xs     = {    1,3,    6,     9,  11, 13,   16,19,    21      }
+%L labely = -1
+%L pws    = PwSpec.from(spec)
+%L xtos   = Xtoxytoy.from(pws:fun(), xs)
+%L vlines = xtos:topict("v")
+%L curve  = pws:topict()
+%L labels = PictList {}
+%L for i,x in ipairs(xs) do
+%L   labels:addputstrat(v(x,labely), "\\cell{x_"..(i-1).."}")
+%L end
+%L p = PictList { vlines, curve:prethickness("2pt"), labels }
+%L p:pgat("pA", "mountain"):output()
+\pu
+
+\unitlength=8pt
+
+\vspace*{-0.25cm}
+\hspace*{-0.5cm}
+$\scalebox{0.55}{$
+ \begin{array}{ccccc}
+ \mountain && \mountain && \mountain \\[20pt]
+ \mountain && \mountain && \mountain \\[20pt]
+ \mountain && \mountain && \mountain \\[20pt]
+ \mountain && \mountain && \mountain \\[20pt]
+ \end{array}
+ $}
+$
+
+
+\newpage
+
+%  _____                   _      _         _ 
+% | ____|_  _____ _ __ ___(_) ___(_) ___   / |
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | |
+% | |___ >  <  __/ | | (__| | (__| | (_) | | |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |_|
+%                                             
+% «exercicio-1»  (to ".exercicio-1")
+% (c2m221somas3p 4 "exercicio-1")
+% (c2m221somas3a   "exercicio-1")
+% (find-pdf-page "~/2022.1-C2/C2-quadros-tarde.pdf" 9)
+
+{\bf Exercício 1.}
+
+Seja $f(x)$ a função da página anterior ---
+
+a página anterior tem 12 cópias do gráfico dela.
+
+Represente graficamente cada um dos somatórios abaixo.
+
+Cada item abaixo vai virar 8 retângulos sobre
+
+uma das cópias do gráfico da $f(x)$.
+
+\msk
+
+\def\sumo{\sum_{i=1}^{8}}
+\def\sumoo#1{\sumo #1 (x_i - x_{i-1})}
+
+a) $\sumoo{f(x_i)}$
+
+\ssk
+
+b) $\sumoo{f(x_{i-1})}$
+
+\ssk
+
+c) $\sumoo{\max(f(x_{i-1}), f(x_i))}$
+
+\ssk
+
+d) $\sumoo{\min(f(x_{i-1}), f(x_i))}$
+
+\ssk
+
+e) $\sumoo{f(\frac{x_{i-1} + x_i}{2})}$
+
+\ssk
+
+f) $\sumoo{\frac{f(x_{i-1}) + f(x_i)}{2}}$
+
+
+\newpage
+
+%  ___                                           __ _           
+% |_ _|_ __ ___   __ _  __ _  ___ _ __  ___ _   / _(_) __ _ ___ 
+%  | || '_ ` _ \ / _` |/ _` |/ _ \ '_ \/ __(_) | |_| |/ _` / __|
+%  | || | | | | | (_| | (_| |  __/ | | \__ \_  |  _| | (_| \__ \
+% |___|_| |_| |_|\__,_|\__, |\___|_| |_|___(_) |_| |_|\__, |___/
+%                      |___/                          |___/     
+%
+% «imagens-figuras»  (to ".imagens-figuras")
+% (c2m221somas3p 5 "imagens-figuras")
+% (c2m221somas3a   "imagens-figuras")
+
+% (find-angg "LUA/Piecewise1.lua" "Xtoxytoy-test3")
+
+{\bf Imagens de intervalos: figuras}
+
+\bsk
+\bsk
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(8,4))
+%L 
+%L cthick = "2pt"     -- curve
+%L dthick = "0.25pt"  -- dots
+%L sthick = "4pt"     -- segments
+%L 
+%L -- Curve:
+%L cspec   = "(0,2)--(2,4)--(6,0)--(8,2)"
+%L cpws    = PwSpec.from(cspec)
+%L curve   = cpws:topict():prethickness(cthick)
+%L 
+%L -- Segments:
+%L sspec = "(1,0)c--(2,0)--(4,0)c" ..
+%L        " (1,3)c--(2,4)--(4,2)c" ..
+%L        " (0,2)c--(0,4)c"
+%L spws   = PwSpec.from(sspec)
+%L segs   = spws:topict():prethickness(sthick):Color("Orange")
+%L 
+%L -- Dots:
+%L dotsn = function (nsubsegs)
+%L     local xs    = seqn(1, 4, nsubsegs)
+%L     local dots0 = Xtoxytoy.from(cpws:fun(), xs)
+%L     local dots  = dots0:topict("vhxpy"):prethickness(dthick):Color("Red")
+%L     return dots
+%L   end
+%L 
+%L PictList { curve, dotsn(1)  } :pgat("pgatc", "ImageOne")   :output()
+%L PictList { curve, dotsn(3)  } :pgat("pgatc", "ImageThree") :output()
+%L PictList { curve, dotsn(6)  } :pgat("pgatc", "ImageSix")   :output()
+%L PictList { curve, dotsn(12) } :pgat("pgatc", "ImageTwelve"):output()
+%L PictList { curve, segs }      :pgat("pgatc", "ImageSegs")  :output()
+\pu
+
+$\ImageOne$
+$\ImageThree$
+$\ImageSix$
+$\ImageTwelve$
+
+$\ImageSegs$
+
+
+\newpage
+
+% «imagens-figuras-2»  (to ".imagens-figuras-2")
+% (c2m221somas3p 6 "imagens-figuras-2")
+% (c2m221somas3a   "imagens-figuras-2")
+
+{\bf Imagens de intervalos: figuras $→$ contas}
+
+\scalebox{0.75}{\def\colwidth{12cm}\firstcol{
+
+Algumas pessoas acham que isto é sempre verdade:
+%
+$$f([a,b]) = [f(a),f(b)].$$
+
+\ColorRed{Não seja como elas!!!}
+
+Nas três figuras à esquerda da página anterior temos:
+%
+$$\begin{array}{rcl}
+  f(\{1,4\}) &=& \{f(1),f(4)\} \\
+             &=& \{3,2\} \\
+             &=& \{2,3\} \\
+  f(\{1,2,3,4\}) &=& \{f(1),f(2),f(3),f(4)\} \\
+                 &=& \{2,3,4,3\} \\
+                 &=& \{2,3,4\} \\
+  f([1,3]) &=& [2,4] \\{}
+  [f(1),f(3)] &=& [3,2] \\
+              &=& \setofst{y∈\R}{3≤y≤2} \\
+              &=& ∅ \\
+  \end{array}
+$$
+
+%}\anothercol{
+}}
+
+
+\newpage
+
+%  _____                   _      _         ____  
+% | ____|_  _____ _ __ ___(_) ___(_) ___   |___ \ 
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \    __) |
+% | |___ >  <  __/ | | (__| | (__| | (_) |  / __/ 
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |_____|
+%                                                 
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m221somas3p 7 "exercicio-2")
+% (c2m221somas3a   "exercicio-2")
+
+{\bf Exercício 2.}
+
+Seja $f(x)$ esta função:
+
+\msk
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(8,4))
+%L spec   = "(0,2)--(2,4)--(6,0)--(8,2)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:pgat("pgatc", "falsoseno"):output()
+\pu
+%
+$f(x) = \falsoseno$
+
+\msk
+
+Calcule estas imagens de intervalos:
+
+\msk
+
+\begin{tabular}[t]{l}
+a) $f([0,1])$ \\
+b) $f([1,2])$ \\
+c) $f([0,2])$ \\
+d) $f([2,3])$ \\
+e) $f([1,3])$ \\
+f) $f([0,3])$ \\
+\end{tabular}
+\qquad
+\begin{tabular}[t]{l}
+g) $f([0,4])$ \\
+h) $f([4,8])$ \\
+i) $f([0,8])$ \\
+j) $f([1,7])$ \\
+\end{tabular}
+
+\newpage
+
+%                  _    ___     _        __ _ 
+%  ___ _   _ _ __ (_)  ( _ )   (_)_ __  / _(_)
+% / __| | | | '_ \| |  / _ \/\ | | '_ \| |_| |
+% \__ \ |_| | |_) | | | (_>  < | | | | |  _| |
+% |___/\__,_| .__/|_|  \___/\/ |_|_| |_|_| |_|
+%           |_|                               
+%
+% «sup-e-inf-informais»  (to ".sup-e-inf-informais")
+% (c2m221somas3p 8 "sup-e-inf-informais")
+% (c2m221somas3a   "sup-e-inf-informais")
+
+{\bf Sup informal e inf informal}
+
+% (find-pdf-page "~/2022.1-C2/C2-quadros-manha.pdf" 7)
+
+\def\sup {\mathsf{sup}}
+\def\supi{\mathsf{supi}}
+\def\inf {\mathsf{inf}}
+\def\infi{\mathsf{infi}}
+
+
+\scalebox{0.85}{\def\colwidth{12cm}\firstcol{
+
+O sup informal, `$\supi$', é como uma função bugada.
+
+O $\sup$ ``de verdade'' recebe um conjuntos
+
+de números e sempre retorna um número.
+
+O $\supi$ recebe um conjuntos de números e às vezes
+
+retorna um número, mas às vezes ele dá erro.
+
+Quando o $\supi$ recebe um intervalo fechado $[a,b]$ ele
+
+retorna a extremidade superior do intervalo: $\supi([a,b])=b$.
+
+Quando o supi recebe um conjunto que
+
+não é um intervalo fechado ele dá erro.
+
+\msk
+
+O inf informal, `$\infi$', é como o $\supi$, mas ele retorna
+
+a extremidade inferior do intervalo: $\infi([a,b])=a$.
+
+\msk
+
+O sup e o inf de verdade são BEM difíceis de definir.
+
+Nós vamos começar usando o $\supi$ e o $\infi$ e vamos deixar
+
+pra definir o sup e o inf de verdade só quando
+
+já tivermos bastante prática com o $\supi$ e o $\infi$.
+
+%}\anothercol{
+}}
+
+
+\newpage
+
+%  _____                   _      _         _____ 
+% | ____|_  _____ _ __ ___(_) ___(_) ___   |___ / 
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \    |_ \ 
+% | |___ >  <  __/ | | (__| | (__| | (_) |  ___) |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |____/ 
+%                                                 
+% «exercicio-3»  (to ".exercicio-3")
+% (c2m221somas3p 9 "exercicio-3")
+% (c2m221somas3a   "exercicio-3")
+
+{\bf Exercício 3.}
+
+Cada um dos itens do exercício 2 pede pra
+
+você calcular uma expressão da forma $f([a,b])$.
+
+Para cada um dos itens do exercício 2
+
+faça uma cópia do gráfico da função $f(x)$
+
+e desenhe sobre esta cópia estes dois retângulos:
+%
+$$\begin{array}{c}
+  \supi(f([a,b]))(b-a), \\
+  \infi(f([a,b]))(b-a) \\
+  \end{array}
+$$
+
+\newpage
+
+%  _____                   _      _         _  _   
+% | ____|_  _____ _ __ ___(_) ___(_) ___   | || |  
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | || |_ 
+% | |___ >  <  __/ | | (__| | (__| | (_) | |__   _|
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/     |_|  
+%                                                  
+% «exercicio-4»  (to ".exercicio-4")
+% (c2m221somas3p 10 "exercicio-4")
+% (c2m221somas3a    "exercicio-4")
+
+{\bf Exercício 4.}
+
+Acrescente estes dois itens extras
+
+no exercício 1 e faça eles:
+
+\bsk
+
+\def\sumo{\sum_{i=1}^{8}}
+\def\sumoo#1{\sumo #1 (x_i - x_{i-1})}
+
+g) $\sumoo{\supi(f([x_{i-1},x_i]))}$
+
+\msk
+
+h) $\sumoo{\infi(f([x_{i-1},x_i]))}$
+
+
+\newpage
+
+% «exercicio-5»  (to ".exercicio-5")
+% (c2m221somas3p 11 "exercicio-5")
+% (c2m221somas3a    "exercicio-5")
+
+{\bf Exercício 5.}
+
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+Vou me referir a este PDF aqui, do semestre passado,
+
+como ``Somas 1'', ou ``S1'':
+
+%\ssk
+
+{\footnotesize
+
+% http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf}
+
+}
+
+\ssk
+
+Vou usar nomes como ``S1E4'' pra me referir aos
+
+exercícios dele --- S1E4 é o Exercício 4 do ``Somas 1''.
+
+\bsk
+
+% (c2m212somas1p 9 "particoes")
+% (c2m212somas1a   "particoes")
+% (c2m212somas1p 10 "exercicio-4")
+% (c2m212somas1a    "exercicio-4")
+
+a) Leia as páginas 9 e 10 do S1 e faça o S1E4.
+
+% (c2m212somas1p 11 "exercicio-5")
+% (c2m212somas1a    "exercicio-5")
+
+b) Leia a página 11 e 12 do S1 e faça o S1E5.
+
+% (c2m212somas1p 23 "metodos-nomes")
+% (c2m212somas1a    "metodos-nomes")
+
+\def\mname#1{\text{[#1]}}
+
+\msk
+
+Para os próximos itens leia a página
+
+23 do S1 e considere que $f(x) = \scalebox{0.33}{$\falsoseno$}$.
+
+\ssk
+
+c) Seja $P=\{0,1,4,5\}$. Represente num gráfico só $f(x)$ e $\mname{L}$.
+
+d) Seja $P=\{0,1,4,5\}$. Represente num gráfico só $f(x)$ e $\mname{R}$.
+
+e) Seja $P=\{0,1,4,5\}$. Represente num gráfico só $f(x)$ e $\mname{min}$.
+
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «exercicio-6»  (to ".exercicio-6")
+% (c2m221somas3p 12 "exercicio-6")
+% (c2m221somas3a    "exercicio-6")
+
+{\bf Exercício 6.}
+
+Vou me referir a este outro PDF do semestre
+
+passado como ``Soma 2'', ou S2:
+
+%\ssk
+
+{\footnotesize
+
+% (c2m212somas2p 1 "title")
+% (c2m212somas2a   "title")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf}
+
+}
+
+\ssk
+
+Vou usar nomes como ``S2E5'' pra me referir aos
+
+exercícios dele --- S2E5 é o Exercício 5 do ``Somas 2''.
+
+\bsk
+
+% (c2m212somas2p 35 "exercicio-13")
+% (c2m212somas2a    "exercicio-13")
+a) Leia as páginas 32 até 35 do S2 e faça o S2E13.
+
+\bsk
+
+Obs: \ColorRed{não faça} o S2E12 da página 34 do S2 ---
+
+nos próximos exercícios você vai fazer algo
+
+parecido com ele, mas com outra notação.
+
+
+\newpage
+
+% «metodos-nomes»  (to ".metodos-nomes")
+% (c2m221somas3p 13 "metodos-nomes")
+% (c2m221somas3a    "metodos-nomes")
+
+{\bf Métodos de integração: nomes}
+
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+O S1 e o S2 usam estes nomes pros métodos de integração:
+
+{\footnotesize
+
+% (c2m212somas1p 23 "metodos-nomes")
+% (c2m212somas1a    "metodos-nomes")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf#page=23
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf\#page=23}
+
+% (c2m212somas2p 32 "metodos-nomes")
+% (c2m212somas2a    "metodos-nomes")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=32
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf\#page=32}
+
+}
+
+\ssk
+
+Ainda não definimos o $\sup$ e o $\inf$ ``de verdade'',
+
+então vamos usar estes nomes aqui...
+
+\def\sumiN#1{\sum_{i=1}^N #1 (b_i-a_i)}
+\def\mname#1{\text{[#1]}}
+%
+$$\scalebox{0.95}{$
+  \begin{array}{ccl}
+  \mname{L}    &=& \sumiN {f(a_i)}                    \\[2pt]
+  \mname{R}    &=& \sumiN {f(b_i)}                    \\[2pt]
+  \mname{Trap} &=& \sumiN {\frac{f(a_i) + f(b_i)}{2}} \\[2pt]
+  \mname{M}    &=& \sumiN {f(\frac{a_i+b_i}{2})}      \\[2pt]
+  \mname{min}  &=& \sumiN {\min(f(a_i), f(b_i))}      \\[2pt]
+  \mname{max}  &=& \sumiN {\max(f(a_i), f(b_i))}      \\[2pt]
+  \mname{infi} &=& \sumiN {\infi(f([a_i,b_i]))}        \\[2pt]
+  \mname{supi} &=& \sumiN {\supi(f([a_i,b_i]))}        \\
+  \end{array}
+  $}
+$$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «exercicio-7»  (to ".exercicio-7")
+% (c2m221somas3p 14 "exercicio-7")
+% (c2m221somas3a    "exercicio-7")
+
+{\bf Exercício 7.}
+
+Faça o S2E12 (página 34 do S2), mas substituindo
+
+os `sup's por `supi's e os `inf's por `infi's.
+
+Use a função do enunciado do S2E12.
+
+(Tem cópias dela na próxima página).
+
+\msk
+
+Link:
+
+{\footnotesize
+
+% (c2m212somas2p 32 "metodos-nomes")
+% (c2m212somas2a    "metodos-nomes")
+% (c2m212somas2p 34 "exercicio-12")
+% (c2m212somas2a    "exercicio-12")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=34
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf\#page=34}
+
+}
+
+\ssk
+
+
+\newpage
+
+% «exercicio-7-figs»  (to ".exercicio-7-figs")
+% (c2m221somas3p 15 "exercicio-7-figs")
+% (c2m221somas3a    "exercicio-7-figs")
+% (c2m212somas2p 34 "exercicio-12")
+% (c2m212somas2a    "exercicio-12")
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(11,7))
+%L spec   = "(0,3)--(3,6)--(8,1)--(11,4)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:addputstrat(v(3,6.4), "\\cell{(3,6)}")
+%L p:addputstrat(v(8,0.4), "\\cell{(8,1)}")
+%L p:pgat("pgatc"):preunitlength("15pt"):sa("FOO"):output()
+\pu
+%
+\def\FOO{\scalebox{0.5}{$\ga{FOO}$}}
+\def\FOO{\ga{FOO}}
+
+% $f(x) = \FOO \smallfoo$
+
+\vspace*{-0.25cm}
+\hspace*{-0.5cm}
+$\scalebox{0.40}{$
+ \begin{array}{ccccccc}
+ \FOO && \FOO && \FOO && \FOO \\[70pt]
+ \FOO && \FOO && \FOO && \FOO \\[70pt]
+ \FOO && \FOO && \FOO && \FOO \\[70pt]
+ \FOO && \FOO && \FOO && \FOO \\[70pt]
+ \end{array}
+ $}
+$
+
+
+
+\newpage
+
+% «exercicio-8»  (to ".exercicio-8")
+% (c2m221somas3p 16 "exercicio-8")
+% (c2m221somas3a    "exercicio-8")
+% (c2m211mt1p 4 "questao-1")
+% (c2m211mt1a   "questao-1")
+
+{\bf Exercício 8.}
+
+\def\mname#1{\text{[#1]}}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(10,5))
+%L spec   = "(0,3)--(2,1)--(8,4)--(10,0)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:pgat("pgatc"):preunitlength("15pt"):sa("Exercicio 8 bare"):output()
+%L p:addputstrat(v(2,0.4), "\\cell{(2,1)}")
+%L p:addputstrat(v(8,4.3), "\\cell{(8,4)}")
+%L p:pgat("pgatc"):preunitlength("15pt"):sa("Exercicio 8"):output()
+\pu
+%
+\def\EB{\scalebox{0.6}{$\ga{Exercicio 8 bare}$}}
+\def\EC{\scalebox{0.6}{$\ga{Exercicio 8}$}}
+
+Seja:
+%
+$$f(x) = \EC
+$$
+
+\msk
+
+Em cada um dos casos abaixo represente num gráfico só
+
+a função $f$ e os dois somatórios pedidos.
+
+\msk
+
+a) $\mname{supi}_{[1,9]_{2^1}}$, $\mname{infi}_{[1,9]_{2^1}}$
+
+b) $\mname{supi}_{[1,9]_{2^2}}$, $\mname{infi}_{[1,9]_{2^2}}$
+
+c) $\mname{supi}_{[1,9]_{2^3}}$, $\mname{infi}_{[1,9]_{2^3}}$
+
+d) $\mname{max}_{[1,9]_{2^1}}$, $\mname{min}_{[1,9]_{2^1}}$
+
+e) $\mname{max}_{[1,9]_{2^2}}$, $\mname{min}_{[1,9]_{2^2}}$
+
+
+\newpage
+
+% «exercicio-8-figs»  (to ".exercicio-8-figs")
+% (c2m221somas3p 15 "exercicio-8-figs")
+% (c2m221somas3a    "exercicio-8-figs")
+%$\ga{Exercicio 8 bare}$
+%$\ga{Exercicio 8}$
+
+\def\EB{\scalebox{1.0}{$\ga{Exercicio 8 bare}$}}
+\def\EC{\scalebox{1.0}{$\ga{Exercicio 8}$}}
+
+
+\vspace*{-0.25cm}
+\hspace*{-0.5cm}
+$\scalebox{0.5}{$
+ \begin{array}{ccccccc}
+ \EC && \EB && \EB && \EB \\[60pt]
+ \EB && \EB && \EB && \EB \\[60pt]
+ \EB && \EB && \EB && \EB \\[60pt]
+ \EB && \EB && \EB && \EB \\[60pt]
+ \end{array}
+ $}
+$
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.1-C2/")
+# (find-fline "~/LATEX/2022-1-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.1-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-1-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-somas-3 veryclean
+make -f 2019.mk STEM=2022-1-C2-somas-3 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2so3"
+% ee-tla: "c2m221somas3"
+% End:

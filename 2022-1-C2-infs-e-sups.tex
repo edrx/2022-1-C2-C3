@@ -1,0 +1,1200 @@
+% (find-LATEX "2022-1-C2-infs-e-sups.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-infs-e-sups.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-infs-e-sups.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-infs-e-sups.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-infs-e-sups.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-infs-e-sups.tex"))
+% (defun o () (interactive) (find-LATEX "2021-2-C2-infs-e-sups.tex"))
+% (defun l () (interactive) (find-LATEX    "Piecewise1.lua"))
+% (defun l () (interactive) (find-angg "LUA/Piecewise1.lua"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-infs-e-sups"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-infs-e-sups.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-infs-e-sups")
+% (find-pdf-page   "~/LATEX/2022-1-C2-infs-e-sups.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-infs-e-sups.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-infs-e-sups.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-infs-e-sups.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-infs-e-sups.pdf
+%               file:///tmp/2022-1-C2-infs-e-sups.pdf
+%           file:///tmp/pen/2022-1-C2-infs-e-sups.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf
+% (find-LATEX "2019.mk")
+% (find-CN-aula-links "2022-1-C2-infs-e-sups" "2" "c2m221is" "c2is")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua QVis1.lua ~/LATEX/")
+
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.uma-figura»			(to "uma-figura")
+% «.algumas-definicoes»		(to "algumas-definicoes")
+% «.links»			(to "links")
+% «.exercicio-1»		(to "exercicio-1")
+% «.exercicio-1-dicas»		(to "exercicio-1-dicas")
+% «.exercicio-1-dicas-2»	(to "exercicio-1-dicas-2")
+% «.exercicio-1-dicas-3»	(to "exercicio-1-dicas-3")
+% «.exercicio-2»		(to "exercicio-2")
+% «.exercicio-2-dica»		(to "exercicio-2-dica")
+% «.exercicio-3»		(to "exercicio-3")
+% «.exercicio-4»		(to "exercicio-4")
+% «.exercicio-5»		(to "exercicio-5")
+% «.exercicio-6»		(to "exercicio-6")
+% «.infs-e-sups-como-numeros»	(to "infs-e-sups-como-numeros")
+% «.aproximacoes-por-cima»	(to "aproximacoes-por-cima")
+%   «.particoes-preferidas»	(to "particoes-preferidas")
+% «.aproximacoes-por-baixo»	(to "aproximacoes-por-baixo")
+% «.exercicio-7»		(to "exercicio-7")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221is" "2022-1-C2-infs-e-sups")
+% (code-eevvideo      "c2m221is" "2022-1-C2-infs-e-sups")
+% (code-eevlinksvideo "c2m221is" "2022-1-C2-infs-e-sups")
+% (find-c2m221isvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\Rext{\overline{\R}}
+
+\celllower=2.5pt
+
+\def\Em#1#2{\underbrace{\mathstrut #2}_{\text{em }#1}}
+\def\Emx #1{\underbrace{\mathstrut #1}_{\text{em }x}}
+\def\Emy #1{\underbrace{\mathstrut #1}_{\text{em }y}}
+\def\Emxy#1{\underbrace{\mathstrut #1}_{\text{em }\R^2}}
+
+\def\Intover     #1#2{\overline {∫}_{#1}#2\,dx}
+\def\Intunder    #1#2{\underline{∫}_{#1}#2\,dx}
+\def\Intoverunder#1#2{\Intover{#1}{#2} - \Intunder{#1}{#2}}
+
+\def\Intxover     #1#2#3{\overline {∫}_{x=#1}^{x=#2}#3\,dx}
+\def\Intxunder    #1#2#3{\underline{∫}_{x=#1}^{x=#2}#3\,dx}
+
+\def\Intoverunder   #1#2{\overline{\underline{∫}}_{#1}      #2\,dx}
+\def\Intxoverunder#1#2#3{\overline{\underline{∫}}_{x=#1}^{x=#2} #3\,dx}
+
+\def\sumiN#1{\sum_{i=1}^N #1 (b_i-a_i)}
+\def\mname#1{\text{[#1]}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221isp 1 "title")
+% (c2m221isa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Aula 15: infs e sups
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+% «uma-figura»  (to ".uma-figura")
+% (c2m221isp 2 "uma-figura")
+% (c2m221isa   "uma-figura")
+
+%L fromep    = PwSpec.fromep
+%L thick     = function (th) return "\\linethickness{"..th.."}" end
+%L putcellat = function (xy, str) return pformat("\\put%s{\\cell{%s}}", xy, str) end
+%L 
+%L _minfy,_pinfy = -3,10  
+%L _xD,_xL,_xU = -0.4,-0.8,-1.0
+%L 
+%L p = PictList {
+%L   fromep(" (0,<_pinfy-1>)--(0,<_pinfy>)c "),
+%L   fromep(" (0,<_minfy+1>)--(0,<_minfy>)c "),
+%L   putcellat(v(1.2, _pinfy), "+\\infty"),
+%L   putcellat(v(1.2, _minfy), "-\\infty"),
+%L   thick("1pt"),
+%L   fromep(" (-1,2)--(3,6)--(8,1)--(11,4)  "),
+%L   thick("2pt"),
+%L   fromep(" (1,0)c--(2,0)c                "):color("red"),
+%L   fromep(" (1,4)c--(2,5)c                "):color("orange"),
+%L   fromep(" (0,4)c--(0,5)c                "):color("green"),
+%L   fromep(" (<_xL>,<_minfy>)c--(<_xL>,4)c "):color("blue"),
+%L   fromep(" (<_xD>,4)c--(<_xD>,5)c        "):color("SpringDarkHard"),
+%L   fromep(" (<_xU>,5)c--(<_xU>,<_pinfy>)c "):color("violet"),
+%L }
+%L p = (p
+%L       :setbounds(v(-1,0), v(11,7))
+%L       :pgat("gat")
+%L       :setbounds(v(-1,_minfy), v(11,_pinfy))
+%L       :pgat("p")
+%L       :preunitlength("15pt")
+%L       :sa("Figura com infinitos")
+%L     )
+%L p:output()
+\pu
+
+$\scalebox{1.05}{$\ga{Figura com infinitos}$}$
+
+\newpage
+
+% «algumas-definicoes»  (to ".algumas-definicoes")
+% (c2m221isp 3 "algumas-definicoes")
+% (c2m221isa   "algumas-definicoes")
+
+{\bf Algumas definições}
+
+Digamos que $f:\R→\R$ e $B⊂\R$.
+
+Vamos definir $\inf(f(B))$ e $\sup(f(B))$
+
+desta forma:
+
+$$\begin{array}{rcl}
+  \Rext &=& \R∪\{-∞,+∞\} \\
+  C  &=& \setofst{(x,f(x))}{x∈B} \\
+  D  &=& \setofst{f(x)}{x∈B} \\
+  D' &=& \setofst{y∈\R}{∃x∈B.\ f(x)=y} \\
+  L &=& \setofst{y∈\Rext}{∀d∈D.\;y≤d} \\
+  U &=& \setofst{y∈\Rext}{∀d∈D.\;d≤y} \\
+  (α=\inf(D)) &=& α∈L ∧ (∀ℓ∈L.\;ℓ \le α) \\
+  (β=\sup(D)) &=& β∈U ∧ (∀u∈U.\;β \le u) \\
+  \end{array}
+$$
+
+\newpage
+
+%  _     _       _        
+% | |   (_)_ __ | | _____ 
+% | |   | | '_ \| |/ / __|
+% | |___| | | | |   <\__ \
+% |_____|_|_| |_|_|\_\___/
+%                         
+% «links»  (to ".links")
+% (c2m221isp 4 "links")
+% (c2m221isa   "links")
+
+{\bf Como visualizar proposições}
+
+O que nós vamos ver agora é uma versão reorganizada
+
+das páginas 11 até 20 do ``Somas 2'' e de algumas
+
+idéias do ``Somas 2 4'', que na verdade se chama
+
+``Comentários sobre o exercício 4 do
+
+``Integrais como somas de retângulos (2)''\,''...
+
+\msk
+
+Links:
+
+\ssk
+
+{\footnotesize
+
+% (c2m212somas2p 11 "tipos")
+% (c2m212somas2a    "tipos")
+% (c2m212somas2p 12 "exercicio-3")
+% (c2m212somas2a    "exercicio-3")
+% (c2m212somas2p 13 "definindo-proposicoes")
+% (c2m212somas2a    "definindo-proposicoes")
+% (c2m212somas2p 14 "para-todo-e-existe")
+% (c2m212somas2a    "para-todo-e-existe")
+% (c2m212somas2p 15 "visualizando-fas-e-exs")
+% (c2m212somas2a    "visualizando-fas-e-exs")
+% (c2m212somas2p 16 "visualizando-fas-e-exs-2")
+% (c2m212somas2a    "visualizando-fas-e-exs-2")
+% (c2m212somas2p 17 "visualizando-fas-e-exs-3")
+% (c2m212somas2a    "visualizando-fas-e-exs-3")
+% (c2m212somas2p 18 "exercicio-4")
+% (c2m212somas2a    "exercicio-4")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=11
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=11}
+
+% (c2m212somas24p 1 "title")
+% (c2m212somas24a   "title")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2-4.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2-4.pdf}
+
+}
+
+\newpage
+
+%  _____                   _      _         _ 
+% | ____|_  _____ _ __ ___(_) ___(_) ___   / |
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | |
+% | |___ >  <  __/ | | (__| | (__| | (_) | | |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |_|
+%                                             
+% «exercicio-1»  (to ".exercicio-1")
+% (c2m221isp 5 "exercicio-1")
+% (c2m221isa   "exercicio-1")
+
+{\bf Exercício 1.}
+
+% (c2m221somas3p 15 "exercicio-7-figs")
+% (c2m221somas3a    "exercicio-7-figs")
+%
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(11,7))
+%L spec   = "(0,3)--(3,6)--(8,1)--(11,4)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:pgat("pgatc"):preunitlength("15pt"):sa("Exercicio 1 bare"):output()
+%L p:addputstrat(v(3,6.4), "\\cell{(3,6)}")
+%L p:addputstrat(v(8,0.4), "\\cell{(8,1)}")
+%L p:pgat("pgatc"):preunitlength("15pt"):sa("Exercicio 1"):output()
+\pu
+%
+\def\EB{\scalebox{0.4}{$\ga{Exercicio 1 bare}$}}
+\def\EC{\scalebox{0.4}{$\ga{Exercicio 1}$}}
+
+\def\alefx#1#2{\Em{(x,f(x))}{\Em{(0,#1)}{#1}≤f(#2)}}
+\def\alefx#1#2{\Em{(x,f(x))}{\Em{(0,#1)}{#1}≤f(\Em{(#2,0)}{#2})}}
+\def\alefx#1#2{\Em{(x,f(x))}{            #1 ≤f(\Em{(#2,0)}{#2})}}
+\def\alefx#1#2{\Em{(#2,f(#2))}{          #1 ≤f(\Em{(#2,0)}{#2})}}
+
+
+Sejam: $f(x) = \EC$\;,
+
+\msk
+
+$B=\{\Emx{7,8,9}\}$,
+%
+$P(α) = \Em{(0,α)}{∀x∈B.\; \alefx{α}{x} }$.
+
+\msk
+
+Represente graficamente
+
+\begin{tabular}{l}
+a) $P(0)$, \\
+b) $P(2)$, \\
+\end{tabular}
+\qquad
+\begin{tabular}{l}
+c) $P(4)$,   \\
+d) $P(1.5)$. \\
+\end{tabular}
+
+\msk
+
+Use uma cópia do gráfico da $f$ pra cada uma.
+
+\newpage
+
+% «exercicio-1-dicas»  (to ".exercicio-1-dicas")
+% (c2m221isp 6 "exercicio-1-dicas")
+% (c2m221isa   "exercicio-1-dicas")
+
+{\bf Dicas pro Exercício 1}
+
+%\scalebox{0.6}{\def\colwidth{15cm}\firstcol{
+
+$$\begin{array}{rcl}
+     B &=& \{7,8,9\} \\
+  P(α) &=& ∀x∈B. \; α≤f(x) \\
+       &=& ∀x∈\{7,8,9\}. \; α≤f(x) \\
+       [2.5pt]
+       &=& (α≤f(x)) [x:=7] \\
+       &∧& (α≤f(x)) [x:=8] \\
+       &∧& (α≤f(x)) [x:=9] \\
+       [2.5pt]
+       &=& (α≤f(7)) ∧ (α≤f(8)) ∧ (α≤f(9)) \\
+       &=& (α≤2) ∧ (α≤1) ∧ (α≤2) \\
+       [5pt]
+  \end{array}
+$$
+
+
+%}\anothercol{
+%}}
+
+
+\newpage
+
+
+% «exercicio-1-dicas-2»  (to ".exercicio-1-dicas-2")
+% (c2m221isp 7 "exercicio-1-dicas-2")
+% (c2m221isa   "exercicio-1-dicas-2")
+
+{\bf Dicas pro Exercício 1 (2)}
+
+\scalebox{0.7}{\def\colwidth{15cm}\firstcol{
+
+\bsk
+
+$\begin{array}{rcl}
+ %P(α) &=& \Em{(0,α)}{∀\Em{(x,0)}{x}∈B.\; \alefx{α}{x} } \\
+  P(α) &=& \Em{(0,α)}{∀           x ∈B.\; \alefx{α}{x} } \\
+           [65pt]
+       &=& \Em{(0,α)}{ (\alefx{α}{x})[x:=7]
+                     ∧ (\alefx{α}{x})[x:=8]
+                     ∧ (\alefx{α}{x})[x:=9] } \\
+           [65pt]
+       &=& \Em{(0,α)}{ (\alefx{α}{7})
+                     ∧ (\alefx{α}{8})
+                     ∧ (\alefx{α}{9}) } \\
+  \end{array}
+$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «exercicio-1-dicas-3»  (to ".exercicio-1-dicas-3")
+% (c2m221isp 7 "exercicio-1-dicas-3")
+% (c2m221isa   "exercicio-1-dicas-3")
+
+{\bf Dicas pro Exercício 1 (3)}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(11,7))
+%L ex1spec   = "(0,3)--(3,6)--(8,1)--(11,4)"
+%L ex1pws    = PwSpec.from(ex1spec)
+%L ex1f      = ex1pws:fun()
+%L ex1curve  = ex1pws:topict()
+%L pd        = PlotDots.new():dims(0.7, 0.4)
+%L pd        = PlotDots.new():dims(0.5, 0.3)
+%L pd:plot(v(7, 0),   "Red")
+%L pd:plot(v(8, 0),   "Red")
+%L pd:plot(v(9, 0),   "Red")
+%L pd:plot(v(7, 2),   "Orange")
+%L pd:plot(v(8, 1),   "Orange", "open")
+%L pd:plot(v(9, 2),   "Orange")
+%L pd:plot(v(0, 1.5), "Violet", "open")
+%L ex1p      = PictList { ex1curve:prethickness("2pt"), pd:topict() }
+%L ex1pdef0  = ex1p:pgat("pgatc"):preunitlength("15pt"):sa("P(1.5)")
+%L ex1pdef0:output()
+\pu
+
+$$\scalebox{1.5}{$\ga{P(1.5)}$}$$
+
+
+
+
+\newpage
+
+%  _____                   _      _         ____  
+% | ____|_  _____ _ __ ___(_) ___(_) ___   |___ \ 
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \    __) |
+% | |___ >  <  __/ | | (__| | (__| | (_) |  / __/ 
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |_____|
+%                                                 
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m221isp 6 "exercicio-2")
+% (c2m221isa   "exercicio-2")
+% (find-pdf-page "~/2022.1-C2/C2-quadros-manha.pdf" 10)
+% (c2m212somas24p 4 "subconjunto-do-plano")
+% (c2m212somas24a   "subconjunto-do-plano")
+
+{\bf Exercício 2.}
+
+
+\scalebox{0.60}{\def\colwidth{12cm}\firstcol{
+
+Represente graficamente os seguintes conjuntos:
+%
+$$\begin{array}{rcl}
+  A &=& \setofxyst{x∈[1,2), \; y∈[1,2)} \\
+  B &=& \setofst{(x,2x)}{x∈[1,2)} \\
+  C &=& \setofxyst{0≤x \;∧\; x+y<2} \\
+  \end{array}
+$$
+
+Dica: todos eles vão dar subconjuntos do plano feitos de
+
+infinitos pontos, e você vai ter que adaptar as convenções
+
+que usamos pra desenhar intervalos pra desenhar {\sl regiões}.
+
+\msk
+
+Use bolinhas cheias pra indicar ``este ponto pertence ao
+
+conjunto'', bolinhas ocas pra indicar ``este ponto não
+
+pertence ao conjunto'', linhas grossas contínuas pra
+
+indicar ``esse trecho da fronteira pertence ao conjunto''
+
+e linhas tracejadas pra indicar ``esse trecho da fronteira
+
+não pertence ao conjunto''. Por exemplo:
+
+%L Pict2e.bounds = PictBounds.new(v(-1,-1), v(4,3))
+%L spec   = [[ (0,0)--(0,2)--(2,2)
+%L             (0.3,0)--(0.75,0) (1.25,0)--(1.7,0)
+%L             (2,0.3)--(2,0.75) (2,1.25)--(2,1.7)
+%L             (0,0)o (2,0)o (2,2)c (0,2)c
+%L          ]]
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList {
+%L     [[ \def\closeddot{\circle*{0.4}}% ]],
+%L     [[ \def\opendot  {\circle*{0.4}\color{white}\circle*{0.3}}% ]],
+%L     Pict2e.region0(v(0,0), v(2,0), v(2,2), v(0,2)):Color("Orange"),
+%L     curve:prethickness("3pt")
+%L  }
+%L p:pgat("pgatc"):preunitlength("20pt"):sa("Exercicio 2 exemplo"):output()
+\pu
+%
+$$\ga{Exercicio 2 exemplo}$$
+
+
+
+%}\anothercol{
+}}
+
+\newpage
+
+% «exercicio-2-dica»  (to ".exercicio-2-dica")
+% (c2m221isp 7 "exercicio-2-dica")
+% (c2m221isa   "exercicio-2-dica")
+
+{\bf Dica pro exercício 2}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(2,2))
+%L spec   = [[ (0,0)--(0,1)--(1,1)--(1,0)--(0,0)--(0,1)
+%L          ]]
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList {
+%L     [[ \def\closeddot{\circle*{0.4}}% ]],
+%L     [[ \def\opendot  {\circle*{0.4}\color{white}\circle*{0.3}}% ]],
+%L     Pict2e.region0(v(0,0), v(1,0), v(1,1), v(0,1)):Color("Orange"),
+%L     -- curve:prethickness("3pt")
+%L  }
+%L p:pgat("pgatc"):preunitlength("10pt"):sa("Prop A'"):output()
+%L
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(2,2))
+%L spec   = [[ (0,0)--(0,1)--(1,1)--(1,0)--(0,0)--(0,1)
+%L          ]]
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList {
+%L     [[ \def\closeddot{\circle*{0.4}}% ]],
+%L     [[ \def\opendot  {\circle*{0.4}\color{white}\circle*{0.3}}% ]],
+%L     Pict2e.region0(v(0,0), v(1,0), v(1,1), v(0,1)):Color("Orange"),
+%L     curve:prethickness("2pt")
+%L  }
+%L p:pgat("pgatc"):preunitlength("10pt"):sa("Prop A''"):output()
+\pu
+
+\scalebox{0.55}{\def\colwidth{10cm}\firstcol{
+
+...ou: como debugar representações gráficas.
+
+Pense num jogo. Os jogadores se chamam $P$ (``proponente''), e $O$
+(``oponente''). O $P$ quer encontrar uma representação gráfica pro
+conjunto $A$, e o $O$ quer mostrar que o $P$ está errado.
+
+\msk
+
+Digamos que
+%
+$$A = \setofxyst{x∈[1,2), \; y∈[1,2)}.$$
+
+O $P$ desenha uma representação gráfica \ColorRed{com um nome
+  diferente de $A$} e ``propõe'' ela --- por exemplo, o $P$ diz isso
+aqui:
+%
+\pu
+%
+$$A' = \ga{Prop A'}$$
+
+O oponente $O$ diz: ``verifica o ponto $(1,1)$''. Os dois verificam o
+ponto $(1,1)$ do $A'$ e vêem que o desenho do $A'$ é ambíguo no ponto
+$(1,1)$, já que esse é um ponto de fronteira e o $P$ não desenhou ele
+nem como linha grossa sólida nem com linha tracejada... então a
+resposta pra pergunta ``$(1,1)∈A'$?'' não é nem $\True$ nem $\False$,
+é ``erro'', e portanto $A≠A'$, e o $P$ ainda não conseguiu a
+representação gráfica certa. O oponente $O$ ganha essa rodada, e o $P$
+tem que propôr outra representação gráfica.
+
+}\anothercol{
+
+  Aí o $P$ propõe uma outra representação gráfica, \ColorRed{com um
+    outro nome, diferente de $A$ e de $A'$}. Por exemplo, $P$ propõe
+  isso aqui:
+%
+$$A'' = \ga{Prop A''}$$
+
+O oponente $O$ diz: ``verifica o ponto $(0,0)$''. Os dois verificam, e
+vêem que:
+%
+$$(0,0)\not∈A, \quad (0,0)∈A''$$
+
+E portanto $A≠A''$, e o $P$ ainda não conseguiu a representação
+gráfica certa. O oponente $O$ ganha mais essa rodada.
+
+\bsk
+
+Quando o $P$ propõe um desenho que o $O$ não consegue mostrar que está
+errado o $P$ ganha a rodada.
+
+\bsk
+
+Até vocês terem prática vocês vão jogar como o $P$, vão me mostrar as
+representações gráficas de vocês, e eu vou jogar como o $O$. Quando
+vocês tiverem mais prática vocês vão conseguir chutar representações
+gráficas (como o jogador $P$) e testá-las (fazendo o papel do jogador
+$O$ vocês mesmos).
+
+}}
+
+
+
+
+\newpage
+
+%  _____                   _      _         _____ 
+% | ____|_  _____ _ __ ___(_) ___(_) ___   |___ / 
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \    |_ \ 
+% | |___ >  <  __/ | | (__| | (__| | (_) |  ___) |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |____/ 
+%                                                 
+% «exercicio-3»  (to ".exercicio-3")
+% (c2m221isp 8 "exercicio-3")
+% (c2m221isa   "exercicio-3")
+
+{\bf Exercício 3.}
+
+Aqui as definições são as mesmas do exercício 1,
+
+mas você só vai representar o resultado de cada $P(α)$
+
+em $(0,α)$... não desenhe as coisas que ficavam
+
+sobre o eixo $x$ ou sobre o gráfico da $f$.
+
+\msk
+
+a) Represente graficamente $P(y)$ (obs: em $(0,y)$!)
+
+para $y=0, 0.5, 1, \ldots, 4$.
+
+\msk
+
+b) Represente graficamente $P(y)$ para $y∈[0,4]$.
+
+\msk
+
+c) Represente graficamente $\setofst{y∈[0,4]}{P(y)}$.
+
+% (c2m211somas24p 34 "que-finja-ter-infinitas")
+% (c2m211somas24a    "que-finja-ter-infinitas")
+
+
+\newpage
+
+%  _____                   _      _         _  _   
+% | ____|_  _____ _ __ ___(_) ___(_) ___   | || |  
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | || |_ 
+% | |___ >  <  __/ | | (__| | (__| | (_) | |__   _|
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/     |_|  
+%                                                  
+% «exercicio-4»  (to ".exercicio-4")
+% (c2m221isp 11 "exercicio-4")
+% (c2m221isa   "exercicio-4")
+
+{\bf Exercício 4.}
+
+Faça o exercício 4 das páginas 18 a 20 do ``Somas 2''.
+
+Link:
+
+\msk
+
+% (c2m212somas2p 18 "exercicio-4")
+% (c2m212somas2a    "exercicio-4")
+
+{\footnotesize
+
+% (c2m212somas2p 18)
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=18
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=18}
+
+}
+
+\bsk
+\bsk
+
+Obs: esse exercício 4 do semestre passado é meio
+
+bagunçado... todos os meus colegas de graduação
+
+conheciam esse método de visualização, mas ele
+
+era algo informal, que eu nunca vi descrito por
+
+escrito em lugar nenhum...
+
+\ssk
+
+Acho que os exercícios 1, 2 e 3 deste semestre
+
+estão bem mais claros do que o 4 do semestre
+
+passado. ${=}/$
+
+
+\newpage
+
+%  _____                   _      _         ____  
+% | ____|_  _____ _ __ ___(_) ___(_) ___   | ___| 
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  |___ \ 
+% | |___ >  <  __/ | | (__| | (__| | (_) |  ___) |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/  |____/ 
+%                                                 
+% «exercicio-5»  (to ".exercicio-5")
+% (c2m221isp 12 "exercicio-5")
+% (c2m221isa    "exercicio-5")
+
+{\bf Exercício 5.}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(9,7))
+%L spec   = "(0,3)--(2,1)o (2,3)c (2,5)o--(7,0)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:addputstrat(v(2.7,5.5), "\\cell{(2,5)}")
+%L p:addputstrat(v(7.7,0.5), "\\cell{(7,0)}")
+%L p:pgat("pgatc"):preunitlength("17pt"):sa("Exercicio 5"):output()
+\pu
+
+\msk
+
+Sejam
+%
+$f(x) = \scalebox{0.5}{$\ga{Exercicio 5}$}$
+
+e $B=[1,3]$.
+
+\msk
+
+Represente graficamente estes conjuntos ---
+
+as definições deles são as mesmas do slide 3:
+%
+$$\begin{array}{rcl}
+  % \Rext &=& \R∪\{-∞,+∞\} \\
+  C  &=& \setofst{(x,f(x))}{x∈B} \\
+  D  &=& \setofst{f(x)}{x∈B} \\
+  D' &=& \setofst{y∈\R}{∃x∈B.\ f(x)=y} \\
+  L &=& \setofst{y∈\Rext}{∀d∈D.\;y≤d} \\
+  U &=& \setofst{y∈\Rext}{∀d∈D.\;d≤y} \\
+  % (α=\inf(D)) &=& α∈L ∧ (∀ℓ∈L.\;ℓ \le α) \\
+  % (β=\sup(D)) &=& β∈U ∧ (∀u∈U.\;β \le u) \\
+  \end{array}
+$$
+
+\newpage
+
+%  _____                   _      _          __   
+% | ____|_  _____ _ __ ___(_) ___(_) ___    / /_  
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | '_ \ 
+% | |___ >  <  __/ | | (__| | (__| | (_) | | (_) |
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/   \___/ 
+%                                                 
+% «exercicio-6»  (to ".exercicio-6")
+% (c2m221isp 13 "exercicio-6")
+% (c2m221isa    "exercicio-6")
+
+{\bf Exercício 6}
+
+Obs: se você tiver muita dificuldade com o Exercício 5
+
+faça este exercício antes do 5... e se você conseguir
+
+fazer o Exercício 5 direto não faça este aqui.
+
+\msk
+
+Sejam $f(x)=x+2$ e $B=[1,2]$.
+
+\msk
+
+Represente graficamente estes conjuntos ---
+
+as definições deles são as mesmas do slide 3:
+%
+$$\begin{array}{rcl}
+  % \Rext &=& \R∪\{-∞,+∞\} \\
+  C  &=& \setofst{(x,f(x))}{x∈B} \\
+  D  &=& \setofst{f(x)}{x∈B} \\
+  D' &=& \setofst{y∈\R}{∃x∈B.\ f(x)=y} \\
+  L &=& \setofst{y∈\Rext}{∀d∈D.\;y≤d} \\
+  U &=& \setofst{y∈\Rext}{∀d∈D.\;d≤y} \\
+  % (α=\inf(D)) &=& α∈L ∧ (∀ℓ∈L.\;ℓ \le α) \\
+  % (β=\sup(D)) &=& β∈U ∧ (∀u∈U.\;β \le u) \\
+  \end{array}
+$$
+
+\newpage
+
+% «infs-e-sups-como-numeros»  (to ".infs-e-sups-como-numeros")
+% (c2m221isp 14 "infs-e-sups-como-numeros")
+% (c2m221isa    "infs-e-sups-como-numeros")
+
+{\bf Infs e sups como números}
+
+
+\scalebox{0.9}{\def\colwidth{9cm}\firstcol{
+
+Dá pra provar que
+%
+$$\begin{array}{l}
+  ∀D∈\Rext.\;∃!α∈\Rext.\;(α=\inf(D)) \\
+  ∀D∈\Rext.\;∃!β∈\Rext.\;(β=\sup(D)) \\
+  \end{array}
+$$
+
+Vamos chamar esses valores de $α$ e $β$
+
+de $\inf(D)$ e $\sup(D)$.
+
+\bsk
+\bsk
+
+{\bf Exercício 6.5.}
+
+Calcule:
+
+\msk
+
+\begin{tabular}{ll}
+a) $\inf([3,4])$ \qquad & b) $\sup([3,4])$ \\
+c) $\inf((3,4))$ \qquad & d) $\sup((3,4))$ \\
+e) $\inf(\R)$    \qquad & f) $\sup(\R)$    \\
+g) $\inf(\Rext)$ \qquad & h) $\sup(\Rext)$ \\
+i) $\inf(∅)$     \qquad & j) $\sup(∅)$ \\
+\end{tabular}
+
+}\anothercol{
+}}
+
+
+
+
+\newpage
+
+% «aproximacoes-por-cima»  (to ".aproximacoes-por-cima")
+% (c2m221isp 14 "aproximacoes-por-cima")
+% (c2m221isa    "aproximacoes-por-cima")
+% (c2m212dip 15 "aproximacoes-por-cima")
+% (c2m212dia    "aproximacoes-por-cima")
+
+{\bf Aproximações por cima}
+
+\scalebox{0.85}{\def\colwidth{12cm}\firstcol{
+
+Mais duas definições:
+
+A ``melhor aproximação por cima'' para a integral de $f$
+
+na partição $P$ é:
+%
+$$\Intover{P}{f(x)} = \mname{sup}_P,$$
+
+O ``limite das aproximações por cima'' pra integral de $f$
+
+no intervalo $[a,b]$ é:
+%
+$$\Intxover{a}{b}{f(x)} = \lim_{k→∞} \mname{sup}_{[a,b]_{2^k}},$$
+
+Esse limite também é chamado de a ``integral por cima de $f$
+
+no intervalo $[a,b]$''.
+
+\bsk
+
+A notação $[a,b]_{2^k}$ está explicada aqui:
+
+\ssk
+
+{\scriptsize
+
+% «particoes-preferidas»  (to ".particoes-preferidas")
+% (c2m212somas2p 35 "exercicio-13")
+% (c2m212somas2a    "exercicio-13")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=35
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf\#page=35}
+
+}
+
+}\anothercol{
+}}
+
+
+
+\newpage
+
+% «aproximacoes-por-baixo»  (to ".aproximacoes-por-baixo")
+% (c2m221isp 15 "aproximacoes-por-baixo")
+% (c2m221isa    "aproximacoes-por-baixo")
+% (c2m212dip 16 "aproximacoes-por-baixo")
+% (c2m212dia    "aproximacoes-por-baixo")
+
+{\bf Aproximações por baixo}
+
+\scalebox{0.85}{\def\colwidth{12cm}\firstcol{
+
+Mais duas definições:
+
+A ``melhor aproximação por baixo'' para a integral de $f$
+
+na partição $P$ é:
+%
+$$\Intunder{P}{f(x)} = \mname{inf}_P,$$
+
+O ``limite das aproximações por baixo'' pra integral de $f$
+
+no intervalo $[a,b]$ é:
+%
+$$\Intxunder{a}{b}{f(x)} = \lim_{k→∞} \mname{inf}_{[a,b]_{2^k}},$$
+
+Esse limite também é chamado de a ``integral por baixo de $f$
+
+no intervalo $[a,b]$''.
+
+}\anothercol{
+}}
+
+\newpage
+
+%  _____                   _      _         _____ 
+% | ____|_  _____ _ __ ___(_) ___(_) ___   |___  |
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \     / / 
+% | |___ >  <  __/ | | (__| | (__| | (_) |   / /  
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/   /_/   
+%                                                 
+% «exercicio-7»  (to ".exercicio-7")
+% (c2m221isp 16 "exercicio-7")
+% (c2m221isa    "exercicio-7")
+
+
+{\bf Exercício 7.}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(9,7))
+%L spec   = "(0,3)--(2,1)o (2,3)c (2,5)o--(7,0)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:addputstrat(v(2.7,5.5), "\\cell{(2,5)}")
+%L p:addputstrat(v(7.7,0.5), "\\cell{(7,0)}")
+%L p:pgat("pgatc"):preunitlength("17pt"):sa("Exercicio 5"):output()
+
+Seja:
+%
+$$f(x) = \scalebox{0.5}{$\ga{Exercicio 5}$}$$
+
+\def\io#1{\Intover {[1,5]_{2^#1}}{f(x)}}
+\def\iu#1{\Intunder{[1,5]_{2^#1}}{f(x)}}
+
+Represente graficamente:
+
+\begin{tabular}{ll}
+a) $\io0$ & \qquad b) $\iu0$ \\
+c) $\io1$ & \qquad d) $\iu1$ \\
+e) $\io2$ & \qquad f) $\iu2$ \\
+\end{tabular}
+
+
+
+\newpage
+
+% «definicao-integral»  (to ".definicao-integral")
+% (c2m211somas2p 34 "definicao-integral")
+% (c2m211somas2a    "definicao-integral")
+
+{\bf A definição de integral}
+
+\ssk
+
+\def\eqa{\overset{\ColorRed{\Downarrow}}{=}}
+
+A nossa definição de $\Intx{a}{b}{f(x)}$ vai ser:
+%
+$$\Intx     {a}{b}{f(x)} \;\;=\;\;
+  \Intxover {a}{b}{f(x)} \;\; \eqa \;\;
+  \Intxunder{a}{b}{f(x)}
+$$
+
+se a igualdade marcada com `$\eqa$' for verdade.
+
+\msk
+\msk
+
+Se a igualdade `$\eqa$' for falsa vamos dizer que:
+
+``$f(x)$ não é integrável no intervalo $[a,b]$'',
+
+``$\Intx{a}{b}{f(x)}$ não está definida'', ou
+
+``$\Intx{a}{b}{f(x)}$ dá erro''.
+
+\msk
+\msk
+
+(Compare com $\frac{42}{0}$, que também ``não está definido'', ou ``dá erro''...)
+
+\newpage
+
+% «intoverunder»  (to ".intoverunder")
+% (c2m211somas2p 35 "intoverunder")
+% (c2m211somas2a    "intoverunder")
+%
+% «exercicio-15»  (to ".exercicio-15")
+% (c2m211somas2p 35 "exercicio-15")
+% (c2m211somas2a    "exercicio-15")
+
+{\bf Como esses limites funcionam?}
+
+Em Cálculo 1 você viu que algumas funções não são deriváveis.
+
+Agora nós vamos ver que algumas funções não são integráveis.
+
+O melhor modo de visualizar isso é usando estas definições:
+%
+$$\begin{array}{rcl}
+  \D \Intoverunder{P}{f(x)} &=&
+  \D \Intover     {P}{f(x)} -
+     \Intunder    {P}{f(x)}
+  \\[15pt]
+  \D \Intxoverunder{a}{b}{f(x)} &=&
+  \D \Intxover     {a}{b}{f(x)} -
+     \Intxunder    {a}{b}{f(x)}
+  \end{array}
+$$
+
+
+As notações com `$\overline{\underline{∫}}$' representam a diferença
+entre uma aproximação
+
+por cima e uma aproximação por baixo, e a gente
+vai desenhar os
+
+`$\overline{\underline{∫}}_P$'s como \ColorRed{retângulos flutuando no
+  ar}. O `$\overline{\underline{∫}}_{x=a}^{x=b}$' é o limite de
+figuras
+
+tipo `$\overline{\underline{∫}}_P$', e ele pode dar algo mais
+complicado do que retângulos.
+
+\newpage
+
+{\bf Exercício 8.}
+
+\def\Intoverunder #1#2{\overline{\underline{∫}}_{#1} #2\,dx}
+
+
+Seja:
+%
+$$f(x) = \scalebox{0.5}{$\ga{Exercicio 5}$}$$
+
+\def\iou#1{\overline{\underline{∫}}_{[1,5]_{2^#1}} {f(x)} \, dx}
+
+Represente graficamente:
+
+\ssk
+
+a) $\iou0$
+
+b) $\iou1$
+
+c) $\iou2$
+
+
+
+
+
+
+\newpage
+
+
+
+% {\bf Exercício 15.}
+% 
+% \def\iou#1{\Intoverunder{[2,10]_{2^#1}}{f(x)}}
+% 
+% a) Verifique que no exercício 14 você desenhou $\iou0$,
+% 
+% $\iou1$, $\iou2$, e $\iou3$.
+% 
+% \msk
+% 
+% b) Calcule a área dessas quatro diferenças. \ColorRed{Veja o vídeo!}
+
+
+
+
+
+
+
+
+% (c2m211somas24p 35 "conjuntos-vazios")
+% (c2m211somas24a    "conjuntos-vazios")
+
+
+
+% (find-pdf-page "~/2022.1-C2/C2-quadros-manha.pdf" 10)
+
+
+% (c2m212somas2p 11 "tipos")
+% (c2m212somas2a    "tipos")
+
+%\printbibliography
+
+% (c2m212somas24p 1 "title")
+% (c2m212somas24a   "title")
+
+
+
+% https://en.wikipedia.org/wiki/Extended_real_number_line
+% (c2m212somas2p 13 "definindo-proposicoes")
+% (c2m212somas2a    "definindo-proposicoes")
+% (c2m212isp 11 "uma-figura")
+% (c2m212isa    "uma-figura")
+% (find-LATEXgrep "grep --color=auto -nH --null -e Aroundfwithinftys *.tex *.lua")
+% (find-LATEX "2021-2-C2-infs-e-sups.tex" "programa-2")
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.1-C2/")
+# (find-fline "~/LATEX/2022-1-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.1-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-1-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-infs-e-sups veryclean
+make -f 2019.mk STEM=2022-1-C2-infs-e-sups pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2is"
+% ee-tla: "c2m221is"
+% End:
