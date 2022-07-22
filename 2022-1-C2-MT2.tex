@@ -1,0 +1,316 @@
+% (find-LATEX "2022-1-C2-MT2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-MT2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-MT2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-MT2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-MT2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-MT2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-MT2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-MT2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-MT2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-MT2")
+% (find-pdf-page   "~/LATEX/2022-1-C2-MT2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-MT2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-MT2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-MT2.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-MT2.pdf
+%               file:///tmp/2022-1-C2-MT2.pdf
+%           file:///tmp/pen/2022-1-C2-MT2.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-MT2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Lazy2.lua Lazy3.lua Lazy4.lua Verbatim1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-MT2" "2" "c2m221mt2" "c2mt2")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.questao-E1»		(to "questao-E1")
+% «.questao-C1»		(to "questao-C1")
+% «.gabarito»		(to "gabarito")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221mt2" "2022-1-C2-MT2")
+% (code-eevvideo      "c2m221mt2" "2022-1-C2-MT2")
+% (code-eevlinksvideo "c2m221mt2" "2022-1-C2-MT2")
+% (find-c2m221mt2video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L dofile "Lazy4.lua"                -- (find-LATEX "Lazy4.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «formulas-defs»  (to ".formulas-defs")
+% (c2m221ftp 1 "title")
+% (c2m221fta   "title")
+% (c2m221fda   "title")
+\input 2022-1-C2-formulas-defs.tex
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221mt2p 1 "title")
+% (c2m221mt2a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Mini-teste 2
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+% «questao-E1»  (to ".questao-E1")
+% (c2m221mt2p 2 "questao-E1")
+% (c2m221mt2a   "questao-E1")
+
+\scalebox{0.5}{\def\colwidth{10.5cm}\firstcol{
+
+{\bf Mini-teste 2}
+
+(Veja o rodapé pra detalhes).
+
+\msk
+
+Isto aqui é um exemplo do livro do Miranda:
+
+\msk
+
+% (find-dmirandacalcpage 189 "6.2 Integração por Substituição")
+% (find-dmirandacalcpage 190 "6.2 Integração por Substituição")
+
+{\color{blue} Problema.} Calcule a antiderivada de $(\sen 4x)^5 \cos 4x$.
+
+{\color{blue} Solução.} Observamos que a derivada de $\sen 4x$ é
+$4 \cos x$, que é um múltiplo do fator $\cos 4x$ que aparece no
+integrando. Isso motiva a substituição
+%
+$$u = \sen 4x,
+  \qquad
+  du = 4 \cos 4x \, dx
+  \qquad
+  \frac{du}{4} = \cos 4x \, dx
+$$
+
+e assim:
+%
+$$\begin{array}{rcl}
+  \D \intx{(\sen 4x)^5 \cos 4x}
+  &=& \D \frac14 \intu{u^5} \\
+  &=& \D \frac14 · \frac16 u^6 + C \\[5pt]
+  &=& \D \frac1{24} (\sen 4x)^6 + C. \\
+  \end{array}
+$$
+
+Justifique o passo $\intx{(\sen 4x)^5 \cos 4x} = \frac14 \intu{u^5}$.
+Mais precisamente: imagine que você tentou justificar ele dizendo que
+ele é verdadeiro ``por mudança de variáveis'', e o jogador $O$
+respondeu: ``me mostra um caso particular do \ga{[MV1]} que justifica
+esse passo'' --- e o jogador $O$ te dá essa dica daqui: ``o \ga{[MV1]}
+é sobre integrais definidas, então suponha que a primeira integral vai
+de $x=a$ até $x=b$''.
+
+}\anothercol{
+}}
+
+
+\newpage
+
+%   ____       _                _ _        
+%  / ___| __ _| |__   __ _ _ __(_) |_ ___  
+% | |  _ / _` | '_ \ / _` | '__| | __/ _ \ 
+% | |_| | (_| | |_) | (_| | |  | | || (_) |
+%  \____|\__,_|_.__/ \__,_|_|  |_|\__\___/ 
+%                                          
+% «gabarito»  (to ".gabarito")
+% (c2m221mt2p 4 "gabarito")
+% (c2m221mt2a   "gabarito")
+% (c2m221dp1p 2 "C2Formulas1")
+% (c2m221dp1a   "C2Formulas1")
+
+{\bf Gabarito}
+
+% (find-angg "LUA/Lazy4.lua" "MT2-tests")
+
+%L ang = Ang.from([[
+%L   <out>
+%L   $\scalebox{1.0}{$\begin{array}{c}
+%L      <MT2_> = <Paren(MT2)>  \\
+%L      <MV2_> = <Paren(MV2)>  \\
+%L      <MV2_><SMV2a.bsm> = <Paren(SMV2a(MV2))> \\
+%L      <MV2_><SMV2b.bsm> = <Paren(SMV2b(MV2))> \\
+%L      <MV2_><SMV2c.bsm> = <Paren(SMV2c(MV2))> \\
+%L    \end{array}
+%L    $}
+%L   $
+%L ]])
+%L ang:sa("gab"):output()
+\pu
+
+\scalebox{0.7}{\def\colwidth{20cm}\firstcol{
+
+{\footnotesize
+
+Veja estes PDFs pra mais detalhes:
+
+\ssk
+
+% (c2m221dp1p 2 "introducao")
+% (c2m221dp1a   "introducao")
+%    http://angg.twu.net/LATEX/2022-1-C2-dicas-pra-P1.pdf
+\url{http://angg.twu.net/LATEX/2022-1-C2-dicas-pra-P1.pdf}
+
+% (c2m221p1p 4 "fracoes-parciais-gab")
+% (c2m221p1a   "fracoes-parciais-gab")
+%    http://angg.twu.net/LATEX/2022-1-C2-P1.pdf#page=4
+\url{http://angg.twu.net/LATEX/2022-1-C2-P1.pdf\#page=4}
+
+}
+
+\msk
+
+As contas são:
+
+\bsk
+
+\ga{gab}
+
+
+
+}\anothercol{
+}}
+
+
+\ssk
+
+
+
+
+% (c2m221dp1p 2 "C2Formulas1")
+% (c2m221dp1a   "C2Formulas1")
+% (find-angg "LUA/C2Formulas1.lua")
+% (c2m221prp 4 "C2Formulas1-test")
+% (c2m221pra   "C2Formulas1-test")
+% (find-LATEX "edrxgac2.tex" "C2" "Definite integrals")
+% \input 2022-1-C2-formulas-defs.tex
+
+
+% (find-angg "LUA/C2Formulas1.lua" "TFC2")
+
+
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-MT2 veryclean
+make -f 2019.mk STEM=2022-1-C2-MT2 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2mt2"
+% ee-tla: "c2m221mt2"
+% End:

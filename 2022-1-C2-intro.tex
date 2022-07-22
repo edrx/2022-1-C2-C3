@@ -36,6 +36,7 @@
 % «.exercicio-8-intro»	(to "exercicio-8-intro")
 % «.exercicio-8»	(to "exercicio-8")
 % «.exercicio-9»	(to "exercicio-9")
+% «.julho»		(to "julho")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -176,6 +177,8 @@ primeiro PDF de 2021.2... link pra ele:
 
 {\footnotesize
 
+% (c3m212introa "title")
+% (c3m212introa "title" "Aula 1: introdução ao curso")
 \url{http://angg.twu.net/LATEX/2021-2-C2-intro.pdf}
 
 }
@@ -190,6 +193,7 @@ primeiro PDF de 2021.2... link pra ele:
 \def\ddt{\frac{d}{dt}}
 \sa{RCsen(42t)}{\left( \ddt \sen(42t) = \cos(42t)·42 \right)}
 \sa{RCsen(42t) subst}{\bsm{ f(x):=\sen x \\ f'(x):=\cos x \\ g(x):=42x \\ g'(x):=42 \\ x:=t }}
+\sa{RCsen(42x) subst}{\bsm{ f(x):=\sen x \\ f'(x):=\cos x \\ g(x):=42x \\ g'(x):=42 }}
 
 %$\begin{array}{l}
 % \D \ga{RC} \ga{RCsen(42t) subst} \\
@@ -315,8 +319,10 @@ b) $\ga{Rc} \bsm{
 % |_____/_/\_\___|_|  \___|_|\___|_|\___/  |____/ 
 %                                                 
 % «exercicio-3»  (to ".exercicio-3")
-% (find-pdf-page "~/2022.1-C2/tarde.pdf" 4)
-% (find-pdf-page "~/2022.1-C2/tarde.pdf")
+% (c2m221introp 5 "exercicio-3")
+% (c2m221introa   "exercicio-3")
+% (find-pdf-page "~/2022.1-C2/C2-quadros-tarde.pdf" 4 "[RC]")
+% (find-pdf-page "~/2022.1-C2/C2-quadros-tarde.pdf" 4 "é da forma")
 
 {\bf Exercício 3.}
 
@@ -882,35 +888,49 @@ calcule $\ga{Rc}\Sn3$.
 }}
 
 
+\newpage
+
+% «julho»  (to ".julho")
+% (c2m221introp 19 "julho")
+% (c2m221introa    "julho")
+
+{\bf Figuras novas (julho)}
+
+\def\und#1#2{\underbrace{#1}_{#2}}
+\def\und#1#2{\underbrace{#1}_{⇒ \; #2}}
+\def\und#1#2{\underbrace{\mathstrut #1}_{⇒ \; #2}}
+
+$$\ga{RC} \ga{RCsen(42x) subst} = \ColorRed{?}$$
+
+$$
+\und{\und{\frac{d}{d\und{x}{x}} \und{f(\und{g(\und{x}{x})}{42 · x})}{\sin(42 · x)}}{\frac{d}{dx} \sin(42 · x)} = \und{\und{f'(\und{g(\und{x}{x})}{42 · x})}{\cos(42 · x)} · \und{g'(\und{x}{x})}{42}}{\cos(42 · x) · 42}}{\frac{d}{dx} \sin(42 · x) = \cos(42 · x) · 42}
+$$
+
+
 
 % (find-books "__analysis/__analysis.el" "miranda")
 % (find-dmirandacalcpage 87 "3.5 A Regra da Cadeia")
 
 
+\newpage
 
+$$    \begin{array}{rcl}
+        D \Intx{a}{b}{f'(g(x)) g'(x)} &=& \difx{a}{b}{f(g(x))} \\
+            &=& f(g(b)) - f(g(a)) \\
+            &=& \difu{g(a)}{g(b)}{f(u)} \\
+            &=& D \Intx{g(a)}{g(b)}{f'(u)} \\
+      \end{array} 
+$$
 
-% \newpage
-% 
-% $$\ga{Rc} = \ga{RC}$$
-% 
-% $$\RC \SCa = \RCa$$
-% 
-% $$\D
-%   \left(\ddx f(g(x))
-%   \frac{a·b+a}{b+2}
-%   \right) \SA =
-%   \left(
-%   \frac{(b+3)·(a+4)+(b+3)}{(a+4)+2}
-%   \right)
-% $$
-% 
-% 
-% $$\begin{array}{rcl}
-%   (a·b+a)\Sa &=& (a·b)\Sa + b\Sa \\
-%              &=& (a\Sa·b\Sa) + b\Sa \\
-%              &=& (b+3)·(a+4) + (a+4) \\
-%   \end{array}
-% $$
+$$
+      \begin{array}{rcl}
+        D \Intx{2}{3}{\cos(42 · x) 42} &=& \difx{2}{3}{\sen(42 · x)} \\
+            &=& \sen(42 · 3) - \sen(42 · 2) \\
+            &=& \difu{42 · 2}{42 · 3}{\sen(u)} \\
+            &=& D \Intx{42 · 2}{42 · 3}{\cos(u)} \\
+      \end{array} 
+$$
+
 
 
 

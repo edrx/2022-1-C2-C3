@@ -1,0 +1,266 @@
+% (find-LATEX "2022-1-C3-MT2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-MT2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-MT2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-MT2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-MT2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-MT2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-MT1.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-funcoes-homogeneas.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-MT2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-MT2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C3-MT2")
+% (find-pdf-page   "~/LATEX/2022-1-C3-MT2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-MT2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-MT2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-MT2.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-MT2.pdf
+%               file:///tmp/2022-1-C3-MT2.pdf
+%           file:///tmp/pen/2022-1-C3-MT2.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-MT2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C3-MT2" "3" "c3m221mt2" "c3mt2")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.questao»	(to "questao")
+% «.gabarito»	(to "gabarito")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m221mt2" "2022-1-C3-MT2")
+% (code-eevvideo      "c3m221mt2" "2022-1-C3-MT2")
+% (code-eevlinksvideo "c3m221mt2" "2022-1-C3-MT2")
+% (find-c3m221mt2video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\Rq{\ColorRed{?}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m221mt2p 1 "title")
+% (c3m221mt2a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.1}
+
+\bsk
+
+Mini-teste 2
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C3.html}
+
+\end{center}
+
+\newpage
+
+% «questao»  (to ".questao")
+% (c3m221mt2p 2 "questao")
+% (c3m221mt2a   "questao")
+% (c3m221fhp 3 "exercicio-2")
+% (c3m221fha   "exercicio-2")
+
+% (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test4")
+%
+%L Numerozinhos.xyn = function (x, y, n)
+%L     if n == "." then return nil end
+%L     if n == "?" then n = "\\ColorRed{?}" end
+%L     return pformat("\\put(%s,%s){\\cell{\\text{%s}}}", x, y, n)
+%L   end
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(8,7))
+%L p = Numerozinhos.xynss(1, 0, 
+%L     [[ ? . . ? . . ?
+%L        . ? . ? . ? .
+%L        . . ? 2 3 . .
+%L        ? ? ? ? 4 ? ?
+%L        . . ? ? ? . .
+%L        . ? . ? . 5 .
+%L        ? . . ? . . ? ]])
+%L p:pgat("pN"):preunitlength("11pt"):sa("Fig 1"):output()
+%L pg = Numerozinhos.xynss(1, 0, 
+%L     [[ \Q  .  . 18  .  . 27
+%L         .  5  .  8  . 12  .
+%L         .  . \q  2  3  .  .
+%L        36 16  4  0  4 16 36
+%L         .  .  3  2 \q  .  .
+%L         . 12  .  8  .  5  .
+%L        27  .  . 18  .  . \Q ]])
+%L pg:pgat("pN"):preunitlength("17pt"):sa("Gabarito"):output()
+\pu
+
+
+\scalebox{0.5}{\def\colwidth{11cm}\firstcol{
+
+{\bf Mini-teste 2}
+
+\ssk
+
+Digamos que $F(x,y)$ é uma função de duas variáveis,
+
+que não precisa ser um polinômio em duas variáveis ---
+
+ela pode ser algo bem mais esquisito.
+
+Digamos que $F(x,y)$ obedece isto aqui,
+%
+$$F(x_0+λΔx,y_0+λΔy) \;=\; λ^2 F(x_0+Δx,y_0+Δy)
+$$
+
+onde $x_0 = 4$ e $y_0 = 3$.
+
+A figura abaixo diz o que sabemos sobre a $F(x,y)$
+
+e o que queremos saber sobre ela.
+
+$$\ga{Fig 1}$$
+
+Descubra o valor de $F(x,y)$ em cada um dos `$\Rq$'s
+
+e escreva os seus resultados sobre alguma das
+
+figuras da direita.
+
+}\anothercol{
+
+\def\Fig{\scalebox{1.75}{$\ga{Fig 1}$}}
+\def\Figs{\Fig \qquad \Fig}
+
+\vspace*{-1.5cm}
+
+$$\begin{array}{c}
+  \Figs \\\\
+  \Figs \\\\
+  \Figs \\
+  \end{array}
+$$
+
+}}
+
+
+\newpage
+
+%   ____       _                _ _        
+%  / ___| __ _| |__   __ _ _ __(_) |_ ___  
+% | |  _ / _` | '_ \ / _` | '__| | __/ _ \ 
+% | |_| | (_| | |_) | (_| | |  | | || (_) |
+%  \____|\__,_|_.__/ \__,_|_|  |_|\__\___/ 
+%                                          
+% «gabarito»  (to ".gabarito")
+% (c3m221mt2p 3 "gabarito")
+% (c3m221mt2a   "gabarito")
+% (find-pdf-page "~/2022.1-C3/C3-quadros.pdf" 26)
+
+{\bf Gabarito}
+
+\def\q{\ensuremath{\frac{1}{4}5}}
+\def\Q{\ensuremath{\frac{9}{4}5}}
+
+$$\scalebox{1.2}{$\ga{Gabarito}$}$$
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C3-MT2 veryclean
+make -f 2019.mk STEM=2022-1-C3-MT2 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3mt2"
+% ee-tla: "c3m221mt2"
+% End:

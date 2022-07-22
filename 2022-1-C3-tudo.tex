@@ -25,6 +25,7 @@
 
 % «.defs»	(to "defs")
 % «.title»	(to "title")
+% «.parts»	(to "parts")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -109,9 +110,15 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
-
+% «parts»  (to ".parts")
+% (c3m221tudop 2 "parts")
+% (c3m221tudoa   "parts")
 \def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
 
+
+% (c3m221orbitaa "title")
+% (c3m221orbitaa "title" "Aulas 4 e 5: órbita")
+\incl{2022-1-C3-orbita}
 
 % (c3m221nfa "title")
 % (c3m221nfa "title" "Aula 10: ``notação de físicos''")
@@ -120,6 +127,22 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c3m221mt1a "title")
 % (c3m221mt1a "title" "Mini-teste 1")
 \incl{2022-1-C3-MT1}
+
+% (c3m221fha "title")
+% (c3m221fha "title" "Aula 29: funções homogêneas")
+\incl{2022-1-C3-funcoes-homogeneas}
+
+% (c3m221mt2a "title")
+% (c3m221mt2a "title" "Mini-teste 2")
+\incl{2022-1-C3-MT2}
+
+% (c3m221p1a "title")
+% (c3m221p1a "title" "P1 (Primeira prova)")
+\incl{2022-1-C3-P1}
+
+% (c3m221p2a "title")
+% (c3m221p2a "title" "P2 (Segunda prova)")
+\incl{2022-1-C3-P2}
 
 
 
@@ -137,36 +160,6 @@ Eduardo Ochs - RCN/PURO/UFF
 % «djvuize»  (to ".djvuize")
 % (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
 
- (eepitch-shell)
- (eepitch-kill)
- (eepitch-shell)
-# (find-fline "~/2022.1-C3/")
-# (find-fline "~/LATEX/2022-1-C3/")
-# (find-fline "~/bin/djvuize")
-
-cd /tmp/
-for i in *.jpg; do echo f $(basename $i .jpg); done
-
-f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-
-f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
-f () { cp -fv $1.png $1.pdf       ~/2022.1-C3/
-       cp -fv        $1.pdf ~/LATEX/2022-1-C3/
-       cat <<%%%
-% (find-latexscan-links "C3" "$1")
-%%%
-}
-
-f 20201213_area_em_funcao_de_theta
-f 20201213_area_em_funcao_de_x
-f 20201213_area_fatias_pizza
 
 
 
@@ -181,9 +174,18 @@ f 20201213_area_fatias_pizza
  (eepitch-shell)
  (eepitch-kill)
  (eepitch-shell)
-# (find-LATEXfile "2019planar-has-1.mk")
-make -f 2019.mk STEM=2022-1-C3-tudo veryclean
-make -f 2019.mk STEM=2022-1-C3-tudo pdf
+# See: (find-angg "2022-1-C2-C3/README.org")
+
+lualatex                  2022-1-C3-tudo.tex
+# (find-pdf-page "~/LATEX/2022-1-C3-tudo.pdf")
+
+# Upload pdf
+cd ~/LATEX/
+Scp-np 2022-1-C3-tudo.pdf $TWUP/LATEX/2022-1-C3-tudo.pdf
+Scp-np 2022-1-C3-tudo.pdf $TWUS/LATEX/2022-1-C3-tudo.pdf
+# Test the pdf (open the urls in a browser):
+# http://angg.twu.net/LATEX/2022-1-C3-tudo.pdf
+
 
 % Local Variables:
 % coding: utf-8-unix

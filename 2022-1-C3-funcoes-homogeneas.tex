@@ -1,0 +1,560 @@
+% (find-LATEX "2022-1-C3-funcoes-homogeneas.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-funcoes-homogeneas.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-funcoes-homogeneas.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-funcoes-homogeneas.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-funcoes-homogeneas.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-funcoes-homogeneas.tex"))
+% (defun o () (interactive) (find-LATEX "2021-2-C3-funcoes-homogeneas.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-funcoes-homogeneas"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-funcoes-homogeneas.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C3-funcoes-homogeneas")
+% (find-pdf-page   "~/LATEX/2022-1-C3-funcoes-homogeneas.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-funcoes-homogeneas.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-funcoes-homogeneas.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-funcoes-homogeneas.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-funcoes-homogeneas.pdf
+%               file:///tmp/2022-1-C3-funcoes-homogeneas.pdf
+%           file:///tmp/pen/2022-1-C3-funcoes-homogeneas.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-funcoes-homogeneas.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C3-funcoes-homogeneas" "3" "c3m221fh" "c3fh")
+
+% «.videos-antigos»	(to "videos-antigos")
+%
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.exercicio-1»	(to "exercicio-1")
+% «.exercicio-2»	(to "exercicio-2")
+% «.exercicio-2-cont»	(to "exercicio-2-cont")
+% «.exercicio-3»	(to "exercicio-3")
+% «.exercicio-4»	(to "exercicio-4")
+% «.exercicio-5»	(to "exercicio-5")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% «videos-antigos»  (to ".videos-antigos")
+% (c3m212mt2a "video-a")
+% (c3m212mt2a "video-b")
+% (c3m212mt2a "video-c")
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m221fh" "2022-1-C3-funcoes-homogeneas")
+% (code-eevvideo      "c3m221fh" "2022-1-C3-funcoes-homogeneas")
+% (code-eevlinksvideo "c3m221fh" "2022-1-C3-funcoes-homogeneas")
+% (find-c3m221fhvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Pict2e1-1.lua"            -- (find-LATEX "Pict2e1-1.lua")
+%%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+\def\Rq{\ColorRed{?}}
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m221fhp 1 "title")
+% (c3m221fha   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.1}
+
+\bsk
+
+Aula 29: funções homogêneas
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C3.html}
+
+\end{center}
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+% (c3m221fhp 2 "exercicio-1")
+% (c3m221fha   "exercicio-1")
+
+{\bf Introdução}
+
+\def\HH#1{[\text{H}_#1]}
+\def\HP#1{[\text{H}'_#1]}
+\def\HPP#1{[\text{H}''_#1]}
+\def\HHH#1#2#3#4{
+  \left(\begin{array}{lrcl}
+        F(#3·#1,#3·#2) \;\; = \;\; #3^#4·F(#1,#2) \\
+        \end{array}
+  \right)}
+\def\HHP#1#2#3#4#5#6{
+  \left(\begin{array}{lrcl}
+        \text{Se}    &  (#3,#4) &=& #5   · (#1,#2) \\
+        \text{então} & F(#3,#4) &=& #5^#6·F(#1,#2) \\
+        \end{array}
+  \right)}
+
+\def\HHPP#1#2#3#4#5#6{
+  \left(\begin{array}{lrcl}
+        F(#1+#5#3,#2+#5#4) \;\; = \;\; #5^#6F(#1+#3,#2+#4) \\
+        \end{array}
+  \right)}
+
+\scalebox{0.4}{\def\colwidth{14cm}\firstcol{
+
+No semestre passado eu apresentei funções homogêneas de um jeito que
+demorou muito... esse aqui:
+
+\ssk
+
+{\footnotesize
+
+% (c3m212fhp 3 "exercicio-1")
+% (c3m212fha   "exercicio-1")
+%    http://angg.twu.net/LATEX/2021-2-C3-funcoes-homogeneas.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C3-funcoes-homogeneas.pdf}
+
+}
+
+\ssk
+
+Vou tentar outro jeito agora.
+
+Normalmente a gente começa a ouvir falar de funções homogêneas por
+polinômios homogêneos, que são polinômios que todos os monômios deles
+têm o mesmo grau... por exemplo,
+%
+$$2x^3y^4 + 5x^4y^3 - 6x^7$$
+
+é um polinômio em duas variáveis, $x$ e $y$, que é homogêneo de grau
+7, porque $x^3y^4$, $x^4y^3$, e $x^7$ são monômios de grau 7. Qualquer
+polinômio em duas variáveis pode ser decomposto em polinômios
+homogêneos; por exemplo:
+%
+$$\def\gra#1{←\;\text{parte homogênea de grau #1}}
+  \begin{array}{rcll}
+  F(x,y) &=& a                           & \gra0 \\
+         &+& bx + cy                     & \gra1 \\
+         &+& dx^2 + exy + fy^2           & \gra2 \\
+         &+& gx^3 + hxy^2 + jx^2y + ky^3 & \gra3 \\
+         &+& \ldots
+  \end{array}
+$$
+
+Repare que fica implícito que $a, b, \ldots, k, \ldots$ são
+constantes.
+
+\msk
+
+Uma função em duas variáveis, $F(x,y)$, homogênea de grau $k$, é uma
+que obedece isso aqui:
+%
+$$\HH{k} \;\;=\;\; \HHH{x_1}{y_1}{λ}{k}$$
+
+ou, equivalentemente,
+
+$$\HP{k} \;\;=\;\; \HHP{x_1}{y_1}{x_2}{y_2}{λ}{k}$$
+
+O ``$∀x_1,y_1,x_2,y_2,λ∈\R$'' fica implícito. Veja estas páginas da
+Wikipedia:
+
+\ssk
+
+{\footnotesize
+
+\url{https://en.wikipedia.org/wiki/Homogeneous_polynomial}
+
+\url{https://en.wikipedia.org/wiki/Homogeneous_function}
+
+}
+
+
+}\anothercol{
+
+  Eu inventei nomes curtos --- $\HH{k}$ e $\HP{k}$ --- pra essas
+  propriedades pra poder usar a operação `$[:=]$' de Cálculo 2,
+
+  \ssk
+
+  {\footnotesize
+
+    % (c2m212introp 11 "exercicio-1-gab")
+    % (c2m212introa    "exercicio-1-gab")
+    % http://angg.twu.net/LATEX/2021-2-C2-intro.pdf#page=11
+    \url{http://angg.twu.net/LATEX/2021-2-C2-intro.pdf\#page=11}
+    
+  }
+
+  \ssk
+
+  pra obter casos particulares. Por exemplo, se a função $F(x,y)$ é
+  homogênea de grau 2 então estes casos particulares valem:
+  %
+  \sa{subst34}{\bsm{x_1:=3 \\ y_1:=4 \\ x_2:=30 \\ y_2:=40 \\ λ:=10 \\ k:=2 }}
+  %
+  $$\begin{array}{rcl}
+    \HH{k} \ga{subst34} &=& \HHH{3}{4}        {10}{2} \\ \\[-5pt]
+    \HP{k} \ga{subst34} &=& \HHP{3}{4}{30}{40}{10}{2}
+    \end{array}
+  $$
+
+\bsk
+
+Vamos definir
+$\HH{1}, \HH{2}, \HH{3}, \ldots, \HP{1}, \HP{2}, \HP{3}, \ldots$ ``do
+jeito óbvio'' --- $\HH{2}=\HH{k}[k:=2]$, $\HP{3}=\HH{k}[k:=3]$, etc.
+No exercício abaixo você vai entender os detalhes disso.
+
+\bsk
+\bsk
+\bsk
+
+{\bf Exercício 1.}
+
+Complete:
+
+\ssk
+
+a) $\HH{k} [k:=2] \;=\; \Rq$
+
+\ssk
+
+b) $\HP{k} [k:=3] \;=\; \Rq$
+
+}}
+
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c3m221fhp 3 "exercicio-2")
+% (c3m221fha   "exercicio-2")
+
+{\bf Exercício 2}
+
+% (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test4")
+%
+%L Numerozinhos.xyn = function (x, y, n)
+%L     if n == "." then return nil end
+%L     if n == "?" then n = "\\ColorRed{?}" end
+%L     return pformat("\\put(%s,%s){\\cell{\\text{%s}}}", x, y, n)
+%L   end
+%L Pict2e.bounds = PictBounds.new(v(-5,-5), v(5,5))
+%L p = Numerozinhos.xynss(-4, -4, 
+%L     [[ . . ? . . . . . .
+%L        . . . . ? . . ? .
+%L        . . . ? ? . ? . ?
+%L        . . . . 3 4 5 . .
+%L        . . ? ? ? 8 ? ? .
+%L        . . ? ? ? . . . .
+%L        ? . ? . ? 2 . . .
+%L        . . . . . . . . .
+%L        . . . . . . ? . .]])
+%L p:pgat("pN"):preunitlength("11pt"):sa("Exercicio 2"):output()
+\pu
+
+\scalebox{0.7}{\def\colwidth{10cm}\firstcol{
+
+Digamos que $F(x,y)$ é uma função de duas variáveis,
+
+que não precisa ser um polinômio em duas variáveis ---
+
+ela pode ser algo bem mais esquisito.
+
+Digamos que $F(x,y)$ seja homogênea de grau 2.
+
+Digamos que a figura à direita diz coisas que a gente
+
+sabe sobre a função $F$ e coisas que a gente quer
+
+descobrir sobre ela --- por exemplo, o numerozinho
+
+2 na posição $(1,1)$ diz que sabemos que $F(1,1)=4$,
+
+e o `$\Rq$' na posição $(3,3)$ diz que queremos saber
+
+$F(3,3)$. Como $F$ obedece $\HP{2}$, este caso particular
+
+do $\HP{2}$ tem que valer:
+%
+$$\begin{array}{l}
+  \HHP{x_1}{y_1}{x_2}{y_2}{λ}{2} \bsm{x_1:=1 \\ y_1:=1 \\ x_2:=3 \\ y_2:=3 \\ λ:=3} \\
+  = \; \HHP 113332
+  \end{array}
+$$
+
+E portanto $F(3,3) = 3^2 · F(1,1) = 3^2 · 4 = 9·4 = 36$.
+
+}\anothercol{
+
+\vspace*{0cm}
+
+$\ga{Exercicio 2}$
+
+}}
+
+\newpage
+
+% «exercicio-2-cont»  (to ".exercicio-2-cont")
+% (c3m221fhp 4 "exercicio-2-cont")
+% (c3m221fha   "exercicio-2-cont")
+
+{\bf Exercício 2 (cont.)}
+
+\scalebox{0.7}{\def\colwidth{10cm}\firstcol{
+
+a) O que você tem que pôr em cada `$\Rq$' daqui
+%
+$$\begin{array}{l}
+  \HHP{x_1}{y_1}{x_2}{y_2}{λ}{2} \bsm{x_1:=\Rq \\ y_1:=\Rq \\ x_2:=\Rq \\ y_2:=\Rq \\ λ:=\Rq} \\
+  \end{array}
+$$
+
+pra descobrir o valor de $F(3,0)$ a partir do valor
+
+de $F(1,0)$?
+
+\ssk
+
+b) Qual vai ser o valor de $F(3,0)$?
+
+\ssk
+
+c) O que você tem que pôr em cada `$\Rq$' acima
+
+pra descobrir $F(-2,4)$ a partir de $F(1,-2)$?
+
+\ssk
+
+d) Qual vai ser o valor de $F(-2,4)$?
+
+\ssk
+
+e) Qual vai ser o valor de $F(-1,-1)$?
+
+\ssk
+
+f) Escreva as contas do item (e) de forma que cada `$=$'
+
+seja fácil de justificar. Baseie-se neste jogo aqui:
+
+\ssk
+
+{\scriptsize
+
+% (c2m221dfip 4 "o-jogo")
+% (c2m221dfia   "o-jogo")
+%    http://angg.twu.net/LATEX/2022-1-C2-der-fun-inv.pdf#page=4
+\url{http://angg.twu.net/LATEX/2022-1-C2-der-fun-inv.pdf\#page=4}
+
+}
+
+\ssk
+
+g) Descubra os valores da $F$ nos outros `$\Rq$'s da
+
+figura à direita.
+
+
+}\anothercol{
+
+\vspace*{0cm}
+
+$\ga{Exercicio 2}$
+
+}}
+
+\newpage
+
+% «exercicio-3»  (to ".exercicio-3")
+% (c3m221fhp 5 "exercicio-3")
+% (c3m221fha   "exercicio-3")
+
+{\bf Exercício 3.}
+
+\scalebox{0.8}{\def\colwidth{9cm}\firstcol{
+
+    No exercício 2 nós supusemos que a função $F(x,y)$ era homogênea
+    de grau 2. Agora nós vamos usar a mesma figura, \ColorRed{mas
+      vamos supor que a $F(x,y)$ é homogênea de grau 1.}
+
+    Digamos --- como no exercício anterior --- que os numerozinhos da
+    figura à direita indicam coisas que a gente sabe sobre a função
+    $F(x,y)$ e que os `$\Rq$' indicam coisas que a gente quer
+    descobrir.
+
+    \msk
+
+    Descubra o valor dessa $F(x,y)$ em cada `$\Rq$' da figura.
+
+}\anothercol{
+
+\vspace*{0cm}
+
+$\ga{Exercicio 2}$
+
+}}
+
+
+\newpage
+
+% «exercicio-4»  (to ".exercicio-4")
+% (c3m221fhp 6 "exercicio-4")
+% (c3m221fha   "exercicio-4")
+
+{\bf Exercício 4.}
+
+\scalebox{0.8}{\def\colwidth{9cm}\firstcol{
+
+    No exercício 2 nós supusemos que a função $F(x,y)$ era homogênea
+    de grau 2, e no exercício 3 nós supusemos que ela era homogênea de
+    grau 1. Agora nós vamos usar a mesma figura, mas vamos supor que a
+    $F(x,y)$ é homogênea de grau \ColorRed{3}.
+
+    \msk
+
+    Digamos --- como no exercício anterior --- que os numerozinhos da
+    figura à direita indicam coisas que a gente sabe sobre a função
+    $F(x,y)$ e que os `$\Rq$' indicam coisas que a gente quer
+    descobrir.
+
+    \msk
+
+    Descubra o valor dessa $F(x,y)$ em cada `$\Rq$' da figura.
+
+}\anothercol{
+
+\vspace*{0cm}
+
+$\ga{Exercicio 2}$
+
+}}
+
+
+\newpage
+
+% «exercicio-5»  (to ".exercicio-5")
+% (c3m221fhp 7 "exercicio-5")
+% (c3m221fha   "exercicio-5")
+% (find-LATEX "Pict2e1-1.lua" "Numerozinhos-test2")
+% (find-angg "LUA/Pict3D1.lua" "nff-test2")
+% (find-angg "LUA/Pict3D1.lua" "nff")
+
+{\bf Exercício 5.}
+
+Vamos dizer que uma função $F(x,y)$ é {\sl homogênea de grau $k$ em
+  torno do ponto $(x_0,y_0)$} quando ela obedece 
+
+$\HHPP abcdef$
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(6,5))
+%L x0,y0 = 4,3
+%L nff = function (str)
+%L     return Code.vc("x,y => local Dx,Dy = x-x0,y-y0; return "..str)
+%L   end
+%L p = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), nff "Dx*Dy")
+%L p:pgat("pN"):preunitlength("11pt"):sa("Exercicio 5"):output()
+\pu
+
+$$\ga{Exercicio 5}$$
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C3-funcoes-homogeneas veryclean
+make -f 2019.mk STEM=2022-1-C3-funcoes-homogeneas pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3fh"
+% ee-tla: "c3m221fh"
+% End:

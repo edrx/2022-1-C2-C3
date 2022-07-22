@@ -1,44 +1,42 @@
-% (find-LATEX "2022-1-C3-MT1.tex")
-% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-MT1.tex" :end))
-% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-MT1.tex" "Success!!!"))
-% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-MT1.pdf"))
-% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-MT1.pdf"))
-% (defun e () (interactive) (find-LATEX "2022-1-C3-MT1.tex"))
-% (defun o () (interactive) (find-LATEX "2022-1-C3-notacao-de-fisicos.tex"))
-% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-MT1"))
+% (find-LATEX "2022-1-C3-orbita.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-orbita.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-orbita.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-orbita.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-orbita.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-orbita.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-orbita.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-orbita"))
 % (defun v () (interactive) (find-2a '(e) '(d)))
-% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-MT1.pdf"))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-orbita.pdf"))
 % (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
-%          (code-eec-LATEX "2022-1-C3-MT1")
-% (find-pdf-page   "~/LATEX/2022-1-C3-MT1.pdf")
-% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-MT1.pdf /tmp/")
-% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-MT1.pdf /tmp/pen/")
-%     (find-xournalpp "/tmp/2022-1-C3-MT1.pdf")
-%   file:///home/edrx/LATEX/2022-1-C3-MT1.pdf
-%               file:///tmp/2022-1-C3-MT1.pdf
-%           file:///tmp/pen/2022-1-C3-MT1.pdf
-% http://angg.twu.net/LATEX/2022-1-C3-MT1.pdf
+%          (code-eec-LATEX "2022-1-C3-orbita")
+% (find-pdf-page   "~/LATEX/2022-1-C3-orbita.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-orbita.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-orbita.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-orbita.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-orbita.pdf
+%               file:///tmp/2022-1-C3-orbita.pdf
+%           file:///tmp/pen/2022-1-C3-orbita.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-orbita.pdf
 % (find-LATEX "2019.mk")
 % (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
 % (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
-% (find-CN-aula-links "2022-1-C3-MT1" "3" "c3m221mt1" "c3mt1")
+% (find-CN-aula-links "2022-1-C3-orbita" "3" "c3m221orbita" "c3or")
 
-% «.defs»		(to "defs")
-% «.title»		(to "title")
-% «.defs-miniteste»	(to "defs-miniteste")
-% «.questao»		(to "questao")
-% «.questao-e-gabarito»	(to "questao-e-gabarito")
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.orbita»	(to "orbita")
 %
-% «.djvuize»		(to "djvuize")
+% «.djvuize»	(to "djvuize")
 
 
 
 % <videos>
 % Video (not yet):
-% (find-ssr-links     "c3m221mt1" "2022-1-C3-MT1")
-% (code-eevvideo      "c3m221mt1" "2022-1-C3-MT1")
-% (code-eevlinksvideo "c3m221mt1" "2022-1-C3-MT1")
-% (find-c3m221mt1video "0:00")
+% (find-ssr-links     "c3m221orbita" "2022-1-C3-orbita")
+% (code-eevvideo      "c3m221orbita" "2022-1-C3-orbita")
+% (code-eevlinksvideo "c3m221orbita" "2022-1-C3-orbita")
+% (find-c3m221orbitavideo "0:00")
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -75,17 +73,14 @@
 
 \catcode`\^^J=10
 \directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
-%L dofile "Pict2e1.lua"              -- (find-LATEX "Pict2e1.lua")
-%L dofile "Pict2e1-1.lua"            -- (find-LATEX "Pict2e1-1.lua")
 %L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
-%L Pict2e.__index.suffix = "%"
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
 %L Pict2e.__index.suffix = "%"
 \pu
 \def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
 \def\pictaxesstyle{\linethickness{0.5pt}}
-\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
-\celllower=3pt
-
+\celllower=2.5pt
 
 % «defs»  (to ".defs")
 % (find-LATEX "edrx21defs.tex" "colors")
@@ -107,8 +102,8 @@
 %                      |_|          |___/      
 %
 % «title»  (to ".title")
-% (c3m221mt1p 1 "title")
-% (c3m221mt1a   "title")
+% (c3m221orbitap 1 "title")
+% (c3m221orbitaa   "title")
 
 \thispagestyle{empty}
 
@@ -120,7 +115,7 @@
 
 \bsk
 
-Mini-teste 1
+Aulas 4 e 5: órbita
 
 \bsk
 
@@ -132,145 +127,108 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
-% «defs-miniteste»  (to ".defs-miniteste")
-% (c3m221mt1p 2 "defs-miniteste")
-% (c3m221mt1a   "defs-miniteste")
-%
-%L -- (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test3")
-%L Pict2e.bounds = PictBounds.new(v(-1,-1), v(11,11))
-%L pyr = Numerozinhos.from(0, 0, [[
-%L     0 0 0 0 0 0 0 0 0 0 0 0
-%L     0 0 0 0 0 0 0 0 0 0 0 0
-%L     0 0 0 0 0 0 0 1 0 0 0 0
-%L     0 0 0 0 0 0 1 2 0 0 0 0
-%L     0 0 0 0 0 1 2 3 1 0 0 0
-%L     0 0 0 0 1 2 3 4 2 0 0 0
-%L     0 0 0 1 2 3 4 5 3 1 0 0
-%L     0 0 1 2 3 4 5 6 4 2 0 0
-%L     0 0 0 0 1 2 3 4 2 0 0 0
-%L     0 0 0 0 0 0 1 2 0 0 0 0
-%L     0 0 0 0 0 0 0 0 0 0 0 0
-%L     0 0 0 0 0 0 0 0 0 0 0 0 ]])
-%L pyr_spec  = "(1,4)--(7,10)--(10,4)--(7,1)--(1,4) (1,4)--(10,4) (7,1)--(7,10)"
-%L pyr:topict(pyr_spec ):sa("piramide com linhas"):output()
-\pu
+Nós começamos o curso de C3 em 2022.1
 
+usando este PDF aqui, de 2021.2:
 
-\def\QUESTAO{
+\ssk
 
-Seja $z=z(x,y)=F(x,y)$ a função
+{\footnotesize
 
-que dá a superfície desta pirâmide:
+% (c3m212introp 1)
+%    http://angg.twu.net/LATEX/2021-2-C3-intro.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C3-intro.pdf}
+
+}
 
 \msk
 
-\unitlength=10pt
+Depois de fazer os exercícios de desenhar
 
-$\scalebox{0.75}{$\ga{piramide com linhas}$}
-$
+parábolas parametrizadas dele nós passamos pros
 
-Lembre que:
-
-$\frac{∂f}{∂𝐛v}(𝐛p) = \lim_{t→0} \frac{ f(𝐛p + t·𝐛v) - f(𝐛p) }{t} $
-
-Digamos que $𝐛p = (5,3)$ e $𝐛v = \VEC{1,1}$.
-
-Calcule $\frac{ f(𝐛p + t·𝐛v) - f(𝐛p) }{t}$ para $t=4$, $t=3$,
-
-$t=2$, $t=1$, $t=\frac12$, $t=-1$, $t=-\frac12$.
-
-}
+exercícios de ``adivinhar trajetórias'' daqui:
 
 
-\def\FA#1{\frac{ f(𝐛p + #1·𝐛v) - f(𝐛p) }{#1}}
-\def\FB#1{\frac{ f((5,3) + #1·\VEC{1,1}) - f((5,3)) }{#1}}
-\def\FC#1#2#3{\frac{ f((#2,#3)) - f((5,3)) }{#1}}
+\ssk
 
+{\footnotesize
 
-\def\GABARITO{
-
-\hspace*{-1cm}
-%
-\scalebox{0.6}{$
-\begin{tabular}[t]{l}
- {\bf Gabarito:} \\
- $\begin{array}{rcl}
-  \FA{4} &=& \FB{4} \\ 
-         &=& \FC 4 9 7 \\
-         &=& \frac{0-2}{4} \\
-         &=& -1/2 \\
-  \FA{3} %&=& \FB{4} \\ 
-         &=& \FC 3 8 6 \\
-         &=& \frac{2-2}{3} \\
-         &=& 0 \\
-  \FA{2} %&=& \FB{4} \\ 
-         &=& \FC 2 7 5 \\
-         &=& \frac{5-2}{2} \\
-         &=& 1 \\
-  \FA{1} %&=& \FB{4} \\ 
-         &=& \FC 1 6 4 \\
-         &=& \frac{5-2}{1} \\
-         &=& 3 \\
-  \FA{0.5} %&=& \FB{4} \\ 
-         &=& \FC {0.5} {5.5} {3.5} \\
-         &=& \frac{3.5-2}{0.5} \\
-         &=& 3 \\
-  \FA{(-0.5)} %&=& \FB{4} \\ 
-         &=& \FC {-0.5} {4.5} {2.5} \\
-         &=& \frac{0.5-2}{0.5} \\
-         &=& 3 \\
-  \FA{(-1)} %&=& \FB{4} \\ 
-         &=& \FC {-1} {4} {1} \\
-         &=& \frac{0-2}{-1} \\
-         &=& 2 \\
-  \end{array}
- $
-\end{tabular}
-$}
+% (c3m212vtp 7 "sobre-adivinhar-trajetorias")
+% (c3m212vta   "sobre-adivinhar-trajetorias")
+%    http://angg.twu.net/LATEX/2021-2-C3-vetor-tangente.pdf#page=7
+\url{http://angg.twu.net/LATEX/2021-2-C3-vetor-tangente.pdf#page=7}
 
 }
 
-\newpage
+\ssk
 
-% «questao»  (to ".questao")
-% (c3m221mt1p 2 "questao")
-% (c3m221mt1a   "questao")
-% (c3m221nfp 21 "low-poly")
-% (c3m221nfa    "low-poly")
+Logo depois disso, nas aulas de 8 e 13 de abril
 
-\scalebox{1.0}{\def\colwidth{7cm}\firstcol{
+de 2022, eu pedi pras pessoas ``adivinharem'' a
 
-\QUESTAO
+trajetória do exercício 4 daqui fazendo só contas
 
-}\anothercol{
-}}
+à mão e aproximações no olhômetro:
 
-\newpage
+\ssk
 
-% «questao-e-gabarito»  (to ".questao-e-gabarito")
-% (c3m221mt1p 3 "questao-e-gabarito")
-% (c3m221mt1a   "questao-e-gabarito")
+{\footnotesize
 
-\scalebox{1.0}{\def\colwidth{7cm}\firstcol{
+% (c3m212vtp 7 "sobre-adivinhar-trajetorias")
+% (c3m212vta   "sobre-adivinhar-trajetorias")
+%    http://angg.twu.net/2022.1-C3/C3-quadros.pdf#page=5
+\url{http://angg.twu.net/2022.1-C3/C3-quadros.pdf\#page=5}
 
-\QUESTAO
+}
 
-}\anothercol{
+\msk
 
-\GABARITO
-
-}}
-
+Essa trajetória dá a órbita da próxima página.
 
 \newpage
 
-Obs:
+% «orbita»  (to ".orbita")
+% (c3m221orbitap 3 "orbita")
+% (c3m221orbitaa   "orbita")
 
-Falta eu escrever como a gente descobre que
+%L PradClass.__index.bshow0 = function (p)
+%L     return p:pgat("pgat"):d():tostringp()
+%L   end
+%L Pict2e.bounds = PictBounds.new(v(-3,-3), v(3,3))
+%L 
+%L _P  = function (t) return v(   cos(t),       sin(t)) end
+%L _Pt = function (t) return v(  -sin(t),       cos(t)) end
+%L _Q  = function (t) return v(   cos(4*t)/2,   sin(4*t)/2) end
+%L _Qt = function (t) return v(-2*sin(4*t),   2*cos(4*t)  ) end
+%L _R  = function (t) return _P(t)+_Q(t) end
+%L _Rt = function (t) return _Pt(t)+_Qt(t) end
+%L 
+%L ts   = seqn(0, 2*pi, 64)
+%L r = Plot2D.new {
+%L       P  = "t => _R (t)",
+%L       Pt = "t => _Rt(t)",
+%L       ts = ts
+%L   }
+%L 
+%L ts_v = seqn(0, 2*pi, 6)
+%L 
+%L p = PictList {
+%L       r:toline():Color("Orange"),
+%L       r:tovectors(ts_v):Color("Red")
+%L     }:prethickness("2pt")
+%L p:pgat("pgat"):sa("orbita"):output()
+\pu
 
-$f(5.5, 3.5) = 3.5$ e que $f(4.5, 2.5) = 0.5$...
+\unitlength=25pt
+
+$$\ga{orbita}$$
 
 
+
+% (find-angg "LUA/Pict2e1-1.lua" "Plot2D-test2")
+% (find-pdf-page "~/2022.1-C3/C3-quadros.pdf" 5)
+% (find-pdf-page "~/2022.1-C3/C3-quadros.pdf" 6)
 
 
 %\printbibliography
@@ -334,11 +292,11 @@ f 20201213_area_fatias_pizza
  (eepitch-kill)
  (eepitch-shell)
 # (find-LATEXfile "2019planar-has-1.mk")
-make -f 2019.mk STEM=2022-1-C3-MT1 veryclean
-make -f 2019.mk STEM=2022-1-C3-MT1 pdf
+make -f 2019.mk STEM=2022-1-C3-orbita veryclean
+make -f 2019.mk STEM=2022-1-C3-orbita pdf
 
 % Local Variables:
 % coding: utf-8-unix
-% ee-tla: "c3mt1"
-% ee-tla: "c3m221mt1"
+% ee-tla: "c3or"
+% ee-tla: "c3m221orbita"
 % End:

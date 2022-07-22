@@ -1,0 +1,284 @@
+% (find-LATEX "2022-1-C2-formulas-defs.tex")
+% (defun c  () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-formulas-defs.tex" :end))
+% (defun C  () (interactive) (find-LATEXsh "lualatex 2022-1-C2-formulas-defs.tex" "Success!!!"))
+% (defun D  () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-formulas-defs.pdf"))
+% (defun d  () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-formulas-defs.pdf"))
+% (defun ed () (interactive) (find-LATEX "2022-1-C2-formulas-defs.tex"))
+% (defun et () (interactive) (find-LATEX "2022-1-C2-formulas-test.tex"))
+% (defun o  () (interactive) (find-LATEX "2022-1-C2-formulas-defs.tex"))
+% (defun u  () (interactive) (find-latex-upload-links "2022-1-C2-formulas-defs"))
+% (defun v  () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-formulas-defs.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-formulas-defs")
+% (find-pdf-page   "~/LATEX/2022-1-C2-formulas-defs.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-formulas-defs.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-formulas-defs.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-formulas-defs.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-formulas-defs.pdf
+%               file:///tmp/2022-1-C2-formulas-defs.pdf
+%           file:///tmp/pen/2022-1-C2-formulas-defs.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-formulas-defs.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-formulas-defs" "2" "c2m221fd" "c2fd")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.eqnp»		(to "eqnp")
+% «.RC»			(to "RC")
+% «.DefDif»		(to "DefDif")
+% «.TFC2»		(to "TFC2")
+% «.DFI»		(to "DFI")
+% «.MV»			(to "MV")
+% «.MV1-and-MV2»	(to "MV1-and-MV2")
+% «.MV-bases»		(to "MV-bases")
+% «.MVs»		(to "MVs")
+
+% «defs»  (to ".defs")
+\def\ph{\phantom}
+\def\veq{\rotatebox{90}{$=$}}
+
+% Difference with mathstrut
+\def\Difms #1#2#3{\left. \mathstrut #3 \right|_{s=#1}^{s=#2}}
+\def\Difmu #1#2#3{\left. \mathstrut #3 \right|_{u=#1}^{u=#2}}
+\def\Difmx #1#2#3{\left. \mathstrut #3 \right|_{x=#1}^{x=#2}}
+\def\Difmth#1#2#3{\left. \mathstrut #3 \right|_{θ=#1}^{θ=#2}}
+
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221ftp 1 "title")
+% (c2m221fda   "title")
+% (c2m221fta   "title")
+%
+% Este arquivo só tem definições!
+% Os testes estão num outro.
+
+
+% «eqnp»  (to ".eqnp")
+\def\eqnpfull#1{\overset{\scriptscriptstyle(#1)}{=}}
+\def\eqnpbare#1{=}
+\def\eqnp{\eqnpbare}
+
+% «RC»  (to ".RC")
+% (c2m221ftp 2 "RC")
+% (c2m221fta   "RC")
+% (c2m221fda   "RC")
+\sa{[RC]}{\ensuremath{[\text{RC}]}}
+\sa {RC} {       \D \ddx f(g(x))    =    f'(g(x))g'(x)         }
+\sa{(RC)}{\left( \D \ddx f(g(x)) \; = \; f'(g(x))g'(x) \right) }
+
+% «DefDif»  (to ".DefDif")
+% (c2m221ftp 2 "DefDif")
+% (c2m221fta   "DefDif")
+% (c2m221fda   "DefDif")
+\sa{[DefDif]}{\ensuremath{[\text{DefDif}]}}
+\sa {DefDif} {       \difx{a}{b}{F(x)}     =    F(b) - F(a)         }
+\sa{(DefDif)}{\left( \difx{a}{b}{F(x)}  \; = \; F(b) - F(a) \right) }
+
+% «TFC2»  (to ".TFC2")
+% (c2m221ftp 1 "TFC2")
+% (c2m221fta   "TFC2")
+% (c2m221fda   "TFC2")
+\sa{[TFC2]}  {\ensuremath{[\text{TFC2}]}}
+\sa {TFC2}   {       \D \Intx{a}{b}{F'(x)}    =    \difx{a}{b}{F(x)} }
+\sa{(TFC2)}  {\left( \D \Intx{a}{b}{F'(x)} \; = \; \difx{a}{b}{F(x)} \right)}
+
+% «DFI»  (to ".DFI")
+% (c2m221ftp 3 "DFI")
+% (c2m221fta   "DFI")
+% (c2m221fda   "DFI")
+% (find-angg "LUA/C2Formulas1.lua" "DFI")
+
+\sa{[DFI]}{\ensuremath{[\text{DFI}]}}
+\sa {DFI} {
+  \begin{array}{lrcl}
+    \text{Se:}    & f(g(x))       &\eqnp{1}& x \\
+    \text{Então:} & \ddx f(g(x))  &\eqnp{2}& \ddx x \\
+                                 &&\eqnp{3}& 1 \\
+                  & \ddx f(g(x))  &\eqnp{4}& f'(g(x))g'(x) \\
+                  & f'(g(x))g'(x) &\eqnp{5}& 1 \\
+                  & g'(x)         &\eqnp{6}& \D \frac{1}{f'(g(x))} \\
+  \end{array}}
+\sa{(DFI)}{\left( \ga{DFI} \right)}
+
+\sa{[DFI-]}{\ensuremath{[\text{DFI}^-]}}
+\sa {DFI-} {
+  \begin{array}{lrcl}
+    \text{Se:}    & f(g(x))       &\eqnp{1}& x \\
+    \text{Então:} & g'(x)         &\eqnp{6}& \D \frac{1}{f'(g(x))} \\
+  \end{array}}
+\sa{(DFI-)}{\left( \ga{DFI-} \right)}
+
+
+% «MV»  (to ".MV")
+% (c2m221ftp 4 "MV")
+% (c2m221fta   "MV")
+% (c2m221fda   "MV")
+
+\sa{[MV1]}{\ensuremath{[\text{MV}_1]}}
+\sa{[MV2]}{\ensuremath{[\text{MV}_2]}}
+\sa{[MV3]}{\ensuremath{[\text{MV}_3]}}
+\sa{[MV4]}{\ensuremath{[\text{MV}_4]}}
+\sa{(MV1)}{\left( \ga{MV1} \right)}
+\sa{(MV2)}{\left( \ga{MV2} \right)}
+\sa{(MV3)}{\left( \ga{MV3} \right)}
+\sa{(MV4)}{\left( \ga{MV4} \right)}
+
+\sa{[MVI1]}{\ensuremath{[\text{MVI}_1]}}
+\sa{[MVI2]}{\ensuremath{[\text{MVI}_2]}}
+\sa{[MVI3]}{\ensuremath{[\text{MVI}_3]}}
+\sa{[MVI4]}{\ensuremath{[\text{MVI}_4]}}
+\sa{(MVI1)}{\left( \ga{MVI1} \right)}
+\sa{(MVI2)}{\left( \ga{MVI2} \right)}
+\sa{(MVI3)}{\left( \ga{MVI3} \right)}
+\sa{(MVI4)}{\left( \ga{MVI4} \right)}
+
+% «MV1-and-MV2»  (to ".MV1-and-MV2")
+% (c2m221atisp 16 "um-exemplo")
+% (c2m221atisa    "um-exemplo")
+\sa {MV1} {
+ \begin{array}{rcl}
+       \D \Intx{  a }{  b }{f'(g(x))g'(x)}
+   &\eqnp{1}& \D \difx{  a }{  b }{f (g(x))     } \\
+   &\eqnp{2}& f(g(b))            - f (g(a))       \\[7.5pt]
+   &\eqnp{3}& \D \difu{g(a)}{g(b)}{f (u)}         \\[7.5pt]
+   &\eqnp{4}& \D \Intu{g(a)}{g(b)}{f'(u)}
+ \end{array}}
+
+\sa {MV2} {
+ \begin{array}{rcl}
+       \D \Intx{  a }{  b }{f'(g(x))g'(x)}
+  %&\eqnp{1}& \D \difx{  a }{  b }{f (g(x))     } \\
+  %&\eqnp{2}& f(g(b))            - f (g(a))       \\[7.5pt]
+  %&\eqnp{3}& \D \difu{g(a)}{g(b)}{f (u)}         \\[7.5pt]
+   &\eqnp{4}& \D \Intu{g(a)}{g(b)}{f'(u)}
+ \end{array}}
+
+% (c2m221atisa "defs")
+% (c2m221atisa "defs" "isubstbox")
+
+% «MV-bases»  (to ".MV-bases")
+% (c2m221ftp 4 "MV-bases")
+% (c2m221fta   "MV-bases")
+% (c2m221fda   "MV-bases")
+
+\sa{(MV base)}{ \left( \ga{MV base} \right) }
+\sa {MV base} {
+    \begin{array}{rcl}
+      \multicolumn{3}{l}{\text{Se $\ga{MV hip}$ então:}} \\%[5pt]
+      \D \ga{MV nw}  &=& \D \ga{MV ne} \\
+         \ga{MV veq} \\
+      \D \ga{MV sw}  &=& \D \ga{MV se} \\
+      %\multicolumn{3}{l}{\text{Obs: $\ga{MV obs}$}} \\
+    \end{array}
+  }
+
+\sa{(MVI base)}{ \left( \ga{MVI base} \right) }
+\sa {MVI base} {
+    \begin{array}{rcl}
+      \multicolumn{3}{l}{\text{Se $\ga{MV hip}$ então:}} \\%[5pt]
+      \D \ga{MV nw}  &=& \D \ga{MV ne} \\
+         \ga{MV veq} \\
+      \D \ga{MV sw}  &=& \D \ga{MV se} \\
+      \multicolumn{3}{l}{\text{Obs: $\ga{MV obs}$}} \\
+    \end{array}
+  }
+
+\sa{(MV- base)}{ \left( \ga{MV- base} \right) }
+\sa {MV- base} {
+    \begin{array}{l}
+      \D \ga{MV ne} \\
+         \ga{MV veq} \\
+      \D \ga{MV se} \\
+    \end{array}
+  }
+
+\sa{(MVI- base)}{ \left( \ga{MVI- base} \right) }
+\sa {MVI- base} {
+    \begin{array}{c}
+      \D \ga{MV ne} \\
+         \ga{MV veq} \\
+      \D \ga{MV se} \\
+      \text{Obs: $\ga{MV obs}$} \\
+    \end{array}
+  }
+
+\sa{MV hip}{hip}
+\sa{MV nw}{nw}
+\sa{MV ne}{ne}
+\sa{MV veq}{\veq}
+\sa{MV sw}{sw}
+\sa{MV se}{se}
+\sa{MV obs}{obs}
+
+
+% «MVs»  (to ".MVs")
+% (c2m221ftp 5 "MVs")
+% (c2m221fta   "MVs")
+% (c2m221fda   "MVs")
+% (find-angg "LUA/C2Formulas1.lua" "MVs")
+
+% (c2m221atisp 22 "subst-int-def")
+% (c2m221atisa    "subst-int-def")
+\sa{(MV3)}{ \left( \ga{MV3} \right) }
+\sa {MV3} {{
+    \sa{MV hip} {F'(u) = f(u)}
+    \sa{MV ne}  {\Intx{a}{b}{f(g(x))g'(x)}}
+    \sa{MV nw}  {\Difmx{a}{b}{F(g(x))}}
+    \sa{MV veq} {\veq \ph{mm}}
+    \sa{MV sw}  {\Difmu{g(a)}{g(b)}{F(u)}}
+    \sa{MV se}  {\Intu{g(a)}{g(b)}{f(u)}}
+    \ga{MV base}
+  }}
+
+\sa{(MVI3)}{ \left( \ga{MVI3} \right) }
+\sa {MVI3} {{
+    \sa{MV hip} {F'(u) = f(u)}
+    \sa{MV ne}  {\intx{f(g(x))g'(x)}}
+    \sa{MV nw}  {F(g(x))}
+    \sa{MV veq} {\veq \ph{mm}}
+    \sa{MV sw}  {F(u)}
+    \sa{MV se}  {\intu{f(u)}}
+    \sa{MV obs} {u = g(x)}
+    \ga{MVI base}
+  }}
+
+\sa{(MV4)}{ \left( \ga{MV4} \right) }
+\sa {MV4} {{
+    \sa{MV ne}  {\Intx{a}{b}{f(g(x))g'(x)}}
+    \sa{MV veq} {\ph{mmmm} \veq}
+    \sa{MV se}  {\Intu{g(a)}{g(b)}{f(u)}}
+    \ga{MV- base}
+  }}
+
+\sa{(MVI4)}{ \left( \ga{MVI4} \right) }
+\sa {MVI4} {{
+    \sa{MV ne}  {\intx{f(g(x))g'(x)}}
+    \sa{MV veq} {\veq}
+    \sa{MV se}  {\intu{f(u)}}
+    \sa{MV obs} {u = g(x)}
+    \ga{MVI- base}
+  }}
+
+% (c2m221atisp 30 "S3I")
+% (c2m221atisa    "S3I")
+
+
+
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2fd"
+% ee-tla: "c2m221fd"
+% End:

@@ -1,0 +1,614 @@
+% (find-LATEX "2022-1-C2-der-fun-inv.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-der-fun-inv.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-der-fun-inv.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-der-fun-inv.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-der-fun-inv.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-der-fun-inv.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-der-fun-inv.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-der-fun-inv"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-der-fun-inv.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-der-fun-inv")
+% (find-pdf-page   "~/LATEX/2022-1-C2-der-fun-inv.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-der-fun-inv.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-der-fun-inv.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-der-fun-inv.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-der-fun-inv.pdf
+%               file:///tmp/2022-1-C2-der-fun-inv.pdf
+%           file:///tmp/pen/2022-1-C2-der-fun-inv.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-der-fun-inv.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v {UbExpr1,UbExpr2,RAng1,RAngFormulas1}.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-der-fun-inv" "2" "c2m221dfi" "c2df")
+
+% «.defs»			(to "defs")
+% «.defs-DFIs»			(to "defs-DFIs")
+% «.title»			(to "title")
+% «.introducao»			(to "introducao")
+% «.exercicio-1»		(to "exercicio-1")
+% «.exercicio-1-resps»		(to "exercicio-1-resps")
+% «.demonstracao-complicada»	(to "demonstracao-complicada")
+% «.o-jogo»			(to "o-jogo")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221dfi" "2022-1-C2-der-fun-inv")
+% (code-eevvideo      "c2m221dfi" "2022-1-C2-der-fun-inv")
+% (code-eevlinksvideo "c2m221dfi" "2022-1-C2-der-fun-inv")
+% (find-c2m221dfivideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "RAngFormulas1.lua"        -- (find-LATEX "RAngFormulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+\def\rq{\ColorRed{?}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-DFIs»  (to ".defs-DFIs")
+% (c2m221dfip 3 "defs-DFIs")
+% (c2m221dfia   "defs-DFIs")
+\def\realeqnp#1{\overset{\scriptscriptstyle(#1)}{=}}
+\def\eqnp{\realeqnp}
+\def\eqnp#1{=}
+
+\sa{DFI sem parenteses}{
+  \begin{array}{lrcl}
+    \text{Se:}    & f(g(x))       &\eqnp{1}& x \\
+    \text{Então:} & \ddx f(g(x))  &\eqnp{2}& \ddx x \\
+                                 &&\eqnp{3}& 1 \\
+                  & \ddx f(g(x))  &\eqnp{4}& f'(g(x))g'(x) \\
+                  & f'(g(x))g'(x) &\eqnp{5}& 1 \\
+                  & g'(x)         &\eqnp{6}& \D \frac{1}{f'(g(x))} \\
+  \end{array}}
+\sa{DFI com parenteses}{\left( \ga{DFI sem parenteses} \right)}
+\sa{[DFI]}{\ensuremath{[\text{DFI}]}}
+
+\sa{DFI- sem parenteses}{
+  \begin{array}{lrcl}
+    \text{Se:}    & f(g(x))       &\eqnp{1}& x \\
+    \text{Então:} & g'(x)         &\eqnp{6}& \D \frac{1}{f'(g(x))} \\
+  \end{array}}
+\sa{DFI- com parenteses}{\left( \ga{DFI- sem parenteses} \right)}
+\sa{[DFI-]}{\ensuremath{[\text{DFI}^-]}}
+ 
+
+
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221dfip 1 "title")
+% (c2m221dfia   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Aula 28: a derivada
+
+da função inversa
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+% «introducao»  (to ".introducao")
+% (c2m221dfip 2 "introducao")
+% (c2m221dfia    "introducao")
+
+{\bf Introdução}
+
+
+\scalebox{0.45}{\def\colwidth{11cm}\firstcol{
+
+No curso de Cálculo 1 você deve ter visto uma fórmula para a derivada
+da função inversa, e você deve ter visto que ela é sempre apresentada
+com certas ``hipóteses''... tipo: ``se as condições tais e tais são
+obedecidas então a derivada da função inversa é dada por esta formula
+aqui: [bla]'' --- e fica implícito que quando essas condições não são
+obedecidas a fórmula pode dar resultados errados. Dê uma olhada em:
+
+\ssk
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-dmirandacalcpage 90 "3.6 Derivada da Função Inversa")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=90
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=90}
+
+% https://en.wikipedia.org/wiki/Inverse_function_rule
+% https://en.wikipedia.org/wiki/Integral_of_inverse_functions
+\url{https://en.wikipedia.org/wiki/Inverse_function_rule}
+
+}
+
+\msk
+
+Nós vimos --- por alto --- que existe uma versão do TFC1 pra funções
+contínuas e uma outra, bem mais complicada, pra funções com
+descontinuidades... e vimos que o TFC2 também tem várias versões, e
+vimos que em muitas situações nós podemos fazer todas as contas que
+nos interessam sem dizer explicitamente quais são os domínios das
+nossas funções; se for necessário dizer os domínios nós podemos
+descobrir os domínios certos no final, depois de fazer todas as
+contas.
+
+\msk
+
+Em Cálculo 2 e Cálculo 3 é comum a gente fazer as contas primeiro e só
+colocar os domínios e as ``condições necessárias'' no final. Neste PDF
+eu vou fazer uma versão extrema disso: eu vou considerar que vocês só
+vão ser capazes de entender bem as condições necessárias quando
+tiverem bastante prática com as contas, então a gente vai sempre
+começar ``chutando'' que as contas funcionam e ``testando'' elas
+depois.
+
+}\anothercol{
+
+  Nós vamos usar esta versão aqui da demonstração da fórmula da
+  derivada da função inversa (``DFI''):
+  %
+  $$\ga{DFI sem parenteses}$$
+
+  O modo natural de numerar cada uma das igualdades dela é este:
+  %
+  $$\def\eqnp{\realeqnp}
+    \ga{DFI sem parenteses}
+  $$
+
+  Por enquanto estamos fingindo que os domínios não importam e que as
+  nossas funções são deriváveis ``onde precisar''.
+
+  \msk
+
+  Se $f:A→B$ e $g:B→A$ então ``$f$ e $g$ são inversas'' quer dizer:
+  %
+  $$\begin{array}{cc}
+             & ∀a∈A.\;g(f(a)) = a \\
+    \text{e} & ∀b∈B.\;f(g(b)) = b \\
+    \end{array}
+  $$
+
+  A linha ``Se: $f(g(x))=x$'' diz que a nossa única hipótese
+  \ColorRed{explícita} é que $∀x∈\dom(g). f(g(x))=x$...
+
+
+}}
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+% (c2m221dfip 3 "exercicio-1")
+% (c2m221dfia   "exercicio-1")
+
+{\bf Exercício 1.}
+
+\scalebox{0.55}{\def\colwidth{12cm}\firstcol{
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  \ga{[DFI]}  &=& \ga{DFI com parenteses} \\ \\[-5pt]
+  \ga{[DFI-]} &=& \ga{DFI- com parenteses} \\
+  \end{array}
+$$
+
+Repare que \ga{[DFI]} é a demonstração da fórmula da derivada da
+função inversa e \ga{[DFI-]} é só a fórmula da derivada da função
+inversa, sem a demonstração toda... e, de novo, lembre que eu vou usar
+uma versão muito reduzida das condições necessárias pra essa fórmula
+valer.
+
+Diga os resultados das substituições abaixo.
+
+\bsk
+
+a) $\ga{[DFI]} \bmat{f(y) := e^y \\
+                    f'(y) := e^y \\
+                    g(x) := \ln x \\
+                    g'(x) := \ln' x \\
+                   } = \rq$
+
+
+}\anothercol{
+
+\def\Sqrt{\text{sqrt}}
+
+b) $\ga{[DFI-]} \bmat{f (y) := y^2 \\
+                    f'(y) := 2y \\
+                    g (x) := \Sqrt(x) \\
+                    g'(x) := \Sqrt'(x) \\
+                   } = \rq
+   $
+
+\msk
+
+c) $\ga{[DFI-]} \bmat{f (y) := \sen y \\
+                    f'(y) := \cos y \\
+                    g (x) := \arcsen(x) \\
+                    g'(x) := \arcsen'(x) \\
+                   } = \rq
+   $
+
+\msk
+
+d) $\ga{[DFI-]} \bmat{x     := s \\
+                    f (θ) := \sen θ \\
+                    f'(θ) := \cos θ \\
+                    g (s) := \arcsen(s) \\
+                    g'(s) := \arcsen'(s) \\
+                   } = \rq
+   $
+
+\msk
+
+e) $\ga{[DFI-]} \bmat{x := c\\
+                    f (θ) := \cos θ \\
+                    f'(θ) := -\sen θ \\
+                    g (c) := \cos^{-1}(c) \\
+                    g'(c) := (\cos^{-1})'(c) \\
+                   } = \rq
+   $
+
+\bsk
+
+Repare que no item (b) eu usei `$\Sqrt(x)$' ao
+
+invés de `$\sqrt{x}$'... isso é porque não há uma
+
+notação boa pra derivada da raiz quadrada.
+
+}}
+
+\newpage
+
+% «exercicio-1-resps»  (to ".exercicio-1-resps")
+% (c2m221dfip 4 "exercicio-1-resps")
+% (c2m221dfia   "exercicio-1-resps")
+
+{\bf Exercício 1: respostas}
+
+\msk
+
+...ainda não digitei! Mas veja este PDF:
+
+
+\ssk
+
+{\footnotesize
+
+% (c2m221dp1p 3 "underbraces")
+% (c2m221dp1a   "underbraces")
+%    http://angg.twu.net/LATEX/2022-1-C2-dicas-pra-P1.pdf
+\url{http://angg.twu.net/LATEX/2022-1-C2-dicas-pra-P1.pdf}
+
+}
+
+\ssk
+
+
+
+
+\newpage
+
+% «demonstracao-complicada»  (to ".demonstracao-complicada")
+% (c2m221dfip 5 "demonstracao-complicada")
+% (c2m221dfia   "demonstracao-complicada")
+
+{\bf Uma demonstração complicada}
+
+\def\casespn#1#2{
+  \begin{cases}
+     #1 & \text{quando $0<x$}, \\
+     #2 & \text{quando $x<0$} \\
+  \end{cases}}
+
+% (c2m212intsp 8 "dfi")
+% (c2m212intsa   "dfi")
+
+\def\eqnp#1{=}
+\def\eqnp{\realeqnp}
+
+\scalebox{0.55}{\def\colwidth{11cm}\firstcol{
+
+$$\begin{array}{rcl}
+  \exp(\ln(x)) &\eqnp1& x \\
+        \ln' x &\eqnp2& 1/\exp'(\ln(x)) \\
+               &\eqnp3& 1/\exp(\ln(x)) \\
+               &\eqnp4& 1/x \\
+  \ddx f(g(x)) &\eqnp5& f'(g(x))g'(x) \\
+  \ddx \ln(-x) &\eqnp6& \ln'(-x)·-1 \\
+               &\eqnp7& 1/(-x)·-1 \\
+               &\eqnp8& 1/x \\
+        \ln|x| &\eqnp9& \casespn{\ln x}{\ln -x} \\
+   \ddx \ln|x| &\eqnp{10}& \ddx \casespn{\ln x}{\ln -x} \\
+               &\eqnp{11}& \casespn{\ddx \ln x}{\ddx \ln -x} \\
+               &\eqnp{12}& \casespn{1/x}{1/x} \\
+               &\eqnp{13}& 1/x \\
+           1/x &\eqnp{14}& \ddx \ln|x| \\
+  \D \Intx{a}{b}{\frac1x}
+               &\eqnp{15}& \D \difx{a}{b}{\big( \ln|x| \big)} \\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «o-jogo»  (to ".o-jogo")
+% (c2m221dfip 4 "o-jogo")
+% (c2m221dfia   "o-jogo")
+
+{\bf Outro jogo}
+
+% (c2m221isp 10 "exercicio-2-dica")
+% (c2m221isa    "exercicio-2-dica")
+
+
+\scalebox{0.5}{\def\colwidth{11.5cm}\firstcol{
+
+No final de maio nós usamos um jogo pra debugar
+
+representações gráficas... esse aqui:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221isp 10)
+%    http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf#page=10
+\url{http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf\#page=10}
+
+}
+
+\ssk
+
+Agora nós vamos fazer algo parecido pra debugar {\sl demonstrações}.
+Nesse jogo novo os objetivos do jogador $O$ vão ser 1) garantir que o
+jogador $P$ sabe justificar cada passo da demonstração que ele propôs,
+e 2) ajudar o jogador $P$ a decobrir erros, 3) ajudar o jogador $P$ a
+descobrir passos da demonstração que são saltos ``grandes demais'', e
+que ficariam mais claros se fosses reescritos como vários sub-passos.
+
+\bsk
+
+{\sl Falta digitar isso aqui!}
+
+\msk
+
+Os exemplos de jogadas que eu pus no quadro em 30/jun/2022 foram
+estes:
+
+\msk
+
+% (find-pdf-page "~/2022.1-C2/C2-quadros.pdf" 42)
+
+$O$: Porque $\realeqnp{2}$?
+
+$P$: Pela \ga{[DFI]}.
+
+$O$: Qual caso particular da \ga{[DFI]}?
+
+$P$: (Aqui o jogador $P$ responde mostrando uma substituição em
+detalhes: o resultado do exercício 1a)
+
+$O$: Porque $\realeqnp{4}$?
+
+$P$: Por $\exp(\ln(x))=x$ --- portanto $1/\exp(\ln(x))=1/x$.
+
+}\anothercol{
+
+{\bf Exercício 2.}
+
+\ssk
+
+a) Justifique a igualdade $\realeqnp{5}$.
+
+Obs: aqui você pode responder com o nome de uma fórmula bem conhecida.
+Alguém que não lembre essa fórmula bem pode pesquisar ela pelo nome e
+encontrar várias explicações grandes sobre ela, {\sl usando várias
+  notações diferentes}, em livros e na internet.
+
+\ssk
+
+b) Justifique $\realeqnp{6}$.
+
+c) Justifique $\realeqnp{7}$.
+
+d) Justifique $\realeqnp{12}$.
+
+\ssk
+
+e) Justifique $\realeqnp{15}$.
+
+Dicas: 1) a igualdade $\realeqnp{15}$ é consequência da igualdade
+$\realeqnp{14}$; 2) aqui você vai ter que usar o TFC2! Encontre um
+enunciado do TFC2 em algum lugar e mostre qual é a substituição que
+você tem que usar pra obter $\realeqnp{15}$ a partir de
+$\realeqnp{14}$.
+
+\bsk
+
+\sa{RM}{\ensuremath{[\text{RM}]}}
+
+O item (f) abaixo é bem mais difícil ---
+
+mas os livros fazem passos desse tipo a beça... $\frown$
+
+\ssk
+
+f) A igualdade $\realeqnp{11}$ é consequência de uma
+``regra misteriosa'', \ga{RM}, que é ``óbvia''. Digamos que:
+%
+$$\ga{RM} \; = \;
+  \left(\ddx
+    \begin{cases}
+      f(x) & \text{quando $P(x)$} \\
+      g(x) & \text{quando $Q(x)$} \\
+    \end{cases}
+    = \rq
+  \right)
+$$
+
+Descubra qual é o `$\rq$' certo e descubra qual é a substituição
+$\ga{RM}\,[??] = ???$ que justifica $\realeqnp{11}$.
+
+
+
+}}
+
+
+\newpage
+
+\sa{[DFI]}{{
+   \sa{Mul(fp(g(x)),gp(x))}{f'(g(x)) · g'(x)}
+  \sa{f(g(x))}{f(g(x))}
+  \sa{fp(g(x))}{f'(g(x))}
+  \sa{gp(x)}{g'(x)}
+  \sa{x}{x}
+  \begin{array}{lrcl}
+    \text{Se:}    &                \ga{f(g(x))} &\eqnp{1}& \ga{x} \\
+    \text{Então:} & \frac{d}{d\ga{x}} \ga{f(g(x))} &\eqnp{2}& \frac{d}{d\ga{x}} \ga{x} \\
+                                            &&\eqnp{3}& 1 \\
+                  & \frac{d}{d\ga{x}} \ga{f(g(x))} &\eqnp{4}& \ga{Mul(fp(g(x)),gp(x))} \\
+                  & \ga{Mul(fp(g(x)),gp(x))}    &\eqnp{5}& 1 \\
+                  & \ga{gp(x)}                  &\eqnp{6}& \D \frac{1}{\ga{fp(g(x))}} \\
+  \end{array}
+}}
+
+\sa{[DFI][S1]}{{
+  \sa{Mul(fp(g(x)),gp(x))}{f'(\ln(x)) · g'(x)}
+  \sa{f(g(x))}{e^{g(x)}}
+  \sa{fp(g(x))}{f'(\ln(x))}
+  \sa{gp(x)}{g'(x)}
+  \sa{x}{x}
+  \begin{array}{lrcl}
+    \text{Se:}    &                \ga{f(g(x))} &\eqnp{1}& \ga{x} \\
+    \text{Então:} & \frac{d}{d\ga{x}} \ga{f(g(x))} &\eqnp{2}& \frac{d}{d\ga{x}} \ga{x} \\
+                                            &&\eqnp{3}& 1 \\
+                  & \frac{d}{d\ga{x}} \ga{f(g(x))} &\eqnp{4}& \ga{Mul(fp(g(x)),gp(x))} \\
+                  & \ga{Mul(fp(g(x)),gp(x))}    &\eqnp{5}& 1 \\
+                  & \ga{gp(x)}                  &\eqnp{6}& \D \frac{1}{\ga{fp(g(x))}} \\
+  \end{array}
+}}
+
+
+$$\ga{[DFI]}$$
+$$\ga{[DFI][S1]}$$
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-der-fun-inv veryclean
+make -f 2019.mk STEM=2022-1-C2-der-fun-inv pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2df"
+% ee-tla: "c2m221dfi"
+% End:

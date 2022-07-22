@@ -37,6 +37,8 @@ require "Pict2e1-1"    -- (find-angg "LUA/Pict2e1-1.lua")
 -- «.PwFunction»		(to "PwFunction")
 -- «.PwFunction-Riemann»	(to "PwFunction-Riemann")
 -- «.PwFunction-tests»		(to "PwFunction-tests")
+-- «.PwFunction-testpoles»	(to "PwFunction-testpoles")
+-- «.PwFunction-intfig»		(to "PwFunction-intfig")
 -- «.Partition»			(to "Partition")
 -- «.Partition-tests»		(to "Partition-tests")
 -- «.Riemann»			(to "Riemann")
@@ -48,6 +50,8 @@ require "Pict2e1-1"    -- (find-angg "LUA/Pict2e1-1.lua")
 -- «.Xtoxytoy-test1»		(to "Xtoxytoy-test1")
 -- «.Xtoxytoy-test2»		(to "Xtoxytoy-test2")
 -- «.Xtoxytoy-test3»		(to "Xtoxytoy-test3")
+-- «.ChangeVar»			(to "ChangeVar")
+-- «.ChangeVar-test1»		(to "ChangeVar-test1")
 
 
 
@@ -581,6 +585,93 @@ p = PictList {
 -- (find-LATEX "2021-1-C2-critical-points.lua" "Approxer")
 -- (c2m212somas2p 42 "exercicio-16-defs")
 -- (c2m212somas2a    "exercicio-16-defs")
+
+-- «PwFunction-testpoles»  (to ".PwFunction-testpoles")
+-- New: (c2m221atisp 5 "x^-2")
+--      (c2m221atisa   "x^-2")
+-- Old: (c2m212intsp 5 "x^-2")
+--      (c2m212intsa   "x^-2")
+-- (find-es "maxima" "TFC2-fails")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Piecewise1.lua"
+Pict2e.bounds = PictBounds.new(v(-4,-4), v(4,4))
+plotdot = function (x, y) return PictList{}:addcloseddotat(v(x,y)) end
+trunc = function (y) return min(max(-4,y),4) end
+f = function (x) return x==0 and 4 or trunc(1/x^2) end
+F = function (x) return x==0 and 4 or trunc(-1/x)  end
+pwf = PwFunction.from(f, seqn(-4, 4, 64))
+pwF = PwFunction.from(F, seqn(-4, 4, 64))
+= f(2)
+= F(2)
+p = PictList {
+  pwf:areaify(-1, 1):Color("Orange"),
+  pwf:pw(-4, -1/2),
+  pwf:pw(1/2, 4),
+}
+= p:bshow()
+ (etv)
+p = PictList {
+  pwF:pw(-4, -1/4),
+  pwF:pw(1/4, 4),
+  plotdot(-1, F(-1)),
+  plotdot(1,  F(1))
+}
+= p:bshow()
+ (etv)
+
+--]]
+
+-- «PwFunction-intfig»  (to ".PwFunction-intfig")
+-- Superseded by: (to "ChangeVar-test1")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Piecewise1.lua"
+Pict2e.bounds = PictBounds.new(v(0,0), v(4,3))
+pi, sqrt, sin, cos = math.pi, math.sqrt, math.sin, math.cos
+maxu = pi
+maxx = sqrt(maxu)
+fu = function (u) return math.sin(u)           end
+fx = function (x) return math.sin(x^2) * 2*x   end
+pwfu = PwFunction.from(fu, seqn(0, maxu, 64))
+pwfx = PwFunction.from(fx, seqn(0, maxx, 64))
+areau = function (a, b, color)
+    return pwfu:areaify(a, b):color(color)
+  end
+areax = function (a, b, color)
+    return pwfx:areaify(sqrt(a), sqrt(b)):color(color)
+  end
+areauorx = function(areaf)
+    local p = PictList {}
+    local colors = split("red orange yellow")
+    local points = {0, 1, 2, 3}
+    for i=1,#colors do table.insert(p, areaf(points[i], points[i+1], colors[i])) end
+    return p
+  end 
+pu = PictList {
+  areauorx(areau),
+  pwfu:lineify(0, maxu),
+}
+px = PictList {
+  areauorx(areax),
+  pwfx:lineify(0, maxx),
+}
+pux = PictList {
+  pu:pgat("pgatc"),
+  "\\quad",
+  px:pgat("pgatc"),
+}
+= Show.try(pux:dd():tostringp())
+ (etv)
+}
+
+--]]
+
+
 
 
 
@@ -1146,6 +1237,157 @@ p = PictList { curve, segs }
 --]==]
 
 
+
+
+--   ____ _                          __     __         
+--  / ___| |__   __ _ _ __   __ _  __\ \   / /_ _ _ __ 
+-- | |   | '_ \ / _` | '_ \ / _` |/ _ \ \ / / _` | '__|
+-- | |___| | | | (_| | | | | (_| |  __/\ V / (_| | |   
+--  \____|_| |_|\__,_|_| |_|\__, |\___| \_/ \__,_|_|   
+--                          |___/                      
+--
+-- Draw figures to explain changes of variables.
+-- (c2m221atisp 12 "substituicao-figura")
+-- (c2m221atisa    "substituicao-figura")
+
+-- «ChangeVar»  (to ".ChangeVar")
+ChangeVar = Class {
+  type    = "ChangeVar",
+  __index = {
+    setxs = function (cv, xmin, xmax, xs)
+        local xtou = function (x) return cv:xtou(x) end
+        local umin,umax = xtou(xmin), xtou(xmax)
+        local us = map(xtou, xs)
+        cv.xmin, cv.xmax, cv.xs = xmin, xmax, xs
+        cv.umin, cv.umax, cv.us = umin, umax, us
+        return cv
+      end,
+    setus = function (cv, umin, umax, us)
+        local utox = function (u) return cv:utox(u) end
+        local xmin,xmax = utox(umin), utox(umax)
+        local xs = map(utox, us)
+        cv.xmin, cv.xmax, cv.xs = xmin, xmax, xs
+        cv.umin, cv.umax, cv.us = umin, umax, us
+        return cv
+      end,
+    setpwfs = function (cv, n)
+        local fx = function (x) return cv:fx(x) end
+        local fu = function (u) return cv:fu(u) end
+        local xs = seqn(cv.xmin, cv.xmax, n or 64)
+        local us = seqn(cv.umin, cv.umax, n or 64)
+        local pwfx = PwFunction.from(fx, xs)
+        local pwfu = PwFunction.from(fu, us)
+        cv.pwfx = pwfx
+        cv.pwfu = pwfu
+        return cv
+      end,
+    setcolors = function (cv, colors)
+        cv.colors = split(colors or "red orange yellow")
+        return cv
+      end,
+    --
+    curvex = function (cv) return cv.pwfx:lineify(cv.xmin, cv.xmax) end,
+    curveu = function (cv) return cv.pwfu:lineify(cv.umin, cv.umax) end,
+    areax = function (cv, x0, x1) return cv.pwfx:areaify(x0, x1) end,
+    areau = function (cv, u0, u1) return cv.pwfu:areaify(u0, u1) end,
+    color = function (cv, i) return cv.colors[i] end,
+    subareax = function (cv, i) return cv:areax(cv.xs[i], cv.xs[i+1]):color(cv:color(i)) end,
+    subareau = function (cv, i) return cv:areau(cv.us[i], cv.us[i+1]):color(cv:color(i)) end,
+    areasx = function (cv)
+        local p = PictList {}
+        for i=1,#cv.colors do table.insert(p, cv:subareax(i)) end
+        return p
+      end,
+    areasu = function (cv)
+        local p = PictList {}
+        for i=1,#cv.colors do table.insert(p, cv:subareau(i)) end
+        return p
+      end,
+    --
+    labelat = function (cv, xy, str) return pformat("\\put%s{\\cell{%s}}", xy, str) end,
+    xlabels = function (cv, y)
+        local p = PictList {}
+        for i=1,#cv.xs do
+          table.insert(p, cv:labelat(v(cv.xs[i], y), "x_{"..(i-1).."}"))
+        end
+        return p
+      end,
+    ulabels = function (cv, y)
+        local p = PictList {}
+        for i=1,#cv.us do
+          table.insert(p, cv:labelat(v(cv.us[i], y), "u_{"..(i-1).."}"))
+        end
+        return p
+      end,
+    --
+    rect = function (cv, a, b, y)
+        return PictList({}):addregion0(v(a,0), v(a,y), v(b,y), v(b,0))
+      end,
+  },
+}
+
+-- «ChangeVar-test1»  (to ".ChangeVar-test1")
+-- Supersedes: (to "PwFunction-intfig")
+--[==[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Piecewise1.lua"
+pi, sqrt, sin, cos = math.pi, math.sqrt, math.sin, math.cos
+xtou = function (x) return x^2 end
+ve = Code.ve
+
+cv = ChangeVar {
+  xtou = ve " cv,x =>     x^2        ",
+  fx   = ve " cv,x => sin(x^2) * 2*x ",
+  fu   = ve " cv,u => sin( u )       ",
+  utox = ve " cv,u =>  sqrt(u)       ",
+}
+cv:setus(0, pi, {0, 1, 2, 3})
+PPPV(cv)
+cv:setpwfs()
+cv:setcolors()
+PPPV(cv)
+= cv:subareax(1)
+= cv:areasx()
+= cv:curvex()
+= cv:xlabels(-0.5)
+= cv:rect(1, 1.5, 0.5):color("blue")
+= cv:rect(cv.xs[2], cv.xs[3], cv:fx(cv.xs[2])):color("blue")
+
+Pict2e.bounds = PictBounds.new(v(0,0), v(4,3))
+ppx = PictList {
+  cv:areasx(),
+  cv:curvex(),
+  cv:rect(cv.xs[2], cv.xs[3], cv:fx(cv.xs[2])):color("blue"),
+  cv:xlabels(-0.35),
+}
+ppu = PictList {
+  cv:areasu(),
+  cv:curveu(),
+  cv:ulabels(-0.35)
+}
+pp2 = PictList {
+  ppx:pgat("pgatc"),
+  "\\qquad",
+  ppu:pgat("pgatc"),
+}
+= Show.try(pp2:preunitlength("50pt"):scalebox("0.7"):d():tostringp())
+ (etv)
+
+= pp2:bshow()
+= ppu:bshow()
+ (etv)
+
+
+
+maxu = pi
+maxx = sqrt(maxu)
+
+
+
+
+--]==]
 
 
 

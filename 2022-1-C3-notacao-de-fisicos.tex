@@ -362,8 +362,8 @@ em que $x_0$ era $0$, mas ficamos de ver depois o caso em que o
 %   |_||_|  \__,_|\__,_|
 %                       
 % «truques-de-traducao»  (to ".truques-de-traducao")
-% (c3m221nfp 99 "truques-de-traducao")
-% (c3m221nfa    "truques-de-traducao")
+% (c3m221nfp 6 "truques-de-traducao")
+% (c3m221nfa   "truques-de-traducao")
 
 {\bf Alguns truques de tradução}
 
@@ -1782,8 +1782,29 @@ deve ser o valor de $\frac{∂f}{∂\VEC{2,0}}((2,3))$?
 
 {\bf O gradiente}
 
+% (c3m221mt1p 2 "defs-miniteste")
+% (c3m221mt1a   "defs-miniteste")
+%
+%L -- (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test3")
+%L Pict2e.bounds = PictBounds.new(v(-1,-1), v(11,11))
+%L pyr = Numerozinhos.from(0, 0, [[
+%L     0 0 0 0 0 0 0 0 0 0 0 0
+%L     0 0 0 0 0 0 0 0 0 0 0 0
+%L     0 0 0 0 0 0 0 1 0 0 0 0
+%L     0 0 0 0 0 0 1 2 0 0 0 0
+%L     0 0 0 0 0 1 2 3 1 0 0 0
+%L     0 0 0 0 1 2 3 4 2 0 0 0
+%L     0 0 0 1 2 3 4 5 3 1 0 0
+%L     0 0 1 2 3 4 5 6 4 2 0 0
+%L     0 0 0 0 1 2 3 4 2 0 0 0
+%L     0 0 0 0 0 0 1 2 0 0 0 0
+%L     0 0 0 0 0 0 0 0 0 0 0 0
+%L     0 0 0 0 0 0 0 0 0 0 0 0 ]])
+%L pyr_spec  = "(1,4)--(7,10)--(10,4)--(7,1)--(1,4) (1,4)--(10,4) (7,1)--(7,10)"
+%L pyr:topict(pyr_spec ):sa("piramide MT1 com linhas"):output()
+\pu
 
-\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+\scalebox{0.65}{\def\colwidth{12cm}\firstcol{
 
 Obs: esse exercício aqui vai ser totalmente reescrito depois!
 
@@ -1811,20 +1832,127 @@ c) $\frac{∂F}{∂y}(x_0,y_0) = \frac{∂F}{∂\VEC{0,1}}(x_0,y_0)$
 
 d) $∇F = \VEC{F_x, F_y}$
 
-\msk
+\bsk
 
-Usando a $F$ da pirâmide, calcule:
+{\bf Exercício 20.}
+
+a) Usando a $F$ da pirâmide mais simples, calcule:
 
 $∇F(2,4), ∇F(4,2), ∇F(6,4), ∇F(4,6)$.
 
 \msk
 
-Represente graficamente $(x_0,y_0) + ∇F(x_0,y_0)$ para
+b) Represente graficamente $(x_0,y_0) + ∇F(x_0,y_0)$ para
 
 estes valores de $(x_0,y_0)$: $(2,4), (4,2), (6,4), (4,6)$.
 
-%}\anothercol{
+\msk
+
+c) Seja $G$ a função da pirâmide torta do mini-teste.
+
+Calcule: $∇G(5,3), ∇G(8,3), ∇G(8,6), ∇G(5,6)$.
+
+\msk
+
+d) Represente graficamente $G(x,y)+∇G(x,y)$ para
+
+cada um dos 4 pontos do item (c).
+
+}\anothercol{
+
+\vspace*{0.1cm}
+
+\hspace*{-1cm}
+$\begin{array}{l}
+ \ga{piramide com linhas} \\ \\
+ \ga{piramide MT1 com linhas} \\
+ \end{array}
+$
+
 }}
+
+\newpage
+
+{\bf Exercício 21.}
+
+% (find-books "__analysis/__analysis.el" "bortolossi")
+% (find-bortolossi3page (+ -78  97) "3.3. Curvas de nível")
+% (find-bortolossi3page (+ -78  98)   "O desenho da curva de nível deve ser feito no plano")
+
+Leia a definição de curvas de nível nas páginas
+
+97 e 98 do capítulo 3 do Bortolossi.
+
+\msk
+
+a) Seja $F(x,y) = 2x + y$.
+
+\ssk
+
+b) Faça o diagrama de numerozinhos da
+
+$F(x,y)$ para os pontos com $x,y∈\{0,1,2,3\}$.
+
+\ssk
+
+c) Desenhe quatro curvas de nível diferentes
+
+da $F(x,y)$ sobre o diagrama do item (b).
+
+\ssk
+
+d) Represente graficamente $F+∇F$ para cada
+
+um destes 16 pontos do (b). Isto vai dar 16
+
+vetores, cada um apoiado num dos numerozinhos.
+
+
+\newpage
+
+
+\scalebox{0.9}{\def\colwidth{9cm}\firstcol{
+
+{\bf Exercício 22.}
+
+Faça a mesma coisa que você fez no
+
+exercício 21, mas agora para
+
+$F(x,y) = 3x - 2y$.
+
+\bsk
+
+
+{\bf Exercício 23.}
+
+Faça a mesma coisa que você fez nos
+
+exercício 21 e 22, mas agora para
+
+\ssk
+
+$\D F(x,y) = \frac{x^2 + y^2}{10}$ \; e
+
+\ssk
+
+$x,y∈\{-2,-1,0,1,2\}$.
+
+\bsk
+
+{\bf Exercício 24.}
+
+Faça a mesma coisa que você fez no
+
+exercício 23, mas agora para
+
+\ssk
+
+$\D F(x,y) = \frac{xy}{10}$.
+
+}\anothercol{
+}}
+
 
 
 

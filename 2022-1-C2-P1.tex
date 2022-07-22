@@ -1,0 +1,955 @@
+% (find-LATEX "2022-1-C2-P1.tex")
+% (defun c  () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-P1.tex" :end))
+% (defun C  () (interactive) (find-LATEXsh "lualatex 2022-1-C2-P1.tex" "Success!!!"))
+% (defun D  () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-P1.pdf"))
+% (defun d  () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-P1.pdf"))
+% (defun e  () (interactive) (find-LATEX "2022-1-C2-P1.tex"))
+% (defun o  () (interactive) (find-LATEX "2021-2-C2-P1.tex"))
+% (defun l2 () (interactive) (find-angg "LUA/Lazy2.lua"))
+% (defun l3 () (interactive) (find-angg "LUA/Lazy3.lua"))
+% (defun u  () (interactive) (find-latex-upload-links "2022-1-C2-P1"))
+% (defun v  () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-P1.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-P1")
+% (find-pdf-page   "~/LATEX/2022-1-C2-P1.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-P1.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-P1.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-P1.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-P1.pdf
+%               file:///tmp/2022-1-C2-P1.pdf
+%           file:///tmp/pen/2022-1-C2-P1.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-P1.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Lazy2.lua Lazy3.lua Lazy4.lua Verbatim1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-P1" "2" "c2m221p1" "c2p1")
+
+% «.dofiles»			(to "dofiles")
+% «.defs»			(to "defs")
+% «.defs-T-and-B»		(to "defs-T-and-B")
+% «.title»			(to "title")
+% «.introducao»			(to "introducao")
+% «.fracoes-parciais»		(to "fracoes-parciais")
+% «.fracoes-parciais-gab»	(to "fracoes-parciais-gab")
+% «.int-pots-sin-cos»		(to "int-pots-sin-cos")
+% «.int-pots-sin-cos-gab»	(to "int-pots-sin-cos-gab")
+% «.escadas-defs»		(to "escadas-defs")
+% «.escadas»			(to "escadas")
+% «.escadas-gab»		(to "escadas-gab")
+% «.grids»			(to "grids")
+% «.formulas»			(to "formulas")
+% «.links»			(to "links")
+%
+% «.djvuize»			(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221p1" "2022-1-C2-P1")
+% (code-eevvideo      "c2m221p1" "2022-1-C2-P1")
+% (code-eevlinksvideo "c2m221p1" "2022-1-C2-P1")
+% (find-c2m221p1video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+% «dofiles»  (to ".dofiles")
+% (c2m221p1p 1 "dofiles")
+% (c2m221p1a   "dofiles")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L dofile "Lazy4.lua"                -- (find-LATEX "Lazy4.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+% (c3m202p1p 6 "questao-2")
+% (c3m202p1a   "questao-2")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+% (c2m221ftp 1 "title")
+% (c2m221fta   "title")
+% (c2m221fda   "title")
+\input 2022-1-C2-formulas-defs.tex  % (find-LATEX "2022-1-C2-formulas-defs.tex")
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221p1p 1 "title")
+% (c2m221p1a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+P1 (Primeira prova)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+%  ___       _                 _                       
+% |_ _|_ __ | |_ _ __ ___   __| |_   _  ___ __ _  ___  
+%  | || '_ \| __| '__/ _ \ / _` | | | |/ __/ _` |/ _ \ 
+%  | || | | | |_| | | (_) | (_| | |_| | (_| (_| | (_) |
+% |___|_| |_|\__|_|  \___/ \__,_|\__,_|\___\__,_|\___/ 
+%                                                      
+% «introducao»  (to ".introducao")
+% (c2m221p1p 2 "introducao")
+% (c2m221p1a   "introducao")
+
+{\bf Introdução}
+
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+Lembre que a gente não teve tempo no curso pra ``aprender a resolver
+integrais'' no sentido usual... ``resolver integrais'' significa
+começar com um problema como, sei lá, por exemplo,
+%
+$$\intx{\frac{2x^3 + 4x^2 + 5x + 6}{x^2 + 7x + 8}} \;=\; \Rq$$
+
+e aí fazer um monte de contas até transformar a expressão original
+numa expressão que ``é mais fácil de calcular'' porque não tem mais um
+sinal de integral, e depois checar se todas as contas estão certas e
+listar quais condições têm que ser verdade pra todas as igualdades
+serem verdadeiras...
+
+No curso só deu tempo da gente fazer o início disso, que é aprender e
+ler contas de ``resolver integrais'', e entender, verificar e
+justificar cada passo delas.
+
+Em vários dos problemas desta prova você vai ter que justificar os
+passos mais difíceis de certas ``contas de resolver integrais''. Eu
+tentei fazer essa prova de um modo que valesse muito a pena vocês
+relerem ela depois e tentarem entender e justificar os outros passos
+dessas contas...
+
+}\anothercol{
+
+  ...mais precisamente: 1) eu escolhi integrais que usam técnicas que
+  vão ser \underline{muito úteis} nas matérias que vêm depois
+  (principalmente as de Física); 2) eu pus links pra mais textos (com
+  exercícios!) sobre essas técnicas de integração; 3) e se vocês
+  tiverem que fazer vista de prova eu talvez peça pra vocês
+  justificarem outros passos da contas pra ver se vocês estão sabendo
+  a matéria...
+
+  \msk
+
+  A prova vai ser posta neste link aqui em breve:
+
+  \ssk
+
+  {\footnotesize
+
+    % (c2m221p1p 2 "introducao")
+    % (c2m221p1a   "introducao")
+    \url{http://angg.twu.net/LATEX/2022-1-C2-P1.pdf}
+
+  }
+
+  \msk
+
+   Estudem por ela quando der!
+
+   Boa prova! $\smile$
+
+}}
+
+
+
+\newpage
+
+%  _____                                                     _       _     
+% |  ___| __ __ _  ___ ___   ___  ___   _ __   __ _ _ __ ___(_) __ _(_)___ 
+% | |_ | '__/ _` |/ __/ _ \ / _ \/ __| | '_ \ / _` | '__/ __| |/ _` | / __|
+% |  _|| | | (_| | (_| (_) |  __/\__ \ | |_) | (_| | | | (__| | (_| | \__ \
+% |_|  |_|  \__,_|\___\___/ \___||___/ | .__/ \__,_|_|  \___|_|\__,_|_|___/
+%                                      |_|                                 
+%
+% «fracoes-parciais»  (to ".fracoes-parciais")
+% (c2m221p1p 3 "fracoes-parciais")
+% (c2m221p1a   "fracoes-parciais")
+
+\def\qeqnp#1{`$\eqnp{#1}$'}
+\def\eqnp{\eqnpfull}
+
+{\bf Questão 1}
+
+\scalebox{0.6}{\def\colwidth{10cm}\firstcol{
+
+\hbox{\T(Total: 5.0 pts)}
+
+(Sobre frações parciais)
+
+Considere:
+
+\msk
+
+\def\myl{\\[-8pt]}
+%
+$\scalebox{0.8}{$
+  \begin{array}{rcl}
+  \D \intx{\frac1x\,}
+  &\eqnp{1}& \ln|x| \\ \myl
+  \D \intx{\frac1{x+a}\,}
+  &\eqnp{2}& \D \intu{\frac1{u}} \\
+  &\eqnp{3}& \ln|u| \\
+  &\eqnp{4}& \ln|x+a| \\ \myl
+      \D \frac{2}{x+3} + \frac{4}{x+5}
+  &=& \D \frac{2(x+5)}{(x+3)(x+5)} + \frac{4(x+3)}{(x+3)(x+5)} \\ \myl
+  &=& \D \frac {2(x+5) + 4(x+3)} {(x+3)(x+5)} \\ \myl
+  &=& \D \frac {2x+10 + 4x+12} {(x+3)(x+5)} \\ \myl
+  &=& \D \frac {6x+22} {x^2+8x+15} \\ \myl
+      \D \intx{\frac {6x+22} {x^2+8x+15}}
+  &=& \D \intx{\frac{2}{x+3} + \frac{4}{x+5}} \\ \myl
+  &=& \D \intx{\frac{2}{x+3}} + \intx{\frac{4}{x+5}} \\ \myl
+  &=& \D 2\intx{\frac{1}{x+3}} + 4\intx{\frac{1}{x+5}} \\ \myl
+  &\eqnp{12} & 2\ln|x+3| + 4\ln|x+5| \\
+  \end{array}
+  $}
+$
+
+}\anothercol{
+
+  % \vspace*{0.5cm}
+
+  Sejam [FP1], [FP2] e [FP12] as igualdades
+
+  numeradas à esquerda.
+
+  \msk
+
+  a) \B (2.0 pts) Mostre como justificar o \qeqnp{2}
+
+  usando o [MV2].
+
+  \msk
+
+  b) \B (3.0) pts) Mostre como justificar o \qeqnp{12}.
+
+
+}}
+
+
+\newpage
+
+%  _____                                                            _     
+% |  ___| __ __ _  ___ ___   _ __   __ _ _ __ ___ ___    __ _  __ _| |__  
+% | |_ | '__/ _` |/ __/ __| | '_ \ / _` | '__/ __/ __|  / _` |/ _` | '_ \ 
+% |  _|| | | (_| | (__\__ \ | |_) | (_| | | | (__\__ \ | (_| | (_| | |_) |
+% |_|  |_|  \__,_|\___|___/ | .__/ \__,_|_|  \___|___/  \__, |\__,_|_.__/ 
+%                           |_|                         |___/             
+%
+% «fracoes-parciais-gab»  (to ".fracoes-parciais-gab")
+% (c2m221p1p 4 "fracoes-parciais-gab")
+% (c2m221p1a   "fracoes-parciais-gab")
+% (find-angg "LUA/Lazy4.lua" "fracoes-parciais-test")
+
+{\bf Questão 1: gabarito}
+
+
+% \sa{[FP2]}{\CFname{FP}{_2}}
+% \sa{[FP234]}{\CFname{FP}{_{234}}}
+% \sa{[MV2]}{\CFname{MV}{_2}}
+
+%L output(out)
+%L
+%L ang = Ang.from([[
+%L   \begin{array}{rcl}
+%L     <FP2_> &=& <Paren(FP2)> \\
+%L     <MV2_> &=& <Paren(MV2)> \\
+%L   \end{array}
+%L ]])
+%L ang:sa("fpgab1"):output()
+%L
+%L ang = Ang.from([[
+%L   \begin{array}{rcl}
+%L     <MV2_><SFPa.bsm> &=& <Paren(SFPa(MV2))> \\
+%L     <MV2_><SFPb.bsm> &=& <Paren(SFPb(MV2))> \\
+%L     <MV2_><SFPc.bsm> &=& <Paren(SFPc(MV2))> \\
+%L   \end{array}
+%L ]])
+%L ang:sa("fpgab2"):output()
+\pu
+
+%L ang = Ang.from([[
+%L   \begin{array}{rcl}
+%L     <FP234_> &=& <Paren(FP234)> \\
+%L   \end{array}
+%L ]])
+%L ang:sa("fpgab3"):output()
+%L
+%L ang = Ang.from([[
+%L   \begin{array}{c}
+%L     <FPa3_> = <FP234_><SFPa3.bmat> = <Paren(SFPa3(FP234))>  \\
+%L     <FPa5_> = <FP234_><SFPa5.bmat> = <Paren(SFPa5(FP234))>  \\
+%L   \end{array}
+%L ]])
+%L ang:sa("fpgab4"):output()
+\pu
+
+
+
+
+
+\scalebox{0.55}{\def\colwidth{10cm}\firstcol{
+
+    Pra fazer o item (a) eu vou começar dando um nome curto --
+    $\ga{[FP2]}$ -- pra igualdade \qeqnp2, e relembrando qual é a
+    fórmula $\ga{[MV2]}$:
+
+    \msk
+
+    $\scalebox{0.8}{$\ga{fpgab1}$}
+    $
+
+    \msk
+
+    ...e agora vou procurar uma substituição que transforma a
+    $\ga{[MV2]}$ em algo parecido com a $\ga{[FP2]}$. Eu não consigo
+    encontrar ela direto, então vou fazer vários chutes -- a escolha
+    da substituição -- e testes -- escrever por extenso o resultado da
+    substituição e ver se esse resultado é ``parecido'' com a
+    $\ga{[FP2]}$:
+
+    \msk
+
+    $\scalebox{0.8}{$\ga{fpgab2}$}
+    $
+
+    \msk
+
+    O último resultado acima é bastante bom. Note que ele tem um
+    `$· 1$' e que ele descreve uma mudança de variável na integral
+    definida, não na integral indefinida.
+
+}\anothercol{
+
+  Agora o item (b). Se combinarmos as igualdades \qeqnp2, \qeqnp3 e
+  \qeqnp4 obtemos a igualdade abaixo:
+  %
+  $$\scalebox{0.8}{$\ga{fpgab3}$}
+  $$
+
+  Ela vale pra todo valor de $a$. Aqui estão dois casos particulares
+  dela:
+  %
+  $$\scalebox{0.8}{$\ga{fpgab4}$}
+  $$
+
+  Considere esta série de igualdades:
+
+  \def\myl{\\[-8pt]}
+  % 
+  $\scalebox{0.8}{$
+    \begin{array}{rcl}
+      \D \intx{\frac1{x+a}\,}
+      &\eqnp{20}& \ln|x+a| \\ \myl
+      \D \intx{\frac1{x+3}\,}
+      &\eqnp{21}& \ln|x+3| \\ \myl
+      \D \intx{\frac1{x+5}\,}
+      &\eqnp{22}& \ln|x+5| \\ \myl
+      \D 2\intx{\frac{1}{x+3}} + 4\intx{\frac{1}{x+5}}
+      &\eqnp{23} & 2\ln|x+3| + 4\ln|x+5| \\
+    \end{array}
+  $}
+$
+
+As três primeiras são justificadas por fórmulas pras quais nós já
+demos nomes, e a última é consequência das duas do meio.
+
+
+
+
+}}
+
+
+
+
+
+
+\newpage
+
+%   ___                  _                ____      ___ ____  ____   ____ 
+%  / _ \ _   _  ___  ___| |_ __ _  ___   |___ \ _  |_ _|  _ \/ ___| / ___|
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \    __) (_)  | || |_) \___ \| |    
+% | |_| | |_| |  __/\__ \ || (_| | (_) |  / __/ _   | ||  __/ ___) | |___ 
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_____(_) |___|_|   |____/ \____|
+%                                                                         
+% «int-pots-sin-cos»  (to ".int-pots-sin-cos")
+% (c2m221p1p 5 "int-pots-sin-cos")
+% (c2m221p1a   "int-pots-sin-cos")
+% (c2m201ipscp 2 "exemplo-1")
+% (c2m201ipsc    "exemplo-1")
+
+{\bf Questão 2}
+
+\scalebox{0.55}{\def\colwidth{9cm}\firstcol{
+
+\hbox{\T(Total: 3.0 pts)}
+
+(Sobre ``integrais de potências
+
+de senos e cossenos'')
+
+\msk
+
+A demonstração abaixo é do gabarito
+
+de uma prova antiga minha:
+\msk
+
+
+\def\S{\sen x}
+\def\C{\cos x}
+
+$\begin{array}[t]{l}
+  \D \intx{(\S)^5 (\C)^3} \\
+  \D = \;\; \intx{(\S)^5 (\C)^2 (\C)} \\
+  \D = \;\; \intx{(\S)^5 (1-\S^2) (\C)} \\
+  \D \eqnp{3} \;\; \ints{s^5 (1-s^2)} \\
+  \D = \;\; \ints{s^5 - s^7} \\
+  \D = \;\; \frac{s^6}{6} - \frac{s^8}{8} \\
+  \D = \;\; \frac{(\S)^6}{6} - \frac{(\S)^8}{8} \\
+  \end{array}
+$
+
+\msk
+
+Esta caixinha aqui
+%
+$$\bsm{s = \sen x \\
+          \frac{ds}{dx} = \cos x \\
+          \sen x = s \\
+          (\cos x)^2 = 1 - s^2 \\
+          \cos x \, dx = ds
+    }
+$$
+
+``Explica'' a mudança de variáveis.
+
+}\anothercol{
+
+  a) \B (3.0 pts) Mostre como justificar o \qeqnp{3}
+
+  usando o [MV2].
+
+}}
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%[TL] ?")
+%
+%L ee_dofile "~/LUA/Repl1.lua"
+%L r = EdrxRepl.new()
+%L -- r:repl()
+\pu
+%T  (eepitch-shell)
+%T  (eepitch-kill)
+%T  (eepitch-shell)
+%T lualatex -record 2022-1-C2-P1.tex
+
+\newpage
+
+% «int-pots-sin-cos-gab»  (to ".int-pots-sin-cos-gab")
+% (c2m221p1p 6 "int-pots-sin-cos-gab")
+% (c2m221p1a   "int-pots-sin-cos-gab")
+
+{\bf Questão 2: gabarito}
+
+%L var "s"
+%L defsubst("S2a", "S2a", [[
+%L     if isvar(u)  then return s end
+%L   ]], [[
+%L     u := s \\
+%L   ]])
+%L defsubst("S2c", "S2c", [[
+%L     if isapp(g)  then return sen(Sarg()) end
+%L     if isapp(gp) then return cos(Sarg()) end
+%L     if isvar(u)  then return s end
+%L   ]], [[
+%L     g(x) := \sen(x) \\
+%L     g'(x) := \cos(x) \\
+%L     u := s \\
+%L   ]])
+%L defsubst("S2d", "S2d", [[
+%L     -- if isapp(fp) then return Paren(minus(pot(Sarg(),5),pot(Sarg(),3))) end
+%L     if isapp(fp) then return Paren(mul(pot(Sarg(),5),Paren(minus(1,pot(Sarg(),2))))) end
+%L     if isapp(g)  then return sen(Sarg()) end
+%L     if isapp(gp) then return cos(Sarg()) end
+%L     if isvar(u)  then return s end
+%L   ]], [[
+%L     f'(x) := x^5(1-x^2) \\
+%L     g(x) := \sen(x) \\
+%L     g'(x) := \cos(x) \\
+%L     u := s \\
+%L   ]])
+%L ang = Ang.from([[
+%L   \def\S{\sen x}
+%L   \def\C{\cos x}
+%L   \begin{array}{rcl}
+%L     && \left( \D \intx{(\S)^5 (1-\S^2) (\C)}
+%L               \eqnp{3} \ints{s^5 (1-s^2)} \right) \\
+%L     <MV2_> &=& <Paren(MV2)>  \\
+%L     <MV2_><S2a.bmat> &=& <Paren(S2a(MV2))>  \\
+%L     <MV2_><S2c.bmat> &=& <Paren(S2c(MV2))>  \\
+%L     <MV2_><S2d.bmat> &=& <Paren(S2d(MV2))>  \\
+%L   \end{array}
+%L ]])
+%L ang:sa("gab 2"):output()
+\pu
+$$\scalebox{0.6}{$\ga{gab 2}$}$$
+
+
+\newpage
+
+%  _____                   _                 _       __     
+% | ____|___  ___ __ _  __| | __ _ ___    __| | ___ / _|___ 
+% |  _| / __|/ __/ _` |/ _` |/ _` / __|  / _` |/ _ \ |_/ __|
+% | |___\__ \ (_| (_| | (_| | (_| \__ \ | (_| |  __/  _\__ \
+% |_____|___/\___\__,_|\__,_|\__,_|___/  \__,_|\___|_| |___/
+%                                                           
+% «escadas-defs»  (to ".escadas-defs")
+% (c2m221p1p 7 "escadas-defs")
+% (c2m221p1a   "escadas-defs")
+%
+%L hx = function (x, y) return format(" (%s,%s)c--(%s,%s)o", x-1,y, x,y) end
+%L hxs = function (ys)
+%L     local str = ""
+%L     for x,y in ipairs(ys) do str = str .. hx(x, y) end
+%L     return str
+%L   end
+%L mtintegralspec = function (specf, xmax, y0)
+%L     local pws = PwSpec.from(specf)
+%L     local f = pws:fun()
+%L     local ys = {[0] = y0}
+%L     for x=1,xmax do
+%L       PP("FOO", x, f(x-0.5), ys)
+%L       ys[x] = ys[x - 1] + f(x - 0.5)
+%L     end
+%L     local strx = function (x) return tostring(v(x, ys[x])) end
+%L     local specF = mapconcat(strx, seq(0, xmax), "--")
+%L     return specF
+%L   end
+%L
+%L ysf   = {1, 2, 1, 0, -1, -2, -1, 0, 1, 2, 1, 0}
+%L specf = hxs(ysf)
+%L ysg   = {0, 1, 2, 3, -2, -1, 0, -1, -2, 3, 2, 1, 0}
+%L specg = hxs(ysg)
+%L specF = mtintegralspec(specf, #ysf,  0)
+%L specG = mtintegralspec(specf, #ysf, -3)
+%L specI = mtintegralspec(specg, #ysg,  0)
+%L pwsf  = PwSpec.from(specf)
+%L pwsg  = PwSpec.from(specg)
+%L pwsF  = PwSpec.from(specF)
+%L pwsG  = PwSpec.from(specG)
+%L pwsI  = PwSpec.from(specI)
+%L pf    = pwsf:topict():setbounds(v(0,-2), v(#ysf,2)):pgat("pgatc")
+%L pg    = pwsg:topict():setbounds(v(0,-2), v(#ysg,3)):pgat("pgatc")
+%L pF    = pwsF:topict():setbounds(v(0,-0), v(#ysf,4)):pgat("pgatc")
+%L pG    = pwsG:topict():setbounds(v(0,-3), v(#ysf,1)):pgat("pgatc")
+%L pI    = pwsI:topict():setbounds(v(0,0),  v(#ysg,6)):pgat("pgatc")
+%L pf:sa("Fig f"):output()
+%L pg:sa("Fig g"):output()
+%L pF:sa("Fig F"):output()
+%L pG:sa("Fig G"):output()
+%L pI:sa("Fig I"):output()
+%L
+%L PictList{}:setbounds(v(0,-4),v(13,4)):pgat("pgatc"):sa("respgrid"):output()
+%L
+%L mtintegralspec2 = function (x0, y0, Dys, dot0, dot1)
+%L     local mkxy = function (x,y) return format("(%d,%d)", x, y) end
+%L     local xys = { mkxy(x0,y0) .. (dot0 or "") }
+%L     local x,y = x0,y0
+%L     for i,Dy in ipairs(Dys) do
+%L       x = x + 1
+%L       y = y + Dy
+%L       table.insert(xys, mkxy(x,y))
+%L     end
+%L     xys[#xys] = xys[#xys] .. (dot1 or "")
+%L     return table.concat(xys, "--")
+%L   end
+%L
+%L -- = mtintegralspec2(10, 20, {1, 2, -3, -3}, "a", "b")
+%L ysf   = {1, 2, 1, 0, -1, -2, -1, 0, 1, 2, 1, 0}
+%L ysf_  = {1, 2, 1, 0, -1, -2, -1}
+%L ysg   = {0, 1, 2, 3, -2, -1,  0, -1, -2, 3, 2, 1, 0}
+%L ysg_  =                         {-1, -2, 3, 2, 1}
+%L specH = mtintegralspec2(0, -4, ysf_, "", "o\n") ..
+%L         mtintegralspec2(7,  1, ysg_, "o", "")
+%L specM = mtintegralspec2(0, -4, ysf_, "", "o\n") ..
+%L         mtintegralspec2(7,  2, ysg_, "o", "")
+%L -- = specH
+%L -- = specM
+%L pwsH  = PwSpec.from(specH)
+%L pwsM  = PwSpec.from(specM)
+%L pH    = pwsH:topict():setbounds(v(0,-4), v(12,4)):pgat("pgatc")
+%L pM    = pwsM:topict():setbounds(v(0,-4),  v(12,5)):pgat("pgatc")
+%L pH:sa("Fig H"):output()
+%L pM:sa("Fig M"):output()
+\pu
+
+
+\newpage
+
+%  _____                   _           
+% | ____|___  ___ __ _  __| | __ _ ___ 
+% |  _| / __|/ __/ _` |/ _` |/ _` / __|
+% | |___\__ \ (_| (_| | (_| | (_| \__ \
+% |_____|___/\___\__,_|\__,_|\__,_|___/
+%                                      
+% «escadas»  (to ".escadas")
+% (c2m221p1p 7 "escadas")
+% (c2m221p1a    "escadas")
+
+
+{\bf Questão 3}
+
+% (c2m221mt1p 2 "defs-figuras")
+% (c2m221mt1a   "defs-figuras")
+
+
+
+\scalebox{0.45}{\def\colwidth{9cm}\firstcol{
+
+\hbox{\T(Total: 3.0 pts)}
+
+(Sobre funções escada)
+
+Sejam:
+
+\unitlength=10pt
+
+
+
+$f(x) \;=\; \ga{Fig f}$ ,
+
+\msk
+
+$g(x) \;=\; \ga{Fig g}$ ,
+
+$$F(x) = \D\Intt{0}{x}{f(t)},$$
+
+$$G(x) = \D\Intt{2}{x}{f(t)},$$
+
+e seja $H(x)$ a função contínua cujo domínio
+
+é o conjunto $D=[0,7)∪(7,12]$ e que obedece
+
+estas três condições:
+
+1) $H(x) = \Intt{3}{x}{f(t)}$ se $x∈[0,7)$,
+
+2) $H(10)=1$, e
+
+3) ``para todo $x∈(7,12]$ temos $H'(x) = g(x)$'',
+
+onde eu pus a expressão acima entre aspas
+
+porque ela é um abuso de linguagem comum
+
+quando a gente fala de funções escada...
+
+a tradução disto pra uma linguagem mais
+
+formal é: ``$H'(x) = g(x)$ é verdade em
+
+todos os pontos $x∈(7,12]$ nos quais
+
+a $g(x)$ é contínua.
+
+
+
+}\anothercol{
+
+a) \B (0.5 pts) Faça o gráfico da $F(x)$.
+
+b) \B (0.5 pts) Faça o gráfico da $G(x)$.
+
+c) \B (1.0 pts) Faça o gráfico da $H(x)$.
+
+\msk
+
+d) \B (1.0 pts) Digamos que a função $M(x)$ é
+
+definida exatamente da mesma forma que a
+
+$H(x)$, mas mudando o ``$H(10)=1$'' por
+
+``$M(10)=2$''. Faça o gráfico da $M(x)$.
+
+
+}}
+
+
+
+
+\newpage
+
+%  _____                   _                         _     
+% | ____|___  ___ __ _  __| | __ _ ___    __ _  __ _| |__  
+% |  _| / __|/ __/ _` |/ _` |/ _` / __|  / _` |/ _` | '_ \ 
+% | |___\__ \ (_| (_| | (_| | (_| \__ \ | (_| | (_| | |_) |
+% |_____|___/\___\__,_|\__,_|\__,_|___/  \__, |\__,_|_.__/ 
+%                                        |___/             
+% «escadas-gab»  (to ".escadas-gab")
+% (c2m221p1p 8 "escadas-gab")
+% (c2m221p1a   "escadas-gab")
+
+{\bf Questão 3: gabarito}
+
+\unitlength=5pt
+
+\def\defH{
+ \begin{array}{r}
+ H(x) = \Intt{3}{x}{f(t)}  \;\;\text{se}\;\; x∈[0,7), \\
+ \text{``$H'(x) = g(x)$''} \;\;\text{se}\;\; x∈(7,12], \\
+ H(10)=1
+ \end{array}
+ }
+\def\defM{
+ \begin{array}{r}
+ M(x) = \Intt{3}{x}{f(t)}  \;\;\text{se}\;\; x∈[0,7), \\
+ \text{``$M'(x) = g(x)$''} \;\;\text{se}\;\; x∈(7,12], \\
+ M(10)=2
+ \end{array}
+ }
+
+$\scalebox{0.8}{$
+ \begin{array}{rcl}
+                     f(x) &=& \ga{Fig f} \\
+ F(x) = \Intt{0}{x}{f(t)} &=& \ga{Fig F} \\
+ G(x) = \Intt{2}{x}{f(t)} &=& \ga{Fig G} \\
+                     g(x) &=& \ga{Fig g} \\
+        \Intt{0}{x}{g(t)} &=& \ga{Fig I} \\
+                    \defH &⇒& \ga{Fig H} \\
+                    \defM &⇒& \ga{Fig M} \\
+ \end{array}
+ $}
+$
+
+
+
+\newpage
+
+% «grids»  (to ".grids")
+% (c2m221p1p 9 "grids")
+% (c2m221p1a   "grids")
+
+\unitlength=6pt
+
+\def\rg{\ga{respgrid}}
+
+$\begin{array}{ccc}
+ \rg & \rg & \rg \\
+ \rg & \rg & \rg \\
+ \rg & \rg & \rg \\
+ \rg & \rg & \rg \\
+ \end{array}
+$
+
+
+
+\newpage
+
+% «formulas»  (to ".formulas")
+% (c2m221p1p 10 "formulas")
+% (c2m221p1a    "formulas")
+
+% (c2m221ftp 2 "RC")
+% (c2m221fta   "RC")
+% (c2m221ftp 5 "MVs")
+% (c2m221fta   "MVs")
+% (c2m221fda   "MVs")
+
+$\scalebox{0.55}{$
+   \begin{array}{l}
+   \ga{[RC]} \;=\;  \ga{(RC)} \\ \\[-5pt]
+   \ga{[MV1]} \;=\; \ga{(MV1)} \\ \\[-5pt]
+   \ga{[MV2]} \;=\; \ga{(MV2)} \\ \\[-5pt]
+   \ga{[MV3]} \;=\; \ga{(MV3)}
+    \quad
+     \ga{[MV4]} \;=\; \ga{(MV4)} \\ \\[-5pt]
+   \ga{[MVI3]} \;=\; \ga{(MVI3)}
+    \quad
+     \ga{[MVI4]} \;=\; \ga{(MVI4)} \\ \\[-5pt]
+   \end{array}
+ $}
+$
+
+
+
+\newpage
+
+% «links»  (to ".links")
+% (c2m221p1p 6 "links")
+% (c2m221p1a    "links")
+
+Links pra estudar esta matéria:
+
+\ssk
+
+{\scriptsize
+
+% (find-angg ".emacs" "c2q192")
+% (find-angg ".emacs" "c2q192" "funções racionais")
+% (c2q192 37 "20190911 peq aula 8: Como integrar funções racionais, parte 1")
+% (c2q192 40 "20190912 gde aula 8: Como integrar funções racionais, parte 1")
+%    http://angg.twu.net/2019.2-C2/2019.2-C2.pdf#page=37
+\url{http://angg.twu.net/2019.2-C2/2019.2-C2.pdf\#page=37}
+
+% (c2m212fpa "title")
+% (c2m212fpa "title" "Aula nn: frações parciais")
+% (c2m212fpp 3 "together")
+% (c2m212fpa   "together")
+% (find-pdft-page   "~/LATEX/2021-2-C2-fracoes-parciais.pdf")
+\url{http://angg.twu.net/LATEX/2021-2-C2-fracoes-parciais.pdf}
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-dmirandacalcpage 240 "8.1 Frações Parciais")
+% (find-dmirandacalcpage 252 "8.2 Decomposição em Frações Parciais")
+%    http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=240
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=240}
+
+}
+
+
+
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.1-C2/")
+# (find-fline "~/LATEX/2022-1-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.1-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-1-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-P1 veryclean
+make -f 2019.mk STEM=2022-1-C2-P1 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2p1"
+% ee-tla: "c2m221p1"
+% End:

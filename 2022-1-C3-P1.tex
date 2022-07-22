@@ -1,0 +1,433 @@
+% (find-LATEX "2022-1-C3-P1.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-P1.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-P1.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-P1.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-P1.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-P1.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-P1.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-P1"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-P1.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C3-P1")
+% (find-pdf-page   "~/LATEX/2022-1-C3-P1.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-P1.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-P1.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-P1.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-P1.pdf
+%               file:///tmp/2022-1-C3-P1.pdf
+%           file:///tmp/pen/2022-1-C3-P1.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-P1.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C3-P1" "3" "c3m221p1" "c3p1")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.barranco-defs»	(to "barranco-defs")
+% «.questao-1»		(to "questao-1")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m221p1" "2022-1-C3-P1")
+% (code-eevvideo      "c3m221p1" "2022-1-C3-P1")
+% (code-eevlinksvideo "c3m221p1" "2022-1-C3-P1")
+% (find-c3m221p1video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+% (c3m202p1p 6 "questao-2")
+% (c3m202p1a   "questao-2")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m221p1p 1 "title")
+% (c3m221p1a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.1}
+
+\bsk
+
+P1 (Primeira prova)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C3.html}
+
+\end{center}
+
+\newpage
+
+% «barranco-defs»  (to ".barranco-defs")
+% (c3m221nfp 26 "barranco")
+% (c3m221nfa    "barranco")
+%\printbibliography
+
+%L Pict2e.bounds = PictBounds.new(v(-1,-1), v(9,9))
+%L barranco = Numerozinhos.from(0, 0, [[
+%L     4 4 4 4 4 4 4 4 4
+%L     4 4 4 4 4 4 4 4 4
+%L     3 3 3 3 4 4 4 4 4
+%L     2 2 2 2 3 4 4 4 4
+%L     1 1 1 1 2 3 4 4 4
+%L     0 0 0 0 1 2 3 4 4
+%L     0 0 0 0 0 1 2 2 2
+%L     0 0 0 0 0 0 1 1 1
+%L     0 0 0 0 0 0 0 0 0 ]])
+%L barranco_spec0 = [[
+%L     (0,7)--(3,7)--(7,3)--(8,3)
+%L     (3,7)--(3,3)  (6,0)--(6,2)  (7,2)--(8,2)
+%L     (0,3)--(3,3)--(6,0)--(8,0) ]]
+%L barranco_spec  = barranco_spec0 -- .. [[ (7,3)--(6,2) ]]
+%L barranco_spec  = barranco_spec0 .. [[ (7,3)--(6,2)--(7,2) ]]
+%L barranco_spec2 = barranco_spec0 .. [[ (7,2)--(6,3)--(6,2) (6,3)--(7,3)--(7,2) ]]
+%L barranco:topict(              ):sa("barranco"):output()
+%L barranco:topict(barranco_spec ):sa("barranco com linhas"):output()
+%L barranco:topict(barranco_spec2):sa("barranco com linhas 2"):output()
+%L
+%L barranco_Fa = [[ (3,3)--(3,7)--(7,3)--(6,2)--(6,0)--(3,3) ]]
+%L barranco_Fb = [[ (8,2)--(6,2)--(7,3)--(8,3) ]]
+%L barranco:topict(barranco_Fa):sa("barranco Fa"):output()
+%L barranco:topict(barranco_Fb):sa("barranco Fb"):output()
+\pu
+
+\def\barra {\ga{barranco}}
+\def\barra {\scalebox{0.9}{$\ga{barranco}$}}
+\def\barrl {\scalebox{0.9}{$\ga{barranco com linhas}$}}
+\def\barrFa{\scalebox{0.9}{$\ga{barranco Fa}$}}
+\def\barrFb{\scalebox{0.9}{$\ga{barranco Fb}$}}
+
+\newpage
+
+% «questao-1»  (to ".questao-1")
+% (c3m221p1p 99 "questao-1")
+% (c3m221p1a    "questao-1")
+
+{\bf Questão 1.}
+
+% (c3m221nfp 12 "variaveis-novas")
+% (c3m221nfa    "variaveis-novas")
+% (c3m221nfp 30 "derivada-direcional")
+% (c3m221nfa    "derivada-direcional")
+
+\scalebox{0.55}{\def\colwidth{9cm}\firstcol{
+
+\vspace*{-0.5cm}
+
+\T(Total: 7.0 pts)
+
+Quando nós fizemos os exercícios do barranco -- reproduzido na próxima
+página -- nós vimos que as duas faces mais complicadas dele eram a) a
+face que continha os pontos $(3,5,2)$, $(4,5,3)$ e $(3,6,3)$ e b) a
+face que continha os pontos $(7,2,2)$, $(8,2,2)$ e $(7,3,4)$. Vou
+chamar essas faces de $F_a$ e $F_b$ e usar os mesmos símbolos pras
+funções dos planos associados a elas: quando $(x,y)∈F_a$ temos
+$z(x,y)=F_a(x,y)$ e quando $(x,y)∈F_b$ temos $z(x,y)=F_b(x,y)$.
+
+\msk
+
+a) \B(0.2 pts) Dê a equação do plano $F_a(x,y)$.
+
+\ssk
+
+b) \B(0.2 pts) Dê a equação do plano $F_b(x,y)$.
+
+\ssk
+
+c) \B(2.0 pts) Mostre em qual região do barranco os numerozinhos obedecem
+$z=F_a(x,y)$ e em qual região eles obedecem $z=F_b(x,y)$. As faces
+$F_a$ e $F_b$ têm uma aresta em comum?
+
+\ssk
+
+d) \B(0.6 pts) Sejam $P_0=(6,2.5)$, $P_1=(6.5,2.5)$ e $P_2=(7,2.5)$.
+Descubra - no olhômetro mesmo - quem são $z_x$ e $z_y$ nos pontos
+$P_0$, $P_1$ e $P_2$.
+
+\ssk
+
+e) \B(2.0 pts) O Bortolossi define a derivada direcional por essa
+fórmula aqui:
+%
+$$\frac{∂f}{∂𝐛v}(𝐛p) =
+  \lim_{t→0} \frac{ f(𝐛p + t·𝐛v) - f(𝐛p) }{t}
+$$
+
+% (c3m221nfp 30 "derivada-direcional")
+% (c3m221nfa    "derivada-direcional")
+
+}\anothercol{
+
+Calcule 
+%
+$$\frac{ f(𝐛p + t·𝐛v) - f(𝐛p) }{t}
+$$
+
+\msk
+
+quando $𝐛p=P_1$ e $𝐛v=\VEC{0.5,-0.5}$, para os seguintes valores de
+$t$: $t=3$, $t=2$, $t=1$, $t=0.5$, $t=-3$, $t=-2$, $t=-1$, $t=-0.5$.
+
+\msk
+
+f) \B(2.0 pts) Lembre que o gradiente de uma função de $\R^2$ em $\R$
+é definido como $\Vec{∇}G(x,y) = \VEC{G_x(x,y), G_y(x,y)}$. Em
+``notação de físicos'' isso vira $\Vec{∇}z = \VEC{z_x,z_y}$, e a nossa
+convenção pra notação pra desenhar vetores gradientes é que cada
+$\Vec{∇}G(x,y)$ é desenhado como $G(x,y) + \Vec{∇}G(x,y)$. Represente
+em um dos diagramas de numerozinhos da próxima página $\Vec{∇}F$ para
+estes valores de $(x,y)$: $(2,1)$, $(2,5)$, $(5,3)$, $(6,6)$, $(7,1)$,
+$(7,2.5)$.
+
+
+}}
+
+\newpage
+
+\def\barra{\ga{barranco}}
+\def\barra{\scalebox{0.9}{$\ga{barranco}$}}
+\def\barrl{\scalebox{0.9}{$\ga{barranco com linhas}$}}
+
+$\begin{array}{rcl}
+ \barra & \barra & \barra \\
+ \barra & \barra & \barra \\
+ \end{array}
+$
+
+\newpage
+
+{\bf Questão 1: gabarito (muito incompleto)}
+
+
+\scalebox{0.5}{\def\colwidth{9cm}\firstcol{
+
+Dois modos de dividir o barranco em faces:
+
+\msk
+
+$\scalebox{0.9}{$
+ \begin{array}{rcl}
+ \ga{barranco com linhas} &
+ \ga{barranco com linhas 2} \\
+ \end{array}
+ $}
+$
+
+\msk
+
+Eu prefiro o primeiro modo porque ele tem
+
+uma face a menos, mas vou aceitar respostas
+
+que usavam o segundo modo.
+
+As faces $F_a$ e $F_b$ são:
+
+\msk
+
+$\scalebox{0.9}{$
+ \begin{array}{rcl}
+ \ga{barranco Fa} &
+ \ga{barranco Fb} \\
+ \end{array}
+ $}
+$
+
+\msk
+
+a) $F_a(x,y) = x+y-6$
+
+b) $F_b(x,y) = 2y-2$
+
+c) Veja as figuras acima.
+
+d) Em $P_0=(6,2.5)$ temos $z=2.5$;
+
+Em $P_1=(6.5,2.5)$ temos $z=3$;
+
+Em $P_2=(7,2.5)$ temos $z=3$.
+
+}\anothercol{
+}}
+
+
+\newpage
+
+{\bf Questão 2.}
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+% (c3m221nfp 12 "variaveis-novas")
+% (c3m221nfa    "variaveis-novas")
+% (find-sthompsonpage (+ 11  66) "IX. Introducing a Useful Dodge")
+% (find-sthompsontext (+ 11  66)     "INTRODUCING A USEFUL DODGE")
+
+\vspace*{-0.5cm}
+
+\T(Total: 3.0 pts)
+
+No capítulo VI o Thompson calcula $\ddx((x^2 + c) + (ax^4 + b))$
+organizando as contas mais ou menos desta forma:
+
+$$\begin{array}{rcl}
+  y &=& (x^2 + c) + (ax^4 + b) \\
+  \frac{dy}{dx} &=& \frac{d((x^2+c) + (ax^4+b))}{dx} \\
+                &=& \frac{d(x^2+c)}{dx} + \frac{d(ax^4+b)}{dx} \\
+                &=& 2x + 4ax^3 \\
+  \end{array}
+$$
+
+
+E no capítulo IX -- ``Introducing a useful dodge'' -- o Thompson
+mostra como a gente pode simplificar contas como essa introduzindo
+``variáveis dependentes'' novas... por exemplo, $w = x^2+c$. Além
+disso ele trata $dy$ e $dw$ como variáveis que dependem de $x$ e $dy$.
+
+Use estes truques pra calcular $\frac{dy}{dx}$ quando:
+%
+$$ y = \sqrt   { \D \frac{a^2+x^2}{a^2-x^2} }
+       \sqrt[3]{ \D \frac{a^2-x^2}{a^2+x^2} }
+$$
+
+
+
+}\anothercol{
+
+{\bf Gabarito}
+
+Veja o livro do Thompson! Ó:
+
+\ssk
+
+{\footnotesize
+
+% (find-books "__analysis/__analysis.el" "thompson")
+% (find-sthompsonpage (+ 11  66) "IX. Introducing a Useful Dodge")
+%    https://www.gutenberg.org/files/33283/33283-pdf.pdf#page=81
+\url{https://www.gutenberg.org/files/33283/33283-pdf.pdf\#page=81}
+
+}
+
+}}
+
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C3-P1 veryclean
+make -f 2019.mk STEM=2022-1-C3-P1 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3p1"
+% ee-tla: "c3m221p1"
+% End:

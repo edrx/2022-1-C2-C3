@@ -1,0 +1,497 @@
+% (find-LATEX "2022-1-C2-primitivas.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-primitivas.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-primitivas.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-primitivas.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-primitivas.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-primitivas.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-primitivas.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-primitivas"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-primitivas.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-primitivas")
+% (find-pdf-page   "~/LATEX/2022-1-C2-primitivas.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-primitivas.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-primitivas.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-primitivas.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-primitivas.pdf
+%               file:///tmp/2022-1-C2-primitivas.pdf
+%           file:///tmp/pen/2022-1-C2-primitivas.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-primitivas.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua UbExpr1.lua UbExpr2.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-primitivas" "2" "c2m221pr" "c2pr")
+
+% «.videos-antigos»	(to "videos-antigos")
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.videos-antigos»	(to "videos-antigos")
+% «.introducao»		(to "introducao")
+% «.introducao-2»	(to "introducao-2")
+% «.introducao-3»	(to "introducao-3")
+% «.exercicio-1»	(to "exercicio-1")
+% «.introducao-4»	(to "introducao-4")
+% «.figura-fake-ln»	(to "figura-fake-ln")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221pr" "2022-1-C2-primitivas")
+% (code-eevvideo      "c2m221pr" "2022-1-C2-primitivas")
+% (code-eevlinksvideo "c2m221pr" "2022-1-C2-primitivas")
+% (find-c2m221prvideo "0:00")
+
+% «videos-antigos»  (to ".videos-antigos")
+% (c2m211tfcsa    "video-1")
+% (c2m211pra      "video-1")
+% (c2m211pra      "video-2")
+% (c2m211pra      "video-3")
+% (c2m211pra      "video-3" "F'(x)=f(x)")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (c2m221fta   "title")
+% (c2m221fda   "title")
+\input 2022-1-C2-formulas-defs.tex
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L -- dofile "QVis1.lua"             -- (find-LATEX "QVis1.lua")
+%L -- dofile "Pict3D1.lua"           -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+\def\domc{\text{domc}}
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221prp 1 "title")
+% (c2m221pra   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Aula 31: primitivas
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+% «videos-antigos»  (to ".videos-antigos")
+% (c2m221prp 2 "videos-antigos")
+% (c2m221pra   "videos-antigos")
+
+{\bf Vídeos antigos}
+
+
+\scalebox{0.8}{\def\colwidth{12.5cm}\firstcol{
+
+Em 2021.1 eu fiz três vídeos sobre como integrar funções escada que eu
+acho que ficaram muito bons. Se você ainda não é capaz de integrar uma
+função escada em poucos segundos, comece por eles! Links:
+
+\msk
+
+{\scriptsize
+
+% (c2m211pra      "video-1")
+% (find-c2m211prvideo "14:14" "integrando funções escada")
+
+\url{http://angg.twu.net/eev-videos/2021-1-C2-propriedades-da-integral.mp4}
+
+\url{https://www.youtube.com/watch?v=ORfsWiwelV8}
+
+\ssk
+
+% (c2m211pra      "video-2")
+\url{http://angg.twu.net/eev-videos/2021-1-C2-propriedades-da-integral-2.mp4}
+
+\url{https://www.youtube.com/watch?v=MmlQTtH5jFo}
+
+\ssk
+
+% (c2m211pra      "video-3")
+\url{http://angg.twu.net/eev-videos/2021-1-C2-propriedades-da-integral-3.mp4}
+
+\url{https://www.youtube.com/watch?v=J97x7MNpr90}
+
+}
+
+\msk
+
+A parte sobre integrar funções escada do primeiro vídeo começa no
+14:14, e ela é sobre este trecho aqui do PDF (note o page=29):
+
+\msk
+
+{\scriptsize
+
+% (c2m211prp 29 "integrando-escadas")
+% (c2m211pra    "integrando-escadas")
+%    http://angg.twu.net/LATEX/2021-1-C2-propriedades-da-integral.pdf#page=29
+\url{http://angg.twu.net/LATEX/2021-1-C2-propriedades-da-integral.pdf\#page=29}
+
+}
+
+\msk
+
+O segundo vídeo é sobre primitivas diferentes pra mesma função. O
+terceiro vídeo é sobre integrar uma função escada resolvendo uma EDO
+no olho traçando segmentos de reta com os coeficientes angulares
+certos.
+
+}\anothercol{
+}}
+
+
+
+
+
+
+
+\newpage
+
+% «introducao»  (to ".introducao")
+% (c2m221prp 2 "introducao")
+% (c2m221pra   "introducao")
+
+{\bf Introdução}
+
+\ssk
+
+O livro do Miranda define primitiva na página 181,
+
+e define a integral indefinida na página seguinte:
+
+\ssk
+
+{\scriptsize
+
+% (find-youtubedl-links "/sda5/videos/" nil "u4kex7hDC2o" nil "{stem}")
+% (code-video "calclogvideo" "/sda5/videos/Your_calculus_prof_lied_to_you_probably-u4kex7hDC2o.webm")
+% (find-calclogvideo)
+% (find-calclogvideo "0:00")
+% (find-calclogvideo "5:20")
+% http://www.youtube.com/watch?v=u4kex7hDC2o#t=5m20s
+%    http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=182
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=182}
+
+}
+
+\msk
+
+Ele faz uma gambiarra que é muito comum em livros de
+
+Cálculo 2, que é definir primitivas e integrais indefinidas
+
+de um jeito simples demais, que não funciona pra fórmula
+
+$\intx{\frac1x} = \ln|x|+C$ (que aparece na p.184!!!) e funciona
+
+bem mal pra funções escada... tem um vídeo bom sobre
+
+isso aqui, mas é em inglês:
+
+\ssk
+
+``Your calculus prof lied to you (probably)''
+
+\url{http://www.youtube.com/watch?v=u4kex7hDC2o}
+
+\newpage
+
+% «introducao-2»  (to ".introducao-2")
+% (c2m221prp 3 "introducao-2")
+% (c2m221pra   "introducao-2")
+
+{\bf Introdução (2)}
+
+\ssk
+
+Existem vários jeitos de trocar essas definições de
+
+primitiva e integral indefinida ``simples demais''
+
+que a maioria dos livros de C2 usam por outras um
+
+pouco melhores. O meu jeito preferido é o que eu
+
+vou explicar nas próximas páginas.
+
+\msk
+
+Existe uma notação padrão pro domínio de uma
+
+função $f$: ``$\dom(f)$''. Vamos definir o conjunto
+
+$\domc(f)$ --- pronúncia: o ``domínio de continuidade''
+
+da $f$ --- como o subconjunto de $\dom(f)$ que só contém
+
+os pontos em que a $f$ é contínua...
+
+
+\newpage
+
+% «introducao-3»  (to ".introducao-3")
+% (c2m221prp 4 "introducao-3")
+% (c2m221pra   "introducao-3")
+
+{\bf Introdução (3)}
+
+Agora vamos escolher a definição de primitiva mais
+
+simples possível que faça as soluções dos exercícios
+
+8 e 9 daqui serem primitivas da $f$ do enunciado:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221tfc1p 48 "exercicio-8")
+% (c2m221tfc1a    "exercicio-8")
+%    http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=48
+\url{http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=48}
+
+}
+
+\ssk
+
+A definição vai ser esta aqui:
+
+\begin{quotation}
+
+  Uma função $F$ é uma primitiva da função $f$
+
+  quando estas quatro condições são obedecidas:
+
+  \ssk
+
+  1) $\dom(F)=\dom(f)$,
+
+  2) $F$ é contínua --- ou seja, $\domc(F) = \dom(F)$,
+
+  3) a $F$ é derivável em todos os pontos de $\domc(f)$,
+
+  4) para todo $x∈\domc(f)$ temos $F'(x)=f(x)$.
+
+\end{quotation}
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+
+{\bf Exercício 1.}
+
+Entenda a definição do slide anterior e verifique que 
+
+
+\newpage
+
+
+
+
+% «introducao-4»  (to ".introducao-4")
+% (c2m221prp 3 "introducao-4")
+% (c2m221pra   "introducao-4")
+
+
+\newpage
+
+{\bf P1 e escadas}
+
+
+% (c2m202escadasp 12 "exercicio-6")
+% (c2m202escadas     "exercicio-6")
+% (c2m202escadasp 11 "exercicio-7")
+% (c2m202escadas     "exercicio-7")
+% (c2m202escadasp 18 "exercicio-9")
+% (c2m202escadasa    "exercicio-9")
+
+
+% (c2m202escadasp 17 "primitivas-como-usar")
+% (c2m202escadas     "primitivas-como-usar")
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-dmirandacalcpage 181 "antiderivada")
+% (find-dmirandacalcpage 182 "antiderivada" "figura")
+% (find-dmirandacalctext 181 "antiderivada")
+
+% (c2m211tfcsp 16 "integral-indefinida")
+% (c2m211tfcsa    "integral-indefinida")
+% (c2m211tfcsp 17 "exercicio-5")
+% (c2m211tfcsa    "exercicio-5")
+
+% (find-angg "LUA/Pict2e1.lua" "fake_ln_mod_x")
+
+% «figura-fake-ln»  (to ".figura-fake-ln")
+% (c2m221prp 3 "figura-fake-ln")
+% (c2m221pra   "figura-fake-ln")
+
+%L Pict2e.bounds = PictBounds.new(v(-5,-5), v(5,5))
+%L fake_ln_mod_x = function (C1, C2)
+%L     return PictList {
+%L       PictList({})
+%L         :addline(v(-5, 3+C1),
+%L                  v(-3, 3+C1),
+%L                  v(-2, 2+C1),
+%L                  v(-1, 0+C1),
+%L                  v(-0,-3+C1))
+%L         :addopendotat(v(-0,-3+C1))
+%L         :Color("Orange"),
+%L       PictList({})
+%L         :addline(v( 5, 3+C2),
+%L                  v( 3, 3+C2),
+%L                  v( 2, 2+C2),
+%L                  v( 1, 0+C2),
+%L                  v( 0,-3+C2))
+%L         :addopendotat(v( 0,-3+C2))
+%L         :Color("Red"),
+%L     }
+%L   end
+%L th = "2pt"
+%L fake_ln_mod_x( 1, 1):prethickness(th):pgat("pgatc"):sa("fake ln  1  1"):output()
+%L fake_ln_mod_x( 1, 0):prethickness(th):pgat("pgatc"):sa("fake ln  1  0"):output()
+%L fake_ln_mod_x( 1,-1):prethickness(th):pgat("pgatc"):sa("fake ln  1 -1"):output()
+%L fake_ln_mod_x( 0, 1):prethickness(th):pgat("pgatc"):sa("fake ln  0  1"):output()
+%L fake_ln_mod_x( 0, 0):prethickness(th):pgat("pgatc"):sa("fake ln  0  0"):output()
+%L fake_ln_mod_x( 0,-1):prethickness(th):pgat("pgatc"):sa("fake ln  0 -1"):output()
+%L fake_ln_mod_x(-1, 1):prethickness(th):pgat("pgatc"):sa("fake ln -1  1"):output()
+%L fake_ln_mod_x(-1, 0):prethickness(th):pgat("pgatc"):sa("fake ln -1  0"):output()
+%L fake_ln_mod_x(-1,-1):prethickness(th):pgat("pgatc"):sa("fake ln -1 -1"):output()
+\pu
+
+\def\closeddot{\circle*{0.7}}
+\def\opendot  {\circle*{0.8}\color{white}\circle*{0.5}}
+\unitlength=5pt
+
+\def\fak#1{\ga{fake ln #1}}
+\def\fak#1{\scalebox{0.6}{$\ga{fake ln #1}$}}
+%\scalebox{1.0}{$\ga{fake ln 0 0}$}$ \; ,
+
+
+$a \fak{0 0} b$
+
+$$\begin{array}{cccc}
+   C_1=1  & \fak{1  -1} & \fak{1 0} & \fak{1 1} \\ \\[-5pt]
+   C_1=0  & \fak{0  -1} & \fak{0 0} & \fak{0 1} \\ \\[-5pt]
+   C_1=-1 & \fak{-1 -1} & \fak{0 0} & \fak{0 1} \\ \\[-5pt]
+          &    C_2=-1  &    C_2=0 &      C_2=1  \\ \\[-5pt]
+  \end{array}
+$$
+
+Compare com:
+
+
+\newpage
+
+% (c2m211prp 45 "TFC1-escadas")
+% (c2m211pra    "TFC1-escadas")
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-primitivas veryclean
+make -f 2019.mk STEM=2022-1-C2-primitivas pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2pr"
+% ee-tla: "c2m221pr"
+% End:

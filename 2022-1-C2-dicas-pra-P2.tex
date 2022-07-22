@@ -1,0 +1,332 @@
+% (find-LATEX "2022-1-C2-dicas-pra-P2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C2-dicas-pra-P2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C2-dicas-pra-P2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C2-dicas-pra-P2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C2-dicas-pra-P2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C2-dicas-pra-P2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-dicas-pra-P2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C2-dicas-pra-P2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C2-dicas-pra-P2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C2-dicas-pra-P2")
+% (find-pdf-page   "~/LATEX/2022-1-C2-dicas-pra-P2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-dicas-pra-P2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C2-dicas-pra-P2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C2-dicas-pra-P2.pdf")
+%   file:///home/edrx/LATEX/2022-1-C2-dicas-pra-P2.pdf
+%               file:///tmp/2022-1-C2-dicas-pra-P2.pdf
+%           file:///tmp/pen/2022-1-C2-dicas-pra-P2.pdf
+% http://angg.twu.net/LATEX/2022-1-C2-dicas-pra-P2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C2-dicas-pra-P2" "2" "c2m221dp2" "c2d2")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.campos-de-direcoes»	(to "campos-de-direcoes")
+% «.edovs»		(to "edovs")
+% «.osc-am»		(to "osc-am")
+% «.osc-am-links»	(to "osc-am-links")
+% «.osc-am-email»	(to "osc-am-email")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m221dp2" "2022-1-C2-dicas-pra-P2")
+% (code-eevvideo      "c2m221dp2" "2022-1-C2-dicas-pra-P2")
+% (code-eevlinksvideo "c2m221dp2" "2022-1-C2-dicas-pra-P2")
+% (find-c2m221dp2video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m221dp2p 1 "title")
+% (c2m221dp2a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.1}
+
+\bsk
+
+Aula 31.5: dicas pra P2
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C2.html}
+
+\end{center}
+
+\newpage
+
+
+% «campos-de-direcoes»  (to ".campos-de-direcoes")
+% (c2m221dp2p 2 "campos-de-direcoes")
+% (c2m221dp2a   "campos-de-direcoes")
+% (find-books "__analysis/__analysis.el" "trench" "Direction Fields")
+% (c2m211edovsp 4 "campos-dirs")
+% (c2m211edovsa   "campos-dirs")
+
+{\bf Campos de direções}
+
+A P2 vai ter uma questão de ``desenhe o campo de direções''
+
+que vai ser muito parecida com os itens do Exercício 1 daqui:
+
+\ssk
+
+{\scriptsize
+
+% (c2m211edovsp 5 "exercicio-1")
+% (c2m211edovsa   "exercicio-1")
+%    http://angg.twu.net/LATEX/2021-1-C2-edovs.pdf#page=5
+\url{http://angg.twu.net/LATEX/2021-1-C2-edovs.pdf#page=5}
+
+}
+
+\ssk
+
+A página 7 desse PDF tem links pra três vídeos:
+
+\ssk
+
+{\scriptsize
+
+% (c2m211edovsp 7 "links")
+% (c2m211edovsa   "links")
+%    http://angg.twu.net/LATEX/2021-1-C2-edovs.pdf#page=7
+\url{http://angg.twu.net/LATEX/2021-1-C2-edovs.pdf#page=7}
+
+}
+
+\ssk
+
+Tem uma explicação pra esse Exercício 1 no segundo
+
+vídeo, a partir do 5:54. Use o terceiro link abaixo:
+
+{\scriptsize
+
+\ssk
+
+% (c2m202edovsa "video-1")
+% (find-c2m202edovsvideo "5:54" "a gente vai interpretar esse f'(x)")
+% (find-c2m202edovsvideo "6:30" "desenhando os coefs angs só desses 10 pontos daqui")
+% (find-c2m202edovsvideo "7:37" "Exercício 1")
+\url{http://angg.twu.net/eev-videos/2020-2-C2-edovs.mp4}
+
+\url{https://www.youtube.com/watch?v=bNfZUomf1xg}
+
+\url{https://www.youtube.com/watch?v=bNfZUomf1xg\#t=5m54s} (Exercício 1)
+
+}
+
+\msk
+
+Essa questão vai valer um ponto.
+
+
+\newpage
+
+% «edovs»  (to ".edovs")
+% (c2m221dp2p 2 "edovs")
+% (c2m221dp2a   "edovs")
+% (c2m221p2p 2 "edovs")
+% (c2m221p2a   "edovs")
+
+
+
+\newpage
+
+
+% «osc-am»  (to ".osc-am")
+
+% «osc-am-links»  (to ".osc-am-links")
+% (find-angg ".emacs" "c2q191")
+% (find-angg ".emacs" "c2q191" "(D-(a+ib))(D-(a-ib))f")
+% (find-angg ".emacs" "c2q192")
+% (find-angg ".emacs" "c2q192" "f''+7f+10f = 0")
+% (find-books "__analysis/__analysis.el" "trench")
+% (find-books "__analysis/__analysis.el" "trench" "5.1 Homogeneous Linear Equations")
+% (find-books "__analysis/__analysis.el" "trench" "6.1 Spring Problems I")
+% (find-books "__analysis/__analysis.el" "boyce-diprima")
+% (find-books "__analysis/__analysis.el" "boyce-diprima" "3 Second-Order Linear Differential Equations")
+% (find-books "__analysis/__analysis.el" "hernandez")
+% (find-books "__analysis/__analysis.el" "hernandez" "24 EDOs homogêneas lineares de ordem n 2")
+% (find-books "__analysis/__analysis.el" "thomas")
+% (find-books "__analysis/__analysis.el" "thomas" "16 Second-Order Differential")
+
+% «osc-am-email»  (to ".osc-am-email")
+% Oi! Tudo bem?
+% Deixa eu te pedir mais uma referência...
+% Digamos que a gente tem uma equação diferencial homogênea de segunda
+% ordem com coeficientes constantes, como por exemplo essa aqui:
+% 
+%   f'' + 7f + 10f = 0
+% 
+% Se a gente encara isso como
+% 
+%   (D^2 + 7D + 10) f = 0
+%   (D + 5) (D + 2) f = 0
+%   (D + 2) (D + 5) f = 0
+% 
+% a gente descobre num instante as soluções básicas, que são f(x) =
+% exp(-5x) e f(x) = exp(-2x), e aí a gente combina elas pra obter
+% soluções não-básicas.
+% 
+% Você sabe de algum livro que explica isso? Eu aprendi isso num curso
+% seu e eu costumava apresentar isso sem dar referências, e agora eu fui
+% procurar isso nos livros de EDOs que eu tenho aqui e nenhum deles tem
+% essa prova via álgebra linear...
+% 
+% Torcendo pros tsunamis te darem alguns períodos de paz,
+%   [[]] =),
+%     E.
+
+% {\bf Oscilações amortecidas}
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.1-C2/")
+# (find-fline "~/LATEX/2022-1-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.1-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-1-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C2-dicas-pra-P2 veryclean
+make -f 2019.mk STEM=2022-1-C2-dicas-pra-P2 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2d2"
+% ee-tla: "c2m221dp2"
+% End:

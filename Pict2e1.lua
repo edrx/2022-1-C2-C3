@@ -68,6 +68,8 @@
 -- «.PictBounds-tests»		(to "PictBounds-tests")
 -- «.PictBounds-methods»	(to "PictBounds-methods")
 -- «.PictBounds-methods-tests»	(to "PictBounds-methods-tests")
+--
+-- «.fake_ln_mod_x»		(to "fake_ln_mod_x")
 
 
 
@@ -1204,6 +1206,43 @@ o = Pict2e.line(v(1,2), v(3,4)):pgat("pgat"):dd()
 = Show.try(o:tostringp())
  (etv)
 
+
+--]]
+
+
+
+
+-- «fake_ln_mod_x»  (to ".fake_ln_mod_x")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1.lua"
+
+Pict2e.bounds = PictBounds.new(v(-5,-5), v(5,5))
+fake_ln_mod_x = function (C1, C2)
+    return PictList({})
+      :addline(v(-4, 3+C1),
+               v(-3, 3+C1),
+               v(-2, 2+C1),
+               v(-1, 0+C1),
+               v(-0,-3+C1))
+      :addline(v( 4, 3+C2),
+               v( 3, 3+C2),
+               v( 2, 2+C2),
+               v( 1, 0+C2),
+               v( 0,-3+C2))
+      :addopendotat(v(-0,-3+C1))
+      :addopendotat(v( 0,-3+C2))
+  end
+= fake_ln_mod_x(0, 0)
+= fake_ln_mod_x(1, 2)
+= fake_ln_mod_x(0, 0):bshow()
+ (etv)
+Pict2e.bounds = PictBounds.new(v(-5,-5), v(5,5))
+Pict2e.bounds = PictBounds.new(v(-4,-4), v(4,4))
+= fake_ln_mod_x(1, -1):bshow()
+ (etv)
 
 --]]
 

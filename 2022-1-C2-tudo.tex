@@ -11,6 +11,7 @@
 % (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
 %          (code-eec-LATEX "2022-1-C2-tudo")
 % (find-pdf-page   "~/LATEX/2022-1-C2-tudo.pdf")
+% (find-pdf-text   "~/LATEX/2022-1-C2-tudo.pdf")
 % (find-sh0 "cp -v  ~/LATEX/2022-1-C2-tudo.pdf /tmp/")
 % (find-sh0 "cp -v  ~/LATEX/2022-1-C2-tudo.pdf /tmp/pen/")
 %     (find-xournalpp "/tmp/2022-1-C2-tudo.pdf")
@@ -18,6 +19,7 @@
 %               file:///tmp/2022-1-C2-tudo.pdf
 %           file:///tmp/pen/2022-1-C2-tudo.pdf
 % http://angg.twu.net/LATEX/2022-1-C2-tudo.pdf
+% (find-angg "2022-1-C2-C3/README.org")
 % (find-LATEX "2019.mk")
 % (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
 % (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
@@ -25,6 +27,7 @@
 
 % «.defs»	(to "defs")
 % «.title»	(to "title")
+% «.parts»	(to "parts")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -60,10 +63,6 @@
 \input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
 %\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
 %
-%\usepackage[backend=biber,
-%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
-%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
-%
 % (find-es "tex" "geometry")
 \usepackage[a6paper, landscape,
             top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
@@ -71,22 +70,9 @@
 %
 \begin{document}
 
-% \catcode`\^^J=10
-% \directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
-% %L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
-% %L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
-% %L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
-% %L Pict2e.__index.suffix = "%"
-% \pu
-% \def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
-% \def\pictaxesstyle{\linethickness{0.5pt}}
-% \celllower=2.5pt
-
 % «defs»  (to ".defs")
 % (find-LATEX "edrx21defs.tex" "colors")
 % (find-LATEX "edrx21.sty")
-
-\def\u#1{\par{\footnotesize \url{#1}}}
 
 \def\drafturl{http://angg.twu.net/LATEX/2022-1-C2.pdf}
 \def\drafturl{http://angg.twu.net/2022.1-C2.html}
@@ -129,8 +115,11 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
+% «parts»  (to ".parts")
+% (c2m221tudop 2 "parts")
+% (c2m221tudoa   "parts")
+% (find-angg ".emacs" "c2-2022-1")
 \def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
-
 
 % (c2m221introa "title")
 % (c2m221introa "title" "Aulas 4 e 5: mais exercícios de substituição")
@@ -149,13 +138,45 @@ Eduardo Ochs - RCN/PURO/UFF
 \incl{2022-1-C2-TFC1}
 
 % (c2m221mt1a "title")
+% (c2m221mt1a "title" "Mini-teste 1")
 \incl{2022-1-C2-MT1}
 
+% (c2m221dfia "title")
+% (c2m221dfia "title" "derivada" "da função inversa")
+\incl{2022-1-C2-der-fun-inv}
 
+% (c2m221atisa "title")
+% (c2m221atisa "title" "Aula 29: algumas técnicas de integração")
+\incl{2022-1-C2-algumas-t-ints}
 
+% (c2m221mt2a "title")
+% (c2m221mt2a "title" "Mini-teste 2")
+\incl{2022-1-C2-MT2}
 
+% (c2m221pra "title")
+% (c2m221pra "title" "Aula 31: primitivas")
+\incl{2022-1-C2-primitivas}
 
-%\printbibliography
+% (c2m221dp1a "title")
+% (c2m221dp1a "title" "Aula 31: dicas pra P1")
+\incl{2022-1-C2-dicas-pra-P1}
+
+% (c2m221p1a "title")
+% (c2m221p1a "title" "P1 (Primeira prova)")
+\incl{2022-1-C2-P1}
+
+% (c2m221dp2a "title")
+% (c2m221dp2a "title" "Aula 31.5: dicas pra P2")
+\incl{2022-1-C2-dicas-pra-P2}
+
+% (c2m221p2a "title")
+% (c2m221p2a "title" "P2 (Segunda prova)")
+\incl{2022-1-C2-P2}
+
+% (c2m221vra "title")
+% (c2m221vra "title" "Prova de reposição (VR)")
+\incl{2022-1-C2-VR}
+
 
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
@@ -171,38 +192,6 @@ Eduardo Ochs - RCN/PURO/UFF
 % «djvuize»  (to ".djvuize")
 % (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
 
- (eepitch-shell)
- (eepitch-kill)
- (eepitch-shell)
-# (find-fline "~/2022.1-C2/")
-# (find-fline "~/LATEX/2022-1-C2/")
-# (find-fline "~/bin/djvuize")
-
-cd /tmp/
-for i in *.jpg; do echo f $(basename $i .jpg); done
-
-f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
-
-f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
-f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
-f () { cp -fv $1.png $1.pdf       ~/2022.1-C2/
-       cp -fv        $1.pdf ~/LATEX/2022-1-C2/
-       cat <<%%%
-% (find-latexscan-links "C2" "$1")
-%%%
-}
-
-f 20201213_area_em_funcao_de_theta
-f 20201213_area_em_funcao_de_x
-f 20201213_area_fatias_pizza
-
-
 
 %  __  __       _        
 % |  \/  | __ _| | _____ 
@@ -215,9 +204,10 @@ f 20201213_area_fatias_pizza
  (eepitch-shell)
  (eepitch-kill)
  (eepitch-shell)
-# (find-LATEXfile "2019planar-has-1.mk")
-make -f 2019.mk STEM=2022-1-C2-tudo veryclean
-make -f 2019.mk STEM=2022-1-C2-tudo pdf
+cd ~/LATEX/
+lualatex                  2022-1-C2-tudo.tex
+# (find-pdf-page "~/LATEX/2022-1-C2-tudo.pdf")
+
 
 % Local Variables:
 % coding: utf-8-unix

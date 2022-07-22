@@ -58,21 +58,23 @@ cat 2022-1-C2-tudo.tex     | getincls0
 cat 2022-1-C2-tudo.tex     | getincls
 cat 2022-1-C2-tudo.tex     | getincltexs
 cat 2022-1-C{2,3}-tudo.tex | getincltexs
-cat 2022-1-C{2,3}-tudo.tex | getincltexs | sort | uniq | tee -a /tmp/.filest0.tex
+cat 2022-1-C{2,3}-tudo.tex | getincltexs | sort | uniq | tee /tmp/.filest00.tex
+cat 2022-1-C{2,3}-tudo.tex | getincltexs | sort | uniq | tee /tmp/.filest0.tex
 # (find-tkdiff "/tmp/.files0.tex" "/tmp/.filest0.tex")
+# (find-fline "/tmp/" ".files0.tex")
 
 # (find-man "tee")
 # (find-fline "/tmp/.files.tex")
 
-for i in $(cat /tmp/.files0.tex); do
+for i in $(cat /tmp/.filest0.tex); do
   basename $i .tex
-  done | tee /tmp/.files0.bn
+  done | tee /tmp/.filest0.bn
 
-for i in $(cat /tmp/.files0.tex); do 
+for i in $(cat /tmp/.filest0.tex); do 
   lualatex -record $i
   done
 
-for i in $(cat /tmp/.files0.bn); do 
+for i in $(cat /tmp/.filest0.bn); do 
   flsfiles $i.fls
   done | sort | uniq | tee /tmp/2022-1.fls
 
@@ -88,6 +90,7 @@ tar -cvzf /tmp/2022-1.tgz   $(cat /tmp/2022-1+.fls)
 cd ~/2022-1-C2-C3/
 tar -xvzf /tmp/2022-1.tgz
 # (find-fline "~/2022-1-C2-C3/")
+# (find-fline "~/2022-1-C2-C3/Makefile")
 
 # git init
 # git add README.org

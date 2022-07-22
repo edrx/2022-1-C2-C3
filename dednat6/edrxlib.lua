@@ -23,7 +23,7 @@
 -- See also: (to "edrxlib")
 --
 -- Author: Eduardo Ochs <eduardoochs@gmail.com>
--- Version: 2022mar26  <- don't trust this date
+-- Version: 2022may31  <- don't trust this date
 -- Public domain.
 --
 -- Note: "dednat4.lua" and "dednat6.lua" try to load this at startup,
@@ -72,6 +72,7 @@
 -- «.Class»			(to "Class")
 --   «.over0»			(to "over0")
 --   «.over»			(to "over")
+--   «.methodsover»		(to "methodsover")
 -- «.Code»			(to "Code")
 -- «.Tos»			(to "Tos")
 --   «.mytostring»		(to "mytostring")
@@ -103,6 +104,7 @@
 -- «.loadblogme3»		(to "loadblogme3")
 -- «.savevars»			(to "savevars")
 -- «.variants-of-format»	(to "variants-of-format")
+--   «.minus-0»			(to "minus-0")
 --   «.trailing-zeroes»		(to "trailing-zeroes")
 --   «.pformat»			(to "pformat")
 --   «.dformat»			(to "dformat")
@@ -517,6 +519,16 @@ Over = function (class)
     return over(class.__index)
   end
 
+-- «methodsover»  (to ".methodsover")
+-- (find-es "lua5" "methodsover")
+methodsover = function (class1index)
+    return function (class2index)
+        local class2indexmetatable = { __index = class1index }
+        setmetatable(class2index, class2indexmetatable)
+        return class2index
+      end
+  end
+
 -- (find-es "lua5" "rawtostring")
 rawtostring = function (o)
     if type(o) == "table" then
@@ -835,6 +847,17 @@ Path = Class {
   prepend = function (field, fname) return Path.from(field):prepend(fname) end,
   prependtopath  = function (fname) return Path.prepend("path",  fname) end,
   prependtocpath = function (fname) return Path.prepend("cpath", fname) end,
+  find = function (field, modulename)
+      local modulepath = modulename:gsub("%.", "/")
+      for pathentry in package[field]:gmatch("([^;]+)") do
+        local filename = pathentry:gsub("%?", modulepath)
+        local file = io.open(filename, "rb")
+        if file then
+          file:close()
+          return filename
+        end
+      end
+    end,
   __tostring = function (p) return p:tostring() end,
   __index = {
     get = function (p) return package[p.field] end,
@@ -949,6 +972,17 @@ DGetInfo = Class {
     --
     tb = function (dgi)
         return DGetInfo.prosodytraceback(dgi)
+      end,
+    --
+    find_fline = function (dgi, line)
+        local src = dgi.short_src
+        return format("(find-fline \"%s\" %d)", src, line)
+      end,
+    fline = function (dgi)
+        local l0  = dgi.linedefined
+        local l1  = dgi.currentline
+        local l2  = dgi.lastlinedefined
+        return dgi:find_fline(l1)
       end,
   },
 }
@@ -1384,6 +1418,13 @@ savevars = function (restorefromargs, ...)
 -- «variants-of-format»  (to ".variants-of-format")
 -- See also: (find-es "lua5" "formatt-and-printt")
 --           (find-dn6 "output.lua" "formatt")
+
+-- «minus-0»  (to ".minus-0")
+-- (find-es "lua5" "minus-0-email")
+-- http://lua-users.org/lists/lua-l/2022-05/msg00082.html
+-- truncn = function (n) return trunc0(string.format("%.3f", n)) end
+-- truncn = function (n) return trunc0(string.format("%.3f", fix0(n))) end
+fix0 = function (x) if (x == 0) then return 0 else return x end end
 
 -- «trailing-zeroes» (to ".trailing-zeroes")
 -- «pformat» (to ".pformat")

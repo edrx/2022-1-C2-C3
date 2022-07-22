@@ -39,13 +39,16 @@
 % «.exercicio-4-dicas»	(to "exercicio-4-dicas")
 % «.exercicio-5»	(to "exercicio-5")
 % «.exercicio-6»	(to "exercicio-6")
-% «.exercicio-7»	(to "exercicio-7")
-% «.exercicio-2»	(to "exercicio-2")
 % «.descontinuidades»	(to "descontinuidades")
 % «.descontinuidades-2»	(to "descontinuidades-2")
 % «.tfc1-complicado-1»	(to "tfc1-complicado-1")
 % «.tfc1-complicado-2»	(to "tfc1-complicado-2")
+% «.exercicio-7»	(to "exercicio-7")
+% «.exercicio-2»	(to "exercicio-2")
 % «.tfc1-complicado-3»	(to "tfc1-complicado-3")
+% «.TFC2-exemplo»	(to "TFC2-exemplo")
+% «.TFC2-exemplo-2»	(to "TFC2-exemplo-2")
+% «.exercicio-8»	(to "exercicio-8")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -1061,7 +1064,7 @@ $$\ga{TFC1 exerc2 2} \quad \ga{TFC1 exerc2 -2}$$
 \newpage
 
 % «descontinuidades»  (to ".descontinuidades")
-% (c2m221tfc1p 33 "descontinuidades")
+% (c2m221tfc1p 34 "descontinuidades")
 % (c2m221tfc1a    "descontinuidades")
 
 {\bf Descontinuidades}
@@ -1083,6 +1086,18 @@ $$\ga{TFC1 exerc2 2} \quad \ga{TFC1 exerc2 -2}$$
 %L   end
 %L pwf = PwFunction.from(f_parabola_complicada, seqn(0, 4, 32), seq(4, 8))
 %L pwf:pw(0, 8):pgat("pgatc"):sa("Parabola complicada"):output()
+%L
+%L f_parabola_complicada_2 = function (x)
+%L     if x <= 4 then return f_parabola_preferida(x) end
+%L     if x <  5 then return 5 - x end
+%L     if x <  6 then return 7 - x end
+%L     if x <  7 then return 3 end
+%L     if x == 7 then return 5 end
+%L     return 0.5
+%L   end
+%L pwf = PwFunction.from(f_parabola_complicada_2, seqn(0, 4, 32), seq(4, 8))
+%L pwf:pw(0, 8):pgat("pgatc"):sa("Parabola complicada 2"):output()
+%L
 \pu
 
 
@@ -1138,18 +1153,39 @@ tem infinitas descontinuidades.
 \newpage
 
 % «descontinuidades-2»  (to ".descontinuidades-2")
-% (c2m221tfc1p 33 "descontinuidades-2")
+% (c2m221tfc1p 35 "descontinuidades-2")
 % (c2m221tfc1a    "descontinuidades-2")
+% No semestre passado esta figura foi um exercício:
+%   (c2m211somas2p 45 "exercicio-18")
+%   (c2m211somas2a    "exercicio-18")
+
 
 {\bf Descontinuidades (2)}
 
 %L Pict2e.bounds = PictBounds.new(v(0,0), v(8,5))
-%L rie = Riemann.fromf(f_parabola_complicada, seqn(0, 4, 32), seq(4, 8))
-%L rie:setab(0, 7.5)
+%L rie  = Riemann.fromf(f_parabola_complicada,   seqn(0, 4, 32), seq(4, 8))
+%L rie2 = Riemann.fromf(f_parabola_complicada_2, seqn(0, 4, 32), seq(4, 8))
+%L rie :setab(0, 7.5)
+%L rie2:setab(0, 7.5)
 %L parabola_complicada_inf_sup_def = function (n, name) 
 %L     local p = PictList {
-%L       rie:areainfsup(n):Color("Orange"),
+%L       -- rie:areainfsup(n):Color("Orange"),
+%L       -- rie:areasup(n):Color("Orange"),
+%L       -- rie:areasup(n):color("orange!50!yellow"),
+%L       rie:areasup(n):color("orange!75!white"),
+%L       rie:areainf(n):Color("Red"),
 %L       rie.pwf:pw(0, 8)
+%L     }
+%L     p:pgat("pgatc"):sa(name):output()
+%L   end
+%L parabola_complicada_2_inf_sup_def = function (n, name) 
+%L     local p = PictList {
+%L       -- rie2:areainfsup(n):Color("Orange"),
+%L       -- rie2:areasup(n):Color("Orange"),
+%L       -- rie2:areasup(n):color("orange!50!yellow"),
+%L       rie2:areasup(n):color("orange!75!white"),
+%L       rie2:areainf(n):Color("Red"),
+%L       rie2.pwf:pw(0, 8)
 %L     }
 %L     p:pgat("pgatc"):sa(name):output()
 %L   end
@@ -1159,20 +1195,36 @@ tem infinitas descontinuidades.
 %L parabola_complicada_inf_sup_def(32, "Parabola complicada diff 32")
 %L parabola_complicada_inf_sup_def(64, "Parabola complicada diff 64")
 %L parabola_complicada_inf_sup_def(128, "Parabola complicada diff 128")
+%L parabola_complicada_2_inf_sup_def( 4, "Parabola complicada 2 diff 4")
+%L parabola_complicada_2_inf_sup_def( 8, "Parabola complicada 2 diff 8")
+%L parabola_complicada_2_inf_sup_def(16, "Parabola complicada 2 diff 16")
+%L parabola_complicada_2_inf_sup_def(32, "Parabola complicada 2 diff 32")
+%L parabola_complicada_2_inf_sup_def(64, "Parabola complicada 2 diff 64")
+%L parabola_complicada_2_inf_sup_def(128, "Parabola complicada 2 diff 128")
 \pu
 
 \unitlength=10pt
 
-Seja
+Sejam
 %
-$$f(x) \;=\; \ga{Parabola complicada} \; .
+$$f(x) \;=\; \ga{Parabola complicada}
+  \quad
+  \text{e}
+  \quad
+  g(x) \;=\; \ga{Parabola complicada 2}
+  \; .
 $$
 
   
 
 As figuras dos próximos slides mostram
 %
-$$\IntPoverunder{[0,7.5]_{2^k}}{f(x)}$$
+$$\IntPoverunder{[0,7.5]_{2^k}}{f(x)}
+  \quad
+  \text{e}
+  \quad
+  \IntPoverunder{[0,7.5]_{2^k}}{g(x)}
+$$
 
 para vários valores de $k$. Use-as pra entender porque
 
@@ -1184,6 +1236,13 @@ se só tivermos um número finito de descontinuidades.
 \def\paracompn#1{\newpage $$\scalebox{3}{$\ga{Parabola complicada diff #1}$}$$}
 \unitlength=20pt
 \def\paracompn#1{\newpage $$\scalebox{1.5}{$\ga{Parabola complicada diff #1}$}$$}
+\def\paracompn#1{\newpage
+  \vspace*{0.4cm}
+  $$\scalebox{0.85}{$\ga{Parabola complicada diff #1}$}
+    \qquad
+    \scalebox{0.85}{$\ga{Parabola complicada 2 diff #1}$}
+  $$
+}
 
 \paracompn{4}
 
@@ -1201,7 +1260,7 @@ se só tivermos um número finito de descontinuidades.
 \newpage
 
 % «tfc1-complicado-1»  (to ".tfc1-complicado-1")
-% (c2m221tfc1p 41 "tfc1-complicado-1")
+% (c2m221tfc1p 42 "tfc1-complicado-1")
 % (c2m221tfc1a    "tfc1-complicado-1")
 
 {\bf A versão complicada do TFC1}
@@ -1237,10 +1296,10 @@ pra algo complicado.
 \newpage
 
 % «tfc1-complicado-2»  (to ".tfc1-complicado-2")
-% (c2m221tfc1p 42 "tfc1-complicado-2")
+% (c2m221tfc1p 43 "tfc1-complicado-2")
 % (c2m221tfc1a    "tfc1-complicado-2")
 % «exercicio-7»  (to ".exercicio-7")
-% (c2m221tfc1p 42 "exercicio-7")
+% (c2m221tfc1p 43 "exercicio-7")
 % (c2m221tfc1a    "exercicio-7")
 
 {\bf A versão complicada do TFC1 (2)}
@@ -1383,6 +1442,8 @@ $$\Intt{α}{β}{f(t)} \;\; = \;\; G(β) - G(α).$$
 
 \newpage
 
+% «TFC2-exemplo»  (to ".TFC2-exemplo")
+
 {\bf TFC2: um exemplo}
 
 \ssk
@@ -1411,6 +1472,8 @@ $$\left(
 $$
 
 \newpage
+
+% «TFC2-exemplo-2»  (to ".TFC2-exemplo-2")
 
 {\bf TFC2: um exemplo (2)}
 
@@ -1457,6 +1520,86 @@ $$\begin{array}{rcl}
 $$
 
 %}\anothercol{
+}}
+
+
+\newpage
+
+% «exercicio-8»  (to ".exercicio-8")
+% (c2m221tfc1p 48 "exercicio-8")
+% (c2m221tfc1a    "exercicio-8")
+
+{\bf Exercício 8.}
+
+
+\scalebox{0.8}{\def\colwidth{9cm}\firstcol{
+
+Este exercício vai servir pra explicar porque é
+
+que eu não uso o ``$+C$'' na fórmula do TFC2 ---
+
+mas isso só daqui a várias páginas.
+
+%L Pict2e.bounds = PictBounds.new(v(-5,-4), v(5,4))
+%L spec = [[  (-5,0)--(-3,0)o
+%L          (-3,-1)c--(-2,-1)o
+%L          (-2,-2)c--(-1,-2)o
+%L          (-1,-3)c--(0,-3)o
+%L          (0,3)o--(1,3)c
+%L          (1,2)o--(2,2)c
+%L          (2,1)o--(3,1)c
+%L          (3,0)o--(5,0)
+%L        ]]
+%L pws = PwSpec.from(spec)
+%L pws:topict():prethickness("1.5pt"):pgat("pgatc"):sa("Intro +C"):output()
+\pu
+
+\msk
+
+\unitlength=7.5pt
+
+
+Sejam
+%
+$$f(x) \;=\; \ga{Intro +C}
+ \quad
+ \text{e}
+$$
+%
+$$F(x) \;=\;
+  \begin{cases}
+    \D α + \Intt{β}{x}{f(t)} & \text{quando $x<0$}, \\[10pt]
+    \D γ + \Intt{δ}{x}{f(t)} & \text{quando $0<x$}. \\
+  \end{cases}
+$$
+
+\msk
+
+Sejam $α=4$, $β=-1$, $γ=3$, $δ=1$.
+
+Faça os gráficos de $F(x)$ de $F'(x)$.
+
+}\anothercol{
+
+{\bf Exercício 9.}
+
+Sejam $f(x)$ e $F(x)$ as
+
+mesmas do exercício 8,
+
+mas agora considere
+
+que $α=3$, $β=-2$,
+
+$γ=6$, $δ=2$.
+
+\msk
+
+Faça os gráficos de
+
+$F(x)$ e de $F'(x)$.
+
+
 }}
 
 

@@ -47,6 +47,7 @@
 -- «.Numerozinhos-test1»	(to "Numerozinhos-test1")
 -- «.Numerozinhos-test2»	(to "Numerozinhos-test2")
 -- «.Numerozinhos-test3»	(to "Numerozinhos-test3")
+-- «.Numerozinhos-test4»	(to "Numerozinhos-test4")
 
 require "Pict2e1"      -- (find-angg "LUA/Pict2e1.lua")
 
@@ -793,6 +794,36 @@ p = Numerozinhos.xynss(0, 0,
 --]==]
 
 
+-- «Numerozinhos-test4»  (to ".Numerozinhos-test4")
+-- (c3m221fhp 5 "exercicio-2-fig")
+-- (c3m221fha   "exercicio-2-fig")
+--[==[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+
+Numerozinhos.xyn = function (x, y, n)
+    if n == "." then return nil end
+    if n == "?" then n = "\\ColorRed{?}" end
+    return pformat("\\put(%s,%s){\\cell{\\text{%s}}}", x, y, n)
+  end
+
+Pict2e.bounds = PictBounds.new(v(-5,-5), v(5,5))
+p = Numerozinhos.xynss(-4, -4, 
+    [[ . . ? . . . . . .
+       . . . . ? . . ? .
+       . . . ? ? . ? . ?
+       . . . . 3 2 5 . .
+       . . ? ? ? 8 ? ? .
+       . . ? ? ? . . . .
+       ? . ? . ? 4 . . .
+       . . . . . . . . .
+       . . . . . . ? . .]])
+= p:pgat("pN"):preunitlength("11pt"):bshow("")
+ (etv)
+
+--]==]
 
 
 
