@@ -28,6 +28,11 @@
 % «.defs-T-and-B»	(to "defs-T-and-B")
 % «.title»		(to "title")
 % «.escadas-defs»	(to "escadas-defs")
+% «.questao-1»		(to "questao-1")
+% «.questao-1-gab»	(to "questao-1-gab")
+% «.questao-2»		(to "questao-2")
+% «.questao-2-gab»	(to "questao-2-gab")
+% «.questao-3»		(to "questao-3")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -199,6 +204,9 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \unitlength=10pt
 
+% «questao-1»  (to ".questao-1")
+% (c2m221vrp 2 "questao-1")
+% (c2m221vra   "questao-1")
 
 {\bf Questão 1}
 
@@ -240,8 +248,17 @@ $\ga{respgrid}$
 
 \newpage
 
+% «questao-1-gab»  (to ".questao-1-gab")
+% (c2m221vrp 2 "questao-1-gab")
+% (c2m221vra   "questao-1-gab")
 
-% «edo-2a-ordem»  (to ".edo-2a-ordem")
+{\bf Questão 1: gabarito}
+
+\newpage
+
+% «questao-2»  (to ".questao-2")
+% (c2m221vrp 4 "questao-2")
+% (c2m221vra   "questao-2")
 % (c2m221p2p 3 "edo-2a-ordem")
 % (c2m221p2a   "edo-2a-ordem")
 % (c2m212introp 12 "EDOs-chutar-testar")
@@ -319,13 +336,11 @@ e $D$ ao invés de $f(x)$ e $\ddx$.
 
 \newpage
 
-% «edo-2a-ordem-cont»  (to ".edo-2a-ordem-cont")
 % (c2m221p2p 6 "edo-2a-ordem-cont")
 % (c2m221p2a   "edo-2a-ordem-cont")
 
 {\bf Questão 2 (cont.)}
 
-% «edo-2a-ordem»  (to ".edo-2a-ordem")
 % (c2m221p2p 3 "edo-2a-ordem")
 % (c2m221p2a   "edo-2a-ordem")
 % (c2m212introp 12 "EDOs-chutar-testar")
@@ -399,7 +414,6 @@ e $D$ ao invés de $f(x)$ e $\ddx$.
 
 }}
 
-
 \newpage
 
 {\bf Questão 2 (cont.)}
@@ -440,6 +454,19 @@ e $D$ ao invés de $f(x)$ e $\ddx$.
 
 \newpage
 
+% «questao-2-gab»  (to ".questao-2-gab")
+% (c2m221vrp 7 "questao-2-gab")
+% (c2m221vra    "questao-2-gab")
+
+{\bf Questão 2: gabarito}
+
+\newpage
+
+% «questao-3»  (to ".questao-3")
+% (c2m221vrp 8 "questao-3")
+% (c2m221vra   "questao-3")
+
+
 {\bf Questão 3}
 
 
@@ -466,8 +493,40 @@ chutar-e-testar, mas dá um pouquinho mais de trabalho.
 
 
 }\anothercol{
+
+{\bf Gabarito}
+
+(sem os testes)
+
+\msk
+
+a)
+%
+$$x^2 - \frac{2}{x^2} + \frac14 \sen 4x
+$$
+
+\bsk
+
+b)
+%
+$$\frac{(3x+4)^{21}}{63}
+$$
+
+
 }}
 
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T f : 2*x + 4/(x^3) + cos(4*x);
+%T integrate(f,x);
+%T f : (3*x+4)^20;
+%T integrate(f,x);
 
 
 

@@ -587,6 +587,8 @@ MiniV = Class {
     to12 = function (v) return v[1], v[2] end,
     to_x_y = function (v) return v:to12() end,
     xy = function (v) return "("..v[1]..","..v[2]..")" end,
+    --
+    norm = function (v) return (v[1]^2 + v[2]^2)^0.5 end,
   },
 }
 

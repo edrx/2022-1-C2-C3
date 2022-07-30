@@ -27,8 +27,11 @@
 % «.defs»		(to "defs")
 % «.defs-T-and-B»	(to "defs-T-and-B")
 % «.title»		(to "title")
-% «.questao-1»		(to "questao-1")
+% «.questoes-1-e-2»	(to "questoes-1-e-2")
+% «.questoes-1-e-2-gab»	(to "questoes-1-e-2-gab")
+% «.questoes-3-e-4»	(to "questoes-3-e-4")
 % «.questao-3-gab»	(to "questao-3-gab")
+% «.questao-4-gab»	(to "questao-4-gab")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -108,12 +111,12 @@
 
 
 
-%  _____ _ _   _                               
-% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%  _____ _ _   _
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___
 %   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
 %   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
 %   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
-%                      |_|          |___/      
+%                      |_|          |___/
 %
 % «title»  (to ".title")
 % (c3m221p2p 1 "title")
@@ -147,17 +150,19 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
-% «questao-1»  (to ".questao-1")
+% «questoes-1-e-2»  (to ".questoes-1-e-2")
+% (c3m221p2p 2 "questoes-1-e-2")
+% (c3m221p2a   "questoes-1-e-2")
 
 \scalebox{0.5}{
 \def\colwidth{10cm}\firstcol{
 
   {\bf Questão 1}
 
-  \T(Total: q.0 pts)
+  \T(Total: 1.0 pts)
 
   Digamos que:
-  % 
+  %
   $$\begin{array}{rcl}
       F(x,y) &=& a \\
              &+& bx + cy \\
@@ -171,7 +176,7 @@ Eduardo Ochs - RCN/PURO/UFF
   \ssk
 
   b) \B(0.8 pts) Mostre como reescrever $F(x,y)$ como
-  % 
+  %
   $$\def\uu{\_\_}
     \begin{array}{rcl}
       F(x,y) &=& \uu \\
@@ -190,7 +195,7 @@ Eduardo Ochs - RCN/PURO/UFF
   \T(Total: 3.0 pts)
 
   Digamos que:
-  % 
+  %
   $$\begin{array}{rcl}
       G(x_0+Δx,y_0+Δy) &=& a \\
                        &+& bΔx + cΔy \\
@@ -204,17 +209,88 @@ Eduardo Ochs - RCN/PURO/UFF
   \ssk
 
   b) \B(2.4 pts) Mostre como reescrever $G(x,y)$ como
-  % 
+  %
   $$\def\uu{\_\_}
     \begin{array}{rcl}
       G(x,y) &=& \uu \\
-             &+& \uu x + \uu y \\
-             &+& \uu x^2 +  \uu xy + \uu y^2 \\
+             &+& \uu Δx + \uu Δy \\
+             &+& \uu Δx^2 +  \uu ΔxΔy + \uu Δy^2 \\
     \end{array}
   $$
 
   onde em cada lacuna você vai pôr uma expressão que depende só das
   derivadas parciais de $G(x,y)$ no ponto $(x_0,y_0)$.
+
+}}
+
+
+\newpage
+
+% «questoes-1-e-2-gab»  (to ".questoes-1-e-2-gab")
+% (c3m221p2p 3 "questoes-1-e-2-gab")
+% (c3m221p2a   "questoes-1-e-2-gab")
+
+{\bf Gabarito das questões 1 e 2}
+
+\scalebox{0.45}{\def\colwidth{9cm}\firstcol{
+
+$$\begin{array}{rcl}
+  F(x,y)   &=& a + bx + cy + dx^2 + exy + fy^2 \\
+  F_x(x,y) &=& b + 2dx + ey \\
+  F_{xx}(x,y) &=& 2d \\
+  F_{xy}(x,y) &=& e \\
+  F_y(x,y) &=& c + ex + 2fy \\
+  F_{yx}(x,y) &=& e \\
+  F_{yy}(x,y) &=& 2f \\
+  \\
+  F(0,0)   &=& a \\
+  F_x(0,0) &=& b \\
+  F_{xx}(0,0) &=& 2d \\
+  F_{xy}(0,0) &=& e \\
+  F_y(0,0) &=& c \\
+  F_{yx}(0,0) &=& e \\
+  F_{yy}(0,0) &=& 2f \\
+  \\
+  F(x,y) &=& F(0,0) \\
+         &+& F_x(0,0)x + F_y(0,0)y \\
+         &+& \frac12 F_{xx}(0,0)x^2 + F_{xy}(0,0)xy + \frac12 F_{yy}(0,0)y^2 \\
+  \\
+  \multicolumn{3}{l}{\text{Se $(x_0,y_0)=(0,0)$,}} \\
+  z(x,y) &=& z \\
+         &+& z_x x + z_y y \\
+         &+& \frac12 z_{xx}x^2 + z_{xy}xy + \frac12 z_{yy}y^2 \\
+  \end{array}
+$$
+
+}\anothercol{
+
+$$\begin{array}{rcl}
+  F(x_0+Δx,y_0+Δy)   &=& a + bΔx + cΔy + dΔx^2 + eΔxΔy + fΔy^2 \\
+  F_x(x_0+Δx,y_0+Δy) &=& b + 2dΔx + eΔy \\
+  F_{xx}(x_0+Δx,y_0+Δy) &=& 2d \\
+  F_{xy}(x_0+Δx,y_0+Δy) &=& e \\
+  F_y(x_0+Δx,y_0+Δy) &=& c + eΔx + 2fΔy \\
+  F_{yx}(x_0+Δx,y_0+Δy) &=& e \\
+  F_{yy}(x_0+Δx,y_0+Δy) &=& 2f \\
+  \\
+  F(x_0,y_0)   &=& a \\
+  F_x(x_0,y_0) &=& b \\
+  F_{xx}(x_0,y_0) &=& 2d \\
+  F_{xy}(x_0,y_0) &=& e \\
+  F_y(x_0,y_0) &=& c \\
+  F_{yx}(x_0,y_0) &=& e \\
+  F_{yy}(x_0,y_0) &=& 2f \\
+  \\
+  F(x_0+Δx,y_0+Δy) &=& F(x_0,y_0) \\
+         &+& F_x(x_0,y_0)Δx + F_y(x_0,y_0)Δy \\
+         &+& \frac12 F_{xx}(x_0,y_0)Δx^2 + F_{xy}(x_0,y_0)ΔxΔy + \frac12 F_{yy}(x_0,y_0)Δy^2 \\
+  \\
+  % \multicolumn{3}{l}{\text{Se $(x_0,y_0)=(0,0)$,}} \\
+  z(x_0+Δx,y_0+Δy) &=& z \\
+         &+& z_x Δx + z_y Δy \\
+         &+& \frac12 z_{xx}Δx^2 + z_{xy}ΔxΔy + \frac12 z_{yy}Δy^2 \\
+  \end{array}
+$$
 
 
 }}
@@ -222,6 +298,9 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
+% «questoes-3-e-4»  (to ".questoes-3-e-4")
+% (c3m221p2p 4 "questoes-3-e-4")
+% (c3m221p2a   "questoes-3-e-4")
 
 \scalebox{0.6}{\def\colwidth{9cm}\firstcol{
 
@@ -260,7 +339,8 @@ $Δx,Δy∈\{-2,-1,-0,1,2\}$.
 \newpage
 
 % «questao-3-gab»  (to ".questao-3-gab")
-
+% (c3m221p2p 99 "questao-3-gab")
+% (c3m221p2a    "questao-3-gab")
 
 % (setq eepitch-preprocess-regexp "^")
 % (setq eepitch-preprocess-regexp "^%T ")
@@ -274,6 +354,24 @@ $Δx,Δy∈\{-2,-1,-0,1,2\}$.
 %T Hxx : diff(Hx, x);
 %T Hxy : diff(Hx, y);
 %T Hyy : diff(Hy, y);
+%T rat(Hyy);
+%T s   : sqrt(x^2 + 3*y^2);
+%T Hx_  : x / s;
+%T Hy_  : 3*y / s;
+%T Hxx_ : (s^2 - x^2) / s^3;
+%T Hxy_ : -3*x*y / s^3;
+%T Hyy_ : (3*s^2 - 9*y^2) / s^3;
+%T V  : [H, Hx,  Hy,  Hxx,  Hxy,  Hyy];
+%T V_ : [H, Hx_, Hy_, Hxx_, Hxy_, Hyy_];
+%T V-V_;
+%T subst([x=1.23, y=4.56], V-V_);
+%T rat(V-V_);
+%T rat(Hyy-Hyy_);
+%T rat([Hxy, Hyy]);
+%T rat([Hx, Hx_]);
+%T rat([Hxx, Hxx_]);
+%T rat(Hxx - Hxx_);
+%T subst([x=1.23, y=4.56], [Hxx, Hxx_]);
 %T [x0,y0] : [1,1];
 %T foo(sym) := [sym, rat(ev(sym)), subst([x=x0,y=y0],ev(sym))];
 %T foo('H);
@@ -285,6 +383,74 @@ $Δx,Δy∈\{-2,-1,-0,1,2\}$.
 %T [H0, Hx0, Hy0, Hxx0, Hxy0, Hyy0] : subst([x=x0,y=y0], [H, Hx, Hy, Hxx, Hxy, Hyy]);
 %T H1 : H0 + Hx0*Dx + Hy0*Dy;
 %T H2 : H0 + Hx0*Dx + Hy0*Dy + Hxx0*Dx^2/2 + Hxy0*Dx*Dy + Hyy0*Dy^2;
+
+
+
+\newpage
+
+{\bf Questão 3: gabarito}
+
+
+\scalebox{0.6}{\def\colwidth{15cm}\firstcol{
+
+Seja $H(x,y) = \sqrt{x^2 + 3y^2} = S$.
+
+Então:
+%
+$$\begin{array}{rclrcl}
+  H(x,y)      &=&           S       & H(x_0,y_0)      &=& 2 \\
+  H_x(x,y)    &=&           x / S   & H_x(x_0,y_0)    &=& 1/2 \\
+  H_y(x,y)    &=&          3y / S   & H_y(x_0,y_0)    &=& 3/2 \\
+  H_{xx}(x,y) &=&   (S^2-x^2) / S^3 & H_{xx}(x_0,y_0) &=& 3/8 \\
+  H_{xy}(x,y) &=&        -3xy / S^3 & H_{xy}(x_0,y_0) &=& -3/8 \\
+  H_{yy}(x,y) &=& (3S^2-9y^2) / S^3 & H_{yy}(x_0,y_0) &=& 3/8 \\
+  \end{array}
+$$
+
+Aproximação de Taylor de 1a ordem:
+%
+$$\begin{array}{rcl}
+  H(x_0+Δx,y_0+Δy) &≈& H(x_0,y_0) \\
+                   &+& H_x(x_0,y_0)Δx + H_y(x_0,y_0)Δy \\
+                   &=& 2 \\
+                   &+& \frac12 Δx + \frac32 Δy \\
+  \end{array}
+$$
+
+Aproximação de Taylor de 2a ordem:
+%
+$$\begin{array}{rcl}
+  H(x_0+Δx,y_0+Δy) &≈& H(x_0,y_0) \\
+         &+& H_x(x_0,y_0)Δx + H_y(x_0,y_0)Δy \\
+         &+& \frac12 H_{xx}(x_0,y_0)Δx^2 + H_{xy}(x_0,y_0)ΔxΔy + \frac12 H_{yy}(x_0,y_0)Δy^2 \\
+         &=& 2 \\
+         &+& \frac12 Δx + \frac32 Δy \\
+         &+& \frac3{16} Δx^2 - \frac3{8} ΔxΔy + \frac3{16} Δy^2 \\
+  \end{array}
+$$
+
+
+}\anothercol{
+}}
+
+\newpage
+
+% «questao-4-gab»  (to ".questao-4-gab")
+% (c3m221fhp 7 "exercicio-5")
+% (c3m221fha   "exercicio-5")
+
+{\bf Questão 4: gabarito}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(6,5))
+%L x0,y0 = 4,3
+%L nff = function (str)
+%L     return Code.vc("x,y => local Dx,Dy = x-x0,y-y0; return "..str)
+%L   end
+%L p = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), nff "Dx*(Dx+Dy)")
+%L p:pgat("pN"):preunitlength("11pt"):sa("Questao 4 gab"):output()
+\pu
+
+$$\ga{Questao 4 gab}$$
 
 
 
@@ -308,12 +474,12 @@ $Δx,Δy∈\{-2,-1,-0,1,2\}$.
 
 \end{document}
 
-%  ____  _             _         
-% |  _ \(_)_   ___   _(_)_______ 
+%  ____  _             _
+% |  _ \(_)_   ___   _(_)_______
 % | | | | \ \ / / | | | |_  / _ \
 % | |_| | |\ V /| |_| | |/ /  __/
 % |____// | \_/  \__,_|_/___\___|
-%     |__/                       
+%     |__/
 %
 % «djvuize»  (to ".djvuize")
 % (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
@@ -351,12 +517,12 @@ f 20201213_area_fatias_pizza
 
 
 
-%  __  __       _        
-% |  \/  | __ _| | _____ 
+%  __  __       _
+% |  \/  | __ _| | _____
 % | |\/| |/ _` | |/ / _ \
 % | |  | | (_| |   <  __/
 % |_|  |_|\__,_|_|\_\___|
-%                        
+%
 % <make>
 
  (eepitch-shell)
@@ -371,4 +537,3 @@ make -f 2019.mk STEM=2022-1-C3-P2 pdf
 % ee-tla: "c3p2"
 % ee-tla: "c3m221p2"
 % End:
-

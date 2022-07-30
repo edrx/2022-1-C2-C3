@@ -5,6 +5,8 @@
 #               (find-angg "2022-1-C2-C3/README.org")
 #               (find-angg "2022-1-C2-C3/")
 # Author: Eduardo Ochs <eduardoochs@gmail.com>
+# See: (find-LATEX "2022-1-C2-tudo.tex")
+#      (find-LATEX "2022-1-C3-tudo.tex")
 # 
 # Some eev-isms:
 # (defun c  () (interactive) (eek "C-c C-e h h"))
@@ -119,7 +121,7 @@ git push -u origin main
  (eepitch-shell)
  (eepitch-kill)
  (eepitch-shell)
-# Test:
+# Test 1:
 cd           ~/2022-1-C2-C3/
 tar -cvzf /tmp/2022-1-C2-C3.tgz *
 rm -Rv    /tmp/2022-1-C2-C3/
@@ -130,6 +132,15 @@ make
 # (find-fline "/tmp/2022-1-C2-C3/")
 # (find-pdf-page "/tmp/2022-1-C2-C3/2022-1-C2-tudo.pdf")
 # (find-pdf-page "/tmp/2022-1-C2-C3/2022-1-C3-tudo.pdf")
+
+# Test 2:
+rm -Rv    /tmp/2022-1-C2-C3/
+mkdir     /tmp/2022-1-C2-C3/
+cd        /tmp/2022-1-C2-C3/
+git clone https://github.com/edrx/2022-1-C2-C3 .
+# (find-fline "/tmp/2022-1-C2-C3/")
+# (find-fline "/tmp/2022-1-C2-C3/Makefile")
+make
 
 #+end_comment
 

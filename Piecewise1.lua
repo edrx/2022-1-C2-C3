@@ -1328,6 +1328,8 @@ ChangeVar = Class {
 
 -- «ChangeVar-test1»  (to ".ChangeVar-test1")
 -- Supersedes: (to "PwFunction-intfig")
+-- See: (c2m221atisp 12 "substituicao-figura")
+--      (c2m221atisa    "substituicao-figura")
 --[==[
  (eepitch-lua51)
  (eepitch-kill)

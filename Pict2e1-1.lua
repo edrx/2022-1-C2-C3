@@ -48,6 +48,9 @@
 -- «.Numerozinhos-test2»	(to "Numerozinhos-test2")
 -- «.Numerozinhos-test3»	(to "Numerozinhos-test3")
 -- «.Numerozinhos-test4»	(to "Numerozinhos-test4")
+-- «.Numerozinhos-test5»	(to "Numerozinhos-test5")
+-- «.Tracinhos»			(to "Tracinhos")
+-- «.Tracinhos-test»		(to "Tracinhos-test")
 
 require "Pict2e1"      -- (find-angg "LUA/Pict2e1.lua")
 
@@ -824,6 +827,134 @@ p = Numerozinhos.xynss(-4, -4,
  (etv)
 
 --]==]
+
+
+-- «Numerozinhos-test5»  (to ".Numerozinhos-test5")
+-- (c3m221fhp 7 "exercicio-5")
+-- (c3m221fha   "exercicio-5")
+-- (c3m221fha   "exercicio-5" "nff \"Dx*Dy\"")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+
+Pict2e.bounds = PictBounds.new(v(0,0), v(6,5))
+x0,y0 = 4,3
+nff = function (str)
+    return Code.vc("x,y => local Dx,Dy = x-x0,y-y0; return "..str)
+  end
+p = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), nff "Dx*Dy")
+= p:pgat("pN"):preunitlength("11pt"):bshow("")
+ (etv)
+
+-- (find-pdftoolsr-page "~/LATEX/2022-1-C3-VR.pdf" 2)
+F = nff "Dy               "
+G = nff "     Dx * (Dx+Dy)"
+H = nff "Dy + Dx * (Dx+Dy)"
+pF = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), F):pgat("pN")
+pG = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), G):pgat("pN")
+pH = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), H):pgat("pN")
+= pH
+sp = "\\quad"
+p3 = PictList({ pF, sp, pG, sp, pH }):preunitlength("11pt")
+= p3:bshow("")
+ (etv)
+
+= pH:preunitlength("25pt"):bshow("")
+ (etv)
+
+ (eepitch-maxima)
+ (eepitch-kill)
+ (eepitch-maxima)
+[x0,y0] : [4,3];
+[Dx,Dy] : [x-x0,y-y0];
+G : Dy + Dx * (Dx+Dy);
+subst([x=4,y=1], G);
+
+--]]
+
+
+
+
+
+--  _____               _       _               
+-- |_   _| __ __ _  ___(_)_ __ | |__   ___  ___ 
+--   | || '__/ _` |/ __| | '_ \| '_ \ / _ \/ __|
+--   | || | | (_| | (__| | | | | | | | (_) \__ \
+--   |_||_|  \__,_|\___|_|_| |_|_| |_|\___/|___/
+--                                              
+-- «Tracinhos»  (to ".Tracinhos")
+Tracinhos = Class {
+  type = "Tracinhos",
+  new = function (r)
+      r = r or 0.2
+      return Tracinhos { r=r, p=PictList({}) }
+    end,
+  __index = {
+    v = function (tr, Dy, Dx)
+        Dx = Dx or 1
+        if Dx == 0 then
+          if Dy == 0 then return nil end
+          return v(0, tr.r)
+        end
+        local v0 = v(Dx, Dy)
+        local v1 = v0 * (1 / v0:norm())
+        local v2 = v1 * tr.r
+        return v2
+      end,
+    tracinho = function (tr, xy, Dy, Dx)
+        local vv = tr:v(Dy, Dx)
+        if not vv then return tr end
+        tr.p:addline(xy-vv, xy+vv)
+
+      end,
+  },
+}
+
+-- «Tracinhos-test»  (to ".Tracinhos-test")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+tr = Tracinhos {r=0.2, p=PictList{}}
+
+Pict2e.bounds = PictBounds.new(v(-2,-2), v(2,2))
+tr = Tracinhos.new()
+for y=2,-2,-1 do
+  for x=-2,2 do
+    tr:tracinho(v(x,y), -y, x)
+  end
+end
+= tr.p:pgat("pN"):bshow("")
+ (etv)
+
+Pict2e.bounds = PictBounds.new(v(-2,-2), v(2,2))
+tr = Tracinhos.new()
+for y=2,-2,-1 do
+  for x=-2,2 do
+    tr:tracinho(v(x,y), 1, x)
+  end
+end
+= tr.p:pgat("pN"):bshow("")
+ (etv)
+
+Pict2e.bounds = PictBounds.new(v(-2,-2), v(2,2))
+tr = Tracinhos.new()
+for y=2,-2,-1 do
+  for x=-2,2 do
+    tr:tracinho(v(x,y), x+y, 2)
+  end
+end
+= tr.p:pgat("pN"):bshow("")
+ (etv)
+
+
+--]]
+
+
+
 
 
 
