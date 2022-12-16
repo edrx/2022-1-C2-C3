@@ -29,7 +29,9 @@
 % «.defs-T-and-B»	(to "defs-T-and-B")
 % «.title»		(to "title")
 % «.questao-1»		(to "questao-1")
+% «.questao-1-gab»	(to "questao-1-gab")
 % «.questao-2»		(to "questao-2")
+% «.questao-2-gab»	(to "questao-2-gab")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -175,7 +177,7 @@ Eduardo Ochs - RCN/PURO/UFF
 \sa{[ECS]}{\CFname{ECS}{}}
 \def\ECSn#1{\CFname{ECS}{_{#1}}}
 
-\scalebox{0.45}{\def\colwidth{12.5cm}\firstcol{
+\scalebox{0.42}{\def\colwidth{12.5cm}\firstcol{
 
 \vspace*{-0.25cm}
 
@@ -186,28 +188,38 @@ Eduardo Ochs - RCN/PURO/UFF
     pus na P2 e na VR. Quando eu puser essa prova na página do curso
     eu vou colocar links pra essas questões.
 
+    \msk
+
+    Em todas as questões desta prova uma lacuna como $\lac$ quer dizer
+    ``aqui vai ter um número mas eu não posso dizer qual é -- você vai
+    ter que descobrir ele''... por exemplo, $e^{\lac x}$ pode ser
+    $e^{42 x}$, $e^{-200 x}$, ou outras coisas assim.
+
+\msk
+
+
 Sejam:
 
 \msk
 
 $\ga{[ECS]} = \left(
  \begin{array}{rcl}
- e^{iθ}  &=& \cos  θ + i\senθ\\
- \sen -θ &=& -\sen θ \\
- \cos -θ &=& -\cos θ \\
- e^{-iθ} &=& \cos -θ + i\sen-θ\\
-         &=& \cos -θ - i\sen θ\\
-         &=& \cos  θ - i\sen θ\\
- e^{iθ}+e^{-iθ} &=& 2\cos θ \\
- e^{iθ}-e^{-iθ} &=& 2i\sen θ \\
- \cos θ &\eqnp{9}& \frac1 2  (e^{iθ} + e^{-iθ}) \\
- \sen θ &\eqnp{10}& \frac1{2i}(e^{iθ} - e^{-iθ}) \\
- \cos kθ &\eqnp{11}& \frac1 2  (e^{ikθ} + e^{-ikθ}) \\
- \sen kθ &\eqnp{12}& \frac1{2i}(e^{ikθ} - e^{-ikθ}) \\
- e^{(α+βi)θ} + e^{(α-βi)θ} &=& e^α (e^{βiθ} + e^{-βiθ}) \\
-                           &=& 2 \, e^α \cos βθ \\
- e^{(α+βi)θ} - e^{(α-βi)θ} &=& e^α (e^{βiθ} - e^{-βiθ}) \\
-                           &=& 2i \, e^α \cos βθ \\
+                     e^{iθ}  &=& \cos  θ + i\senθ\\
+                     \sen -θ &=& -\sen θ \\
+                     \cos -θ &=& -\cos θ \\
+                     e^{-iθ} &=& \cos -θ + i\sen-θ\\
+                             &=& \cos -θ - i\sen θ\\
+                             &=& \cos  θ - i\sen θ\\
+              e^{iθ}+e^{-iθ} &=& 2\cos θ \\
+              e^{iθ}-e^{-iθ} &=& 2i\sen θ \\
+              \cos θ & \eqnp{9}& \frac1 2  (e^{iθ} + e^{-iθ}) \\
+              \sen θ &\eqnp{10}& \frac1{2i}(e^{iθ} - e^{-iθ}) \\
+             \cos kθ &\eqnp{11}& \frac1 2  (e^{ikθ} + e^{-ikθ}) \\
+             \sen kθ &\eqnp{12}& \frac1{2i}(e^{ikθ} - e^{-ikθ}) \\
+   e^{(α+βi)θ} + e^{(α-βi)θ} &=& e^α (e^{βiθ} + e^{-βiθ}) \\
+                             &=& 2 \, e^α \cos βθ \\
+   e^{(α+βi)θ} - e^{(α-βi)θ} &=& e^α (e^{βiθ} - e^{-βiθ}) \\
+                             &=& 2i \, e^α \cos βθ \\
  \end{array}
  \right)
 $
@@ -245,10 +257,10 @@ e chame-o de $\CFname{E}{_1}$.
 \bsk
 
 b) \B(2.8 pts) As idéias da $\ga{[ECS]}$ devem indicar que existe uma
-função da forma $g_1(x) = e^{\lac} \cos(\lac x)$ que é solução da EDO
-da primeira linha da resposta do seu item (a). Chame esta EDO de $(*)$
-e verifique se a sua função $g_1(x)$ é solução da EDO $(*)$. Se não
-for chute outra função -- chame-a de $g_2(x)$ -- e veja se ela é
+função da forma $g_1(x) = e^{\lac x} \cos(\lac x)$ que é solução da
+EDO da primeira linha da resposta do seu item (a). Chame esta EDO de
+$(*)$ e verifique se a sua função $g_1(x)$ é solução da EDO $(*)$. Se
+não for chute outra função -- chame-a de $g_2(x)$ -- e veja se ela é
 solução da EDO $(*)$. Se ainda não for faça outro chute-e-teste, e
 repita. Lembre de NUNCA de apagar um chute-e-teste que não resolveu o
 seu problema original.
@@ -260,6 +272,89 @@ seu problema original.
 
 \newpage
 
+%   ___                  _                _               _     
+%  / _ \ _   _  ___  ___| |_ __ _  ___   / |   __ _  __ _| |__  
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \  | |  / _` |/ _` | '_ \ 
+% | |_| | |_| |  __/\__ \ || (_| | (_) | | | | (_| | (_| | |_) |
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_|  \__, |\__,_|_.__/ 
+%                                             |___/             
+%
+% «questao-1-gab»  (to ".questao-1-gab")
+% (c2m221vsap 3 "questao-1-gab")
+% (c2m221vsaa   "questao-1-gab")
+
+{\bf Questão 1: gabarito}
+
+%L ang("_", [[
+%L   \begin{array}{l}
+%L     <EDOLG_> = <EDOLG> \\ \\[-5pt]
+%L     <EVSA1_> = <EDOLG_><SVSA1> = \\ \\[-5pt]
+%L     = <EVSA1> \\ \\[-5pt]
+%L     = <EVSA2> \\
+%L   \end{array}
+%L ]]):sa("Questao 1a gab"):output()
+\pu
+
+
+\scalebox{0.42}{\def\colwidth{20cm}\firstcol{
+
+\vspace*{0.0pt}
+
+$\ga{Questao 1a gab}$
+
+\msk
+
+A última linha acima diz que $e^{2x}e^{-10ix}$ e $e^{2x}e^{10ix}$
+
+são soluções da EDO $f''(x) -4f'(x) + 104f(x) = 0$. \quad $(*)$
+
+Então $e^{2x}e^{-10ix} + e^{2x}e^{10ix} = e^{2x}(2 \cos 10x)$
+
+também deve ser solução dessa EDO, e $e^{2x}\cos 10x$ também.
+
+Sejam $g(x) = e^{2x} \cos 10x$ e $h(x) = e^{2x} \sen 10x$. Daí:
+%
+$$\begin{array}{rcl}
+   g'(x) &=& 2g(x) - 10h(x) \\
+   h'(x) &=& 2h(x) + 10g(x) \\
+  g''(x) &=& -96g(x) - 40h(x) \\
+  h''(x) &=& -96h(x) + 40g(x) \\
+  g''(x) -4g'(x) + 104g(x) &=& (-96g(x) - 40h(x)) -4(2g(x) - 10h(x)) + 104g(x) \\
+                           &=& 0 \\
+  h''(x) -4h'(x) + 104h(x) &=& (-96h(x) + 40g(x)) -4(2h(x) + 10g(x)) + 104h(x) \\
+                           &=& 0 \\
+  \end{array}
+$$
+
+e portanto tanto $g(x)$ quanto $h(x)$ são soluções da EDO $(*)$.
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T g   : %e^(2*x) * cos(10*x);
+%T h   : %e^(2*x) * sin(10*x);
+%T gx  : diff(g,  x);
+%T hx  : diff(h,  x);
+%T gxx : diff(gx, x);
+%T hxx : diff(hx, x);
+%T expand(gxx - 4 * gx + 104 * g);
+%T expand(hxx - 4 * hx + 104 * h);
+%T gx - (2*g -10*h);
+%T hx - (2*h +10*g);
+%T gxx - (-96*g - 40*h);
+%T hxx - (-96*h + 40*g);
+
+
+
+}\anothercol{
+}}
+
+
+\newpage
+
 %   ___                  _                ____  
 %  / _ \ _   _  ___  ___| |_ __ _  ___   |___ \ 
 % | | | | | | |/ _ \/ __| __/ _` |/ _ \    __) |
@@ -267,8 +362,22 @@ seu problema original.
 %  \__\_\\__,_|\___||___/\__\__,_|\___/  |_____|
 %                                               
 % «questao-2»  (to ".questao-2")
+% (c2m221vsap 4 "questao-2")
+% (c2m221vsaa   "questao-2")
 
 {\bf Questão 2}
+
+\def\TTT#1#2{
+  \left(
+  \begin{array}{rcl}
+    \sqrt{#1^2 - #2^2x^2 \mathstrut}
+      &=& \sqrt{#1^2 - \frac{#1^2}{#1^2} #2^2x^2} \\
+      &=& \sqrt{#1^2 \left(1 - \frac{#2^2}{#1^2} x^2 \right)} \\
+      &=& \sqrt{#1^2 \mathstrut} \, \sqrt{1 - \frac{#2^2}{#1^2} x^2} \\
+      &=& #1 \, \sqrt{1 - \left(\frac{#2}{#1}x\right)^2} \\
+  \end{array}
+  \right)
+  }
 
 \scalebox{0.55}{\def\colwidth{10cm}\firstcol{
 
@@ -283,17 +392,7 @@ $$\sqrt{α^2 - β^2x^2}$$
 
 Seja:
 %
-$$\CFname{T}{} =
-  \left(
-  \begin{array}{rcl}
-    \sqrt{α^2 - β^2x^2 \mathstrut}
-      &=& \sqrt{α^2 - \frac{α^2}{α^2} β^2x^2} \\
-      &=& \sqrt{α^2 \left(1 - \frac{β^2}{α^2} x^2 \right)} \\
-      &=& \sqrt{α^2 \mathstrut} \, \sqrt{1 - \frac{β^2}{α^2} x^2} \\
-      &=& α \, \sqrt{1 - \left(\frac{β}{α}x\right)^2} \\
-  \end{array}
-  \right)
-$$
+$$\CFname{T}{} = \TTT{α}{β}$$
 
 a) \B(0.2 pts) Calcule:
 %
@@ -333,6 +432,94 @@ casos mais complicados.
 
 }}
 
+\newpage
+
+%   ___                  _                ____                _     
+%  / _ \ _   _  ___  ___| |_ __ _  ___   |___ \    __ _  __ _| |__  
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \    __) |  / _` |/ _` | '_ \ 
+% | |_| | |_| |  __/\__ \ || (_| | (_) |  / __/  | (_| | (_| | |_) |
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_____|  \__, |\__,_|_.__/ 
+%                                                 |___/             
+% «questao-2-gab»  (to ".questao-2-gab")
+% (c2m221vsap 5 "questao-2-gab")
+% (c2m221vsaa   "questao-2-gab")
+
+{\bf Questão 2: gabarito}
+
+
+\scalebox{0.6}{\def\colwidth{15cm}\firstcol{
+
+a) $\CFname{T}{} \bmat{α:=2 \\ β:=3} \;=\; \TTT{2}{3}$
+
+b) $\begin{array}{rcl}
+     \intx{x^2 \sqrt{4-9x^2}}
+       &=& \intx{x^2 \sqrt{2^2-3^2x^2}} \\
+       &=& \intx{x^2 · 2\sqrt{1-(\frac32 x)^2}} \\
+       &=& \intu{(\frac23u)^2 · 2\sqrt{1-u^2}·\frac23} \\
+       &=& \intu{(\frac23)^3·2· u^2\sqrt{1-u^2}} \\
+       &=& \frac{16}{27} \intu{u^2\sqrt{1-u^2}} \\
+       &=& \frac{16}{27} \intth{(\senθ)^2\sqrt{1-(\senθ)^2}·\cosθ} \\
+       &=& \frac{16}{27} \intth{(\senθ)^2\sqrt{(\cosθ)^2}·\cosθ} \\
+       &=& \frac{16}{27} \intth{(\senθ)^2\cosθ·\cosθ} \\
+       &=& \frac{16}{27} \intth{(\senθ)^2 (\cosθ)^2} \\
+     \end{array}
+   $
+   \qquad
+   $\begin{array}{c}
+    \bsm{ u=\frac32x \\
+          x=\frac23u \\
+          du=\frac32dx \\
+          dx=\frac23du
+        }
+    \\ \\
+    \bsm{
+      u = \senθ \\
+      \frac{du}{dθ} = \cosθ \\
+      du = \cosθ\,dθ \\
+    }
+    \end{array}
+   $
+
+}\anothercol{
+
+}}
+
+
+\newpage
+
+
+{\bf Questão 2: gabarito (cont.)}
+
+\scalebox{0.6}{\def\colwidth{15cm}\firstcol{
+
+c) $\begin{array}{rcl}
+      \intx{x^γ\sqrt{α^2-β^2x^2}^δ}
+      &=& \intx{x^γ\sqrt{α^2(1-\frac{β^2}{α^2}x^2)}^δ} \\
+      &=& \intx{x^γ\left(\sqrt{α^2(1-(\frac{β}{α}x)^2)}\right)^δ} \\
+      &=& \intx{x^γ\left(α\sqrt{(1-(\frac{β}{α}x)^2)}\right)^δ} \\
+      &=& α^γ \intx{x^γ\left(\sqrt{(1-(\frac{β}{α}x)^2)}\right)^δ} \\
+      &=& α^γ \intu{(\fracαβ u)^γ\left(\sqrt{(1-u^2)}\right)^δ · \fracαβ} \\
+      &=& α^γ (\fracαβ)^{γ+1} \intu{u^γ \sqrt{(1-u^2)}^δ} \\
+    \end{array}
+   $
+   \qquad
+   $\begin{array}{c}
+    \bmat{ u=\fracβα x \\
+          x=\fracαβ u \\
+          du=\fracβα dx \\
+          dx=\fracαβ du
+        }
+    \end{array}
+   $
+
+}\anothercol{
+}}
+
+
+
+
+
+
 
 
 \newpage
@@ -353,7 +540,7 @@ casos mais complicados.
 
 {\bf Gabarito da questão 1 da P2}
 
-{\footnotesize (Com vários chutes e testes)}
+{\footnotesize (Com vários chutes e testes -- pra questão 2)}
 
 % (find-LATEX "2022-1-C2-P2.lua" "subst-trig")
 %L TRIGSOLUTION:sa("TRIGSOLUTION"):output()

@@ -49,8 +49,11 @@
 -- «.Numerozinhos-test3»	(to "Numerozinhos-test3")
 -- «.Numerozinhos-test4»	(to "Numerozinhos-test4")
 -- «.Numerozinhos-test5»	(to "Numerozinhos-test5")
+-- «.Numerozinhos-test6»	(to "Numerozinhos-test6")
 -- «.Tracinhos»			(to "Tracinhos")
 -- «.Tracinhos-test»		(to "Tracinhos-test")
+-- «.FromYs»			(to "FromYs")
+-- «.FromYs-tests»		(to "FromYs-tests")
 
 require "Pict2e1"      -- (find-angg "LUA/Pict2e1.lua")
 
@@ -694,14 +697,38 @@ Numerozinhos = Class {
     toputs = function (ns)
         return Numerozinhos.xynss(ns.x, ns.y, ns.bigstr)
       end,
-    topict = function (ns, spec)
-        local puts  = ns:toputs()
+    topictbody = function (ns, spec, etc)
         local lines = spec and Numerozinhos.spectolines(spec)
-        local body  = spec and PictList { lines, puts } or puts
-        return body:pgat("Npc"):preunitlength("11pt")
+        local puts  = ns:toputs()
+        local body  = PictList {}
+        table.insert(body, lines)   -- lines first, below
+        table.insert(body, puts)    -- numbers over the lines
+        table.insert(body, etc)
+        return body
+      end,
+    topict = function (ns, ...)
+        return ns:topictbody(...):pgat("Npc"):preunitlength("11pt")
+      end,
+    topictu = function (ns, u, ...)
+        return ns:topictbody(...):pgat("Npc"):preunitlength(u)
       end,
   },
 }
+
+-- A quick hack to add dots and (gradient) vectors
+PradClass.__index.adddv = function (p, ...)
+    local tio = function (o) table.insert(p, o) end
+    local dot = function (x,y) tio(pformat("\\put(%s,%s){\\closeddot}", x, y)) end
+    local vec = function (x,y,Dx,Dy) tio(Pict2eVector.fromwalk(v(x,y),v(Dx,Dy))) end
+    for i,item in ipairs({...}) do
+      if type(item) == "string" then table.insert(p, item)
+      elseif type(item) == "table" then
+        if #item >= 2 then dot(item[1],item[2]) end
+        if #item == 4 then vec(unpack(item)) end
+      end
+    end
+    return p
+  end
 
 -- «Numerozinhos-test1»  (to ".Numerozinhos-test1")
 -- (c2m221isp 7 "exercicio-2-dica")
@@ -874,6 +901,31 @@ subst([x=4,y=1], G);
 
 --]]
 
+-- «Numerozinhos-test6»  (to ".Numerozinhos-test6")
+-- (find-angg "LUA/Pict2e1.lua" "Pict2eVector-tests")
+-- (find-angg "LUA/lua50init.lua" "minus-0")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+truncn = function (n) return trunc0(string.format("%.3f", fix0(n))) end
+nff = function (str)
+    return Code.vc("x,y => local Dx,Dy = x-x0,y-y0; return "..str)
+  end
+
+Pict2e.bounds = PictBounds.new(v(0,0), v(6,5))
+x0,y0 = 4,3
+p = Numerozinhos.fromf(v(x0-2,y0-2),v(x0+2,y0+2), nff "Dx*Dy")
+p:adddv("\\color{Red2}", "\\linethickness{1.0pt}")
+p:adddv({4,1}, {4,2,2,1})
+PPPV(p)
+= p
+= p:pgat("pN"):preunitlength("12.5pt"):bshow("")
+ (etv)
+
+--]]
+
 
 
 
@@ -919,6 +971,7 @@ Tracinhos = Class {
  (eepitch-lua51)
 dofile "Pict2e1-1.lua"
 tr = Tracinhos {r=0.2, p=PictList{}}
+V.__index.norm = function (v) return (v[1]^2 + v[2]^2)^0.5 end
 
 Pict2e.bounds = PictBounds.new(v(-2,-2), v(2,2))
 tr = Tracinhos.new()
@@ -951,7 +1004,92 @@ end
  (etv)
 
 
+
+
 --]]
+
+
+--  _____                 __   __   
+-- |  ___| __ ___  _ __ __\ \ / /__ 
+-- | |_ | '__/ _ \| '_ ` _ \ V / __|
+-- |  _|| | | (_) | | | | | | |\__ \
+-- |_|  |_|  \___/|_| |_| |_|_||___/
+--                                  
+-- «FromYs»  (to ".FromYs")
+-- Based on: (c2m221p1p 7 "escadas-defs")
+--           (c2m221p1a   "escadas-defs")
+--           (c2m221p1p 8 "escadas-gab")
+--           (c2m221p1a   "escadas-gab")
+--
+FromYs = Class {
+  type   = "FromYs",
+  fromys = function (ys) return FromYs {ys=ys} end,
+  __tostring = function (fry) return mytostringv(fry) end,
+  __index = {
+    getYs = function (fry, Y0)
+        fry.Ys = {Y0}
+        for i,y in ipairs(fry.ys) do
+          local lastY = fry.Ys[#fry.Ys]
+          table.insert(fry.Ys, lastY+y)
+        end
+        fry.ymax = foldl1(max, fry.ys)
+        fry.ymin = foldl1(min, fry.ys)
+        fry.Ymax = foldl1(max, fry.Ys)
+        fry.Ymin = foldl1(min, fry.Ys)
+        local hx = function (x, y)
+            return format(" (%s,%s)c--(%s,%s)o", x-1,y, x,y)
+          end
+        fry.yspec = ""
+        for x,y in ipairs(fry.ys) do fry.yspec = fry.yspec .. hx(x, y) end
+        local xY = function (x) return format("(%s,%s)", x, fry.Ys[x+1]) end
+        PP(fry.ys)
+        PP(fry.Ys)
+        PP(xY(0), xY(1), xY(2))
+        fry.Yspec = mapconcat(xY, seq(0, #fry.Ys-1), "--")
+        return fry
+      end,
+    getypict = function (fry, ymin, ymax)
+        ymin = ymin or fry.ymin
+        ymax = ymax or fry.ymax
+        local pws  = PwSpec.from(fry.yspec)
+        local pict = pws:topict():setbounds(v(0, ymin), v(#fry.ys, ymax))
+        return pict
+      end,
+    getYpict = function (fry, Ymin, Ymax)
+        Ymin = Ymin or fry.Ymin
+        Ymax = Ymax or fry.Ymax
+        local pws  = PwSpec.from(fry.Yspec)
+        local pict = pws:topict():setbounds(v(0, Ymin), v(#fry.Ys-1, Ymax))
+        return pict
+      end,
+    getYgrid = function (fry, Ymin, Ymax)
+        Ymin = Ymin or fry.Ymin
+        Ymax = Ymax or fry.Ymax
+        local pws  = PwSpec.from("")
+        local pict = pws:topict():setbounds(v(0, Ymin), v(#fry.Ys-1, Ymax))
+        return pict
+      end,
+  },
+}
+
+-- «FromYs-tests»  (to ".FromYs-tests")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+require "Piecewise1"
+fryy = FromYs.fromys {0,1,2,3}
+fryy:getYs(10)
+= fryy
+= fryy:getypict()
+= fryy:getYpict()
+= fryy:getYpict():pgat("pgatc")
+= fryy:getYpict():pgat("pgatc"):sa("fig Foo")
+
+--]]
+
+
 
 
 

@@ -5,6 +5,7 @@
 % (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-P1.pdf"))
 % (defun e () (interactive) (find-LATEX "2022-1-C3-P1.tex"))
 % (defun o () (interactive) (find-LATEX "2022-1-C3-P1.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-VSB.tex"))
 % (defun u () (interactive) (find-latex-upload-links "2022-1-C3-P1"))
 % (defun v () (interactive) (find-2a '(e) '(d)))
 % (defun d0 () (interactive) (find-ebuffer "2022-1-C3-P1.pdf"))
@@ -28,6 +29,7 @@
 % «.title»		(to "title")
 % «.barranco-defs»	(to "barranco-defs")
 % «.questao-1»		(to "questao-1")
+% «.questao-1-gab»	(to "questao-1-gab")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -84,7 +86,7 @@
 \def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
 \def\pictaxesstyle{\linethickness{0.5pt}}
 \def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
-\celllower=2.5pt
+\celllower=4pt
 
 % «defs»  (to ".defs")
 % (find-LATEX "edrx21defs.tex" "colors")
@@ -141,6 +143,8 @@ Eduardo Ochs - RCN/PURO/UFF
 \newpage
 
 % «barranco-defs»  (to ".barranco-defs")
+% (c3m221p1p 3 "barranco-defs")
+% (c3m221p1a   "barranco-defs")
 % (c3m221nfp 26 "barranco")
 % (c3m221nfa    "barranco")
 %\printbibliography
@@ -171,6 +175,41 @@ Eduardo Ochs - RCN/PURO/UFF
 %L barranco_Fb = [[ (8,2)--(6,2)--(7,3)--(8,3) ]]
 %L barranco:topict(barranco_Fa):sa("barranco Fa"):output()
 %L barranco:topict(barranco_Fb):sa("barranco Fb"):output()
+%L
+%L makedv = function (...)
+%L     return PictList({"\\def\\closeddot{\\circle*{0.4}}"})
+%L       :adddv(...)
+%L       :prethickness("1.0pt"):precolor("Blue4")
+%L   end
+%L dv_item_d = makedv(
+%L    {6,  2.5, 1,1},
+%L    {6.5,2.5,},
+%L    {7,  2.5, 0,2})
+%L dv_item_e = makedv(
+%L       {6.5, 2.5},
+%L       {8.0, 1.0},
+%L       {7.5, 1.5},
+%L       {7.0, 2.0},
+%L       {6.75, 2.25},
+%L       {5.0, 4.0},
+%L       {5.5, 3.5},
+%L       {6.0, 3.0},
+%L       {6.25, 2.75}
+%L       )
+%L dv_item_f = makedv(
+%L    {2,1},
+%L    {2,5, 0,1},
+%L    {5,3, 1,1},
+%L    {6,6},
+%L    {7,1, 0,1},
+%L    {7,2.5, 0,2})
+%L barranco:topict(barranco_spec, dv_item_d)
+%L   :sa("barranco item d"):output()
+%L barranco:topict(barranco_spec, dv_item_e)
+%L   :sa("barranco item e"):output()
+%L barranco:topict(barranco_spec, dv_item_f)
+%L   :sa("barranco item f"):output()
+
 \pu
 
 \def\barra {\ga{barranco}}
@@ -278,6 +317,11 @@ $
 
 \newpage
 
+% «questao-1-gab»  (to ".questao-1-gab")
+% (c3m221p1p 4 "questao-1-gab")
+% (c3m221p1a   "questao-1-gab")
+% (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test6")
+
 {\bf Questão 1: gabarito (muito incompleto)}
 
 
@@ -323,13 +367,25 @@ b) $F_b(x,y) = 2y-2$
 
 c) Veja as figuras acima.
 
-d) Em $P_0=(6,2.5)$ temos $z=2.5$;
+d) Em $P_0=(6,2.5)$ temos $z=2.5$, $z_x=1$, $z_y=1$;
 
-Em $P_1=(6.5,2.5)$ temos $z=3$;
+Em $P_1=(6.5,2.5)$ temos $z=3$, e nesse ponto $z_x$ e $z_y$ não
+existem;
 
-Em $P_2=(7,2.5)$ temos $z=3$.
+Em $P_2=(7,2.5)$ temos $z=3$, $z_x=0$, $z_y=2$.
 
 }\anothercol{
+
+\vspace*{0cm}
+
+Item d: $\ga{barranco item d}$
+
+Item e: $\ga{barranco item e}$
+
+Item f: $\ga{barranco item f}$
+
+
+
 }}
 
 

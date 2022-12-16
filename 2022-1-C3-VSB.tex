@@ -1,0 +1,613 @@
+% (find-LATEX "2022-1-C3-VSB.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-VSB.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-VSB.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-VSB.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-VSB.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-VSB.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-VSB.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-VSB"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-VSB.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C3-VSB")
+% (find-pdf-page   "~/LATEX/2022-1-C3-VSB.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-VSB.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-VSB.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-VSB.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-VSB.pdf
+%               file:///tmp/2022-1-C3-VSB.pdf
+%           file:///tmp/pen/2022-1-C3-VSB.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-VSB.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C3-VSB" "3" "c3m221vsb" "c3vs")
+
+% «.defs»		(to "defs")
+% «.defs-T-and-B»	(to "defs-T-and-B")
+% «.title»		(to "title")
+% «.questao-1»		(to "questao-1")
+% «.questao-2»		(to "questao-2")
+% «.questao-1-gab»	(to "questao-1-gab")
+% «.questao-2-gab»	(to "questao-2-gab")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m221vsb" "2022-1-C3-VSB")
+% (code-eevvideo      "c3m221vsb" "2022-1-C3-VSB")
+% (code-eevlinksvideo "c3m221vsb" "2022-1-C3-VSB")
+% (find-c3m221vsbvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+% (c3m202p1p 6 "questao-2")
+% (c3m202p1a   "questao-2")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m221vsbp 1 "title")
+% (c3m221vsba   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.1}
+
+\bsk
+
+VS extra - 31/ago/2022
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C3.html}
+
+\end{center}
+
+\newpage
+
+% «questao-1»  (to ".questao-1")
+% (c3m221vsbp 2 "questao-1")
+% (c3m221vsba   "questao-1")
+% (c3m221vsp 2 "questao-1")
+% (c3m221vsa   "questao-1")
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(9,10))
+%L barranco_VSB = Numerozinhos.from(0, 0, 
+%L     [[ 6 6 6 6 6 6 6 6 6 6
+%L        6 6 6 6 6 6 6 6 6 6
+%L        6 6 6 6 6 6 6 5 5 5
+%L        6 6 6 6 6 6 5 4 4 4
+%L        6 6 6 6 6 5 4 3 3 3
+%L        6 6 6 6 5 4 3 2 2 2
+%L        6 6 6 5 4 3 2 1 1 1
+%L        6 6 6 4 3 2 1 0 0 0
+%L        6 6 6 4 2 1 0 0 0 0
+%L        6 6 6 4 2 0 0 0 0 0
+%L        6 6 6 4 2 0 0 0 0 0 ]])
+%L barranco_VSB_spec = [[ (2,0)--(2,4)--(5,1)--(5,0)
+%L                        (2,4)--(7,9)--(9,9)
+%L                        (5,1)--(7,3)--(9,3)  (7,3)--(7,9) ]]
+%L barranco_VSB:topictu("16pt"                   ):sa("barranco VSB")    :output()
+%L barranco_VSB:topictu("16pt", barranco_VSB_spec):sa("barranco VSB gab"):output()
+%L
+%L -- = p:pgat("pN"):preunitlength("11pt"):bshow("")
+% (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test1")
+\pu
+
+{\bf Questão 1}
+
+\scalebox{0.55}{\def\colwidth{9cm}\firstcol{
+
+\vspace*{-0.4cm}
+
+\T(Total: 7.0 pts)
+
+O diagrama de numerozinhos da próxima folha corresponde a uma
+superfície $z=F(x,y)$ que tem 5 faces. Também é possível interpretá-lo
+como uma superfície com 7 ou mais faces, mas vamos considerar que a
+superfície com só 5 faces é que é a correta.
+
+\msk
+
+a) \B (2.0 pts) Mostre como dividir o plano em 5 polígonos que são as
+projeções destas faces.
+
+% Use uma das cópias do diagrama de numerozinhos para a sua resposta.
+
+\msk
+
+b) \B (1.0 pts) Chame estas faces de face NW (``noroeste''), S
+(``sul''), C (``centro''), E (``leste''), e SE (``sudeste''), e chame
+as equações dos planos delas de $F_{NW}(x,y)$, $F_S(x,y)$,
+$F_{C}(x,y)$, $F_E(x,y)$, e $F_{SE}(x,y)$. Dê as equações destes
+planos.
+
+\msk
+
+c) \B (1.0 pts) Sejam:
+%
+$$\begin{array}{rcl}
+  %P_{NW} &=& \setofxyzst{z = F_{NW}(x,y)}, \\
+  P_S &=& \setofxyzst{z = F_S(x,y)}, \\
+  P_C &=& \setofxyzst{z = F_C(x,y)}, \\
+  %P_E &=& \setofxyzst{z = F_E(x,y)}, \\
+  %P_{SE} &=& \setofxyzst{z = F_{SE}(x,y)}, \\
+  r &=& P_S ∩ P_C. \\
+  \end{array}
+$$
+
+Dê uma parametrização para a reta $r$.
+
+
+}\anothercol{
+
+  d) \B (2.0 pts) Seja
+  %
+  $$A \;=\; \{0,1,\ldots,9\} × \{0,1,\ldots,10\};$$
+
+  note que os numerozinhos do diagrama de numerozinhos estão todos
+  sobre pontos de $A$. Para cada ponto $(x,y)∈A$ represente
+  graficamente $(x,y)+\frac12 \vec∇F(x,y)$.
+
+  \ssk
+
+  Obs: quando $\vec∇F(x,y)=0$ desenhe uma bolinha preta sobre o ponto
+  $(x,y)$, e quando $\vec∇F(x,y)$ não existir não desenhe nada.
+
+  \msk
+
+  e) \B (1.0 pts) Sejam
+  %
+  $$\begin{array}{rcl}
+    Q(t) &=& (1,0) + t\VEC{1,1}, \\
+    (x(t),y(t)) &=& Q(t), \\
+    h(t) &=& F(x(t),y(t)). \\ &
+    \end{array}
+  $$
+
+  Faça o gráfico da função $h(t)$. Considere que o domínio dela é o
+  intervalo $[0,8]$.
+
+
+}}
+
+
+% (find-angg "LUA/Pict2e1-1.lua" "Numerozinhos-test1")
+
+\unitlength=15pt
+
+\def\grd{\scalebox{0.6}{$\ga{barranco VSB}$}}
+
+$\begin{array}{ccccc}
+ \grd && \grd && \grd \\ \\
+ \grd && \grd && \grd \\
+ \end{array}
+$
+
+\newpage
+
+% «questao-2»  (to ".questao-2")
+% (c3m221vsbp 4 "questao-2")
+% (c3m221vsba   "questao-2")
+
+{\bf Questão 2}
+
+\T(Total: 3.0 pts)
+
+\msk
+
+Seja $H(x,y) = \sqrt{x+ay}$.
+
+Dê a aproximação de Taylor de ordem 2
+
+para $H(x,y)$ em torno do ponto $(1,1)$.
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T H   : sqrt(x + a*y);
+%T Hx  : diff(H,  x);
+%T Hy  : diff(H,  y);
+%T Hxx : diff(Hx, x);
+%T Hxy : diff(Hx, y);
+%T Hyy : diff(Hy, y);
+%T H1s : [H, Hx, Hy];
+%T H2s : [Hxx, Hxy, Hyy];
+%T subst([x=1,y=1], H1s);
+%T subst([x=1,y=1], H2s);
+%T rat(Hyy);
+
+% (c3m221p2p 5 "questao-3-gab")
+% (c3m221p2a   "questao-3-gab")
+
+
+\newpage
+
+% «questao-1-gab»  (to ".questao-1-gab")
+% (c3m221vsbp 5 "questao-1-gab")
+% (c3m221vsba   "questao-1-gab")
+
+%L spec  = [[ (0,6)--(1,6)--(2.5,3)--(6,3)--(8,5) ]]
+%L pws   = PwSpec.from(spec)
+%L p     = pws:topict():setbounds(v(0,0), v(8,6)):pgat("pgatc")
+%L p:sa("gab 1e"):output()
+\pu
+
+{\bf Questão 1: gabarito}
+
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+\bsk
+
+a)
+$\scalebox{0.7}{$
+  \ga{barranco VSB gab}
+  $}
+$
+
+\bsk
+
+b) $\begin{array}{rcl}
+    F_{NW}(x,y) &=& 6 \\
+    F_{S}(x,y) &=& 10-2x \\
+    F_{C}(x,y) &=& y-x+4 \\
+    F_{E}(x,y) &=& y-3 \\
+    F_{SE}(x,y) &=& 0 \\
+    \end{array}
+   $
+
+\bsk
+
+c) $\begin{array}{rcl}
+    P_S &=& \setofxyzst{z = 10-2x}, \\
+    P_C &=& \setofxyzst{z = y-x+4}, \\
+    r &=& \setofxyzst{z = 10-2x = y-x+4}, \\
+      &=& \setofxyzst{z = 10-2x, \; y=6-x}, \\
+      &=& \setofst{(x,6-x,10-2x)}{x∈\R}
+    \end{array}
+   $
+
+}\anothercol{
+
+\def\gra{\vec∇(x,y)}
+
+d) No interior da região...
+
+$NW$: temos $\gra = \VEC{0,0}$,
+
+$S$: temos $\gra = \VEC{-2,0}$,
+
+$C$: temos $\gra = \VEC{-1,-1}$,
+
+$E$: temos $\gra = \VEC{0,1}$,
+
+$SE$: temos $\gra = \VEC{0,0}$.
+
+Nas fronteiras entre as regiões o gradiente não existe.
+
+Vou fazer o desenho depois.
+
+\bsk
+
+e) $h(t) \;=\; \ga{gab 1e}$
+
+
+}}
+
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T myeq : 10-2*x = y-x+4;
+%T solve(myeq, y);
+%T xyz(x) := [x, 6-x, 10-2*x];
+%T xyz(0);
+%T xyz(6);
+
+
+\newpage
+
+% «questao-2-gab»  (to ".questao-2-gab")
+% (c3m221vsbp 6 "questao-2-gab")
+% (c3m221vsba    "questao-2-gab")
+
+{\bf Questão 2: gabarito}
+
+
+\scalebox{0.8}{\def\colwidth{14cm}\firstcol{
+
+Sejam $S=\sqrt{x+ay}$ e $S_0=\sqrt{1+a}$.
+Então:
+%
+$$\begin{array}{rcl}
+  H(x,y)      &=& S \\
+  H_x(x,y)    &=& 1/(2S) \\
+  H_y(x,y)    &=& a/(2S) \\
+  H_{xx}(x,y) &=& -1/(4S^3) \\
+  H_{xy}(x,y) &=& -a/(4S^3) \\
+  H_{yy}(x,y) &=& -a^2/(4S^3) \\
+  \end{array}
+  \qquad
+  \begin{array}{rcl}
+  H(1,1)      &=& S_0 \\
+  H_x(1,1)    &=& 1/(2S_0) \\
+  H_y(1,1)    &=& a/(2S_0) \\
+  H_{xx}(1,1) &=& -1/(4S_0^3) \\
+  H_{xy}(1,1) &=& -a/(4S_0^3) \\
+  H_{yy}(1,1) &=& -a^2/(4S_0^3) \\
+  \end{array}
+$$
+%
+$$\begin{array}{rcl}
+  H(1+Δx,1+Δy) &=& H(1,1) \\
+               &+& H_x(1,1)Δx + H_y(1,1)Δy \\
+               &+& H_{xx}(1,1)\frac{Δx^2}{2}
+                 + H_{xy}(1,1)ΔxΔy
+                 + H_{yy}(1,1)\frac{Δy^2}{2} \\
+               &=& S_0 \\
+               &+& \frac{1}{2S_0}Δx + \frac{a}{2S_0}ΔxΔy \\
+               &+& \frac{-1}{4S_0^3} \frac{Δx^2}{2}
+                 + \frac{-a}{4S_0^3} ΔxΔy
+                 + \frac{-a^2}{4S_0^3} \frac{Δy^2}{2} \\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T H    : sqrt(x+a*y);
+%T H_x  : diff(H,   x);
+%T H_xx : diff(H_x, x);
+%T H_xy : diff(H_x, y);
+%T H_y  : diff(H,   y);
+%T H_yy : diff(H_y, y);
+%T display(H, H_x, H_y, H_xx, H_xy, H_yy);
+%T [H0, H_x0, H_y0, H_xx0, H_xy0, H_yy0] :
+%T subst([x=1,y=1], [H, H_x, H_y, H_xx, H_xy, H_yy]);
+
+\newpage
+
+{\bf Critérios de correção}
+
+\scalebox{0.5}{\def\colwidth{9cm}\firstcol{
+
+Erros crassos exatamente iguais ao de colegas podem fazer a pessoa
+perder mais pontos.
+
+\msk
+
+{\bf Questão 1}
+
+\ssk
+
+Item 1a:
+
+Já fizemos exercícios deste tipo muitas vezes, então aqui a correção é
+bem rigorosa. Se alguma das regiões da pessoa tem quatro pontos
+não-coplanares ela leva zero neste item.
+
+\msk
+
+Item 1b:
+
+Aqui as funções $F_{NW}$ e $F_{SE}$ são triviais e não contam pontos.
+Se a pessoa obtiver três planos diferentes para $F_S$, $F_C$ e $F_E$
+fazendo contas claras e legíveis pequenos erros de conta podem ser
+perdoados.
+
+\msk
+
+Item 1c:
+
+Aqui a reta correta é a reta
+
+$r \;=\; \setofst{(x, 6-x, 10-2x)}{x∈\R}.$
+
+\ssk
+
+Se a pessoa obteve a projeção desta reta no plano $(x,y)$, que é
+$r \;=\; \setofst{(x, 6-x, 10-2x)}{x∈\R}.$
+
+então ela ganha só 0.6 pontos.
+
+Repostas com retas dadas por equações ao invés de retas parametrizadas
+são aceitas sem desconto de pontos.
+
+
+}\anothercol{
+
+Item 1d:
+
+Nós fizemos exercícios deste tipo muitas vezes em sala --- tanto a
+parte de calcular gradientes de regiões planas de diagramas de
+numerozinhos quanto a parte de representar graficamente somas de
+pontos e vetores seguindo esta convenção:
+
+
+{\footnotesize
+
+% (c3m212tudop 8)
+%    http://angg.twu.net/LATEX/2021-2-C3-tudo.pdf#page=8
+\url{http://angg.twu.net/LATEX/2021-2-C3-tudo.pdf\#page=8}
+
+}
+
+\ssk
+
+então aqui a correção pode ser bem rigorosa. Eu esperava que os alunos
+mostrassem que sabiam que nas regiões NW e SE os gradientes são zero,
+que na região S ele aponta pra esquerda, que na região C ele aponta
+pra noroeste que e na região E ele aponta pra cima; erros nisso são
+considerados erros graves e descontam muitos pontos. Os erros que
+descontam poucos pontos são: 1) não reconhecer que nos pontos de
+fronteira entre os planos o gradiente não está definido e 2) não
+reconhecer que na região S o módulo do gradiente é o dobro do módulo
+na região E.
+
+
+
+}}
+
+
+\newpage
+
+{\bf Critérios de correção (cont.)}
+
+\scalebox{0.65}{\def\colwidth{16cm}\firstcol{
+
+Item 1e:
+
+Se a pessoa conseguiu desenhar a reta $Q(t)$ ela ganha 0.1 pontos.
+
+Se além disso ela conseguiu fazer um gráfico da função $h(t)$ em que o
+valor de $h(t)$ está correto em todos os valores de $t$ inteiros ela
+ganha mais 0.5 pontos.
+
+Se além disso a pessoa conseguiu ver que a inclinação da função $h(t)$
+muda quando $t=2.5$ ela ganha os 0.4 que faltam.
+
+\bsk
+\bsk
+
+{\bf Questão 2}
+
+Aqui erros de conta no cálculo das derivadas parciais podem ser
+perdoados. O mais importante é que a pessoa ponha o resultado final
+numa destas formas:
+%
+$$\def\uu{\_\_}
+  \begin{array}{rcl}
+    G(1+Δx,1+Δy) &≈& \uu \\
+                 &+& \uu Δx + \uu Δy \\
+                 &+& \uu Δx^2 +  \uu ΔxΔy + \uu Δy^2 \\
+  \\
+  \text{ou:}  \\
+    G(x,y) &≈& \uu \\
+           &+& \uu (x-1)   + \uu (y-1) \\
+           &+& \uu (x-1)^2 + \uu (x-1)(y-1) + \uu (y-1)^2 \\
+  \end{array}
+$$
+
+e manipule os coeficientes de forma coerente.
+
+}\anothercol{
+
+
+
+}}
+
+
+\msk
+
+
+
+
+
+
+
+\newpage
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3vsb"
+% ee-tla: "c3m221vsb"
+% End:
+

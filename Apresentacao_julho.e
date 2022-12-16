@@ -179,7 +179,7 @@ Mudança de variável
 
 Caso da srta K.
   Critérios de correção / erros de sintaxe
-  (c2m221dfip 4 "demonstracao-complicada")
+  (c2m221dfip 5 "demonstracao-complicada")
   (c2m221dfia   "demonstracao-complicada")
   Lean
 

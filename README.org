@@ -124,7 +124,7 @@ git push -u origin main
 # Test 1:
 cd           ~/2022-1-C2-C3/
 tar -cvzf /tmp/2022-1-C2-C3.tgz *
-rm -Rv    /tmp/2022-1-C2-C3/
+rm -Rfv   /tmp/2022-1-C2-C3/
 mkdir     /tmp/2022-1-C2-C3/
 cd        /tmp/2022-1-C2-C3/
 tar -xvzf /tmp/2022-1-C2-C3.tgz
@@ -134,7 +134,7 @@ make
 # (find-pdf-page "/tmp/2022-1-C2-C3/2022-1-C3-tudo.pdf")
 
 # Test 2:
-rm -Rv    /tmp/2022-1-C2-C3/
+rm -Rfv   /tmp/2022-1-C2-C3/
 mkdir     /tmp/2022-1-C2-C3/
 cd        /tmp/2022-1-C2-C3/
 git clone https://github.com/edrx/2022-1-C2-C3 .

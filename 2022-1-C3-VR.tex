@@ -1,0 +1,335 @@
+% (find-LATEX "2022-1-C3-VR.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-1-C3-VR.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-1-C3-VR.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-1-C3-VR.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-1-C3-VR.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-1-C3-VR.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C3-VR.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-1-C3-VR"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-1-C3-VR.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-1-C3-VR")
+% (find-pdf-page   "~/LATEX/2022-1-C3-VR.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-VR.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-1-C3-VR.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-1-C3-VR.pdf")
+%   file:///home/edrx/LATEX/2022-1-C3-VR.pdf
+%               file:///tmp/2022-1-C3-VR.pdf
+%           file:///tmp/pen/2022-1-C3-VR.pdf
+% http://angg.twu.net/LATEX/2022-1-C3-VR.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-1-C3-VR" "3" "c3m221vr" "c3vr")
+
+% «.defs»		(to "defs")
+% «.defs-T-and-B»	(to "defs-T-and-B")
+% «.title»		(to "title")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m221vr" "2022-1-C3-VR")
+% (code-eevvideo      "c3m221vr" "2022-1-C3-VR")
+% (code-eevlinksvideo "c3m221vr" "2022-1-C3-VR")
+% (find-c3m221vrvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-1-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.1-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+% (c3m202p1p 6 "questao-2")
+% (c3m202p1a   "questao-2")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m221vrp 1 "title")
+% (c3m221vra   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.1}
+
+\bsk
+
+Prova de reposição (VR)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.1-C3.html}
+
+\end{center}
+
+\newpage
+
+
+\scalebox{0.55}{\def\colwidth{10cm}\firstcol{
+
+{\bf Questão 1.}
+
+\T(Total: 5.0 pts)
+
+Sejam:
+%
+$$\begin{array}{rcl}
+     F(x,y) &=& \D \frac{\sqrt{x^2 + y^3}}{y}\;, \\
+  (x_0,y_0) &=& (1,1) \; .\\
+  \end{array}
+$$
+
+Lembre que a fórmula para a aproximação de Taylor de 2a ordem é:
+%
+$$\begin{array}{rcl}
+  z(x_1,y_1) &≈& z \\
+             &+& z_xΔx + z_yΔy \\
+             &+& \frac{z_{xx}ΔxΔx}{2} + z_{xy}ΔxΔy + \frac{z_{yy}ΔyΔy}{2}
+  \end{array}
+$$
+
+Calcule as aproximações de Taylor de 1a e 2a ordem da função $F(x,y)$
+em torno do ponto $(x_0,y_0)$ e use-as para calcular duas aproximações
+para $F(1.1,1.1)$, uma usando Taylor de 1a ordem e outra usando Taylor
+de 2a ordem.
+
+\msk
+
+Pontuação:
+
+a) \B(2.0 pts) Taylor de 1a ordem.
+
+b) \B(3.0 pts) Taylor de 1a ordem.
+
+\bsk
+
+Note que esta questão tem um monte de ``subitens secretos'' -- um
+monte de coisas que você vai ter que calcular de forma organizada pra
+conseguir chegar até os resultados finais -- e eu não estou dizendo
+quais são esses subitens... você vai ter que se virar!
+
+}\anothercol{
+
+{\bf Questão 2.}
+
+\T(Total: 5.0 pts)
+
+Sejam $(x_0,y_0) = (4,3)$ e:
+%
+$$\begin{array}{rcl}
+  F(x_0+Δx, y_0+Δy) &=& Δy, \\
+  G(x_0+Δx, y_0+Δy) &=& Δx(Δx+Δy), \\
+  H(x, y) &=& F(x,y) + G(x,y). \\
+  \end{array}
+$$
+
+Faça os diagramas de numerozinhos das funções $F(x,y)$, $G(x,y)$ e
+$H(x,y)$ nos pontos com $Δx,Δy∈\{-2,-1,0,1,2\}$. Depois faça uma cópia
+(a caneta) do seu diagrama de numerozinhos para a função $z = H(x,y)$
+e trace sobre essa cópia (a lápis) as curvas de nível dela em 5
+valores de $z$ diferentes. {\sl Dica:} essas curvas de nível vão ser
+``curvas quádricas'', como parábolas e elipses, que você deve ter
+visto no fim no curso de GA.
+
+\msk
+
+Pontuação:
+
+a) \B(2.0 pts) Diagramas de numerozinhos.
+
+b) \B(3.0 pts) Curvas de nível.
+
+}}
+
+
+
+
+%T H   : sqrt(x^2 + 3*y^2) / y;
+
+
+
+% (c3m221tudop 2 "parts")
+% (c3m221tudoa   "parts")
+
+% (c3m221p2p 99 "questao-3-gab")
+% (c3m221p2a    "questao-3-gab")
+
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T H   : sqrt(x^2 + 3*y^2);
+%T H   : sqrt(x^2 + 3*y^2) / (x+y);
+%T H   : sqrt(x^2 + 3*y^2) / y;
+%T Hx  : diff(H,  x);
+%T Hy  : diff(H,  y);
+%T Hxx : diff(Hx, x);
+%T Hxy : diff(Hx, y);
+%T Hyy : diff(Hy, y);
+%T [x0,y0] : [1,1];
+%T foo(sym) := [sym, rat(ev(sym)), subst([x=x0,y=y0],ev(sym))];
+%T foo('H);
+%T foo('Hx);
+%T foo('Hy);
+%T foo('Hxx);
+%T foo('Hxy);
+%T foo('Hyy);
+%T [H0, Hx0, Hy0, Hxx0, Hxy0, Hyy0] : subst([x=x0,y=y0], [H, Hx, Hy, Hxx, Hxy, Hyy]);
+%T H1 : H0 + Hx0*Dx + Hy0*Dy;
+%T H2 : H0 + Hx0*Dx + Hy0*Dy + Hxx0*Dx^2/2 + Hxy0*Dx*Dy + Hyy0*Dy^2;
+
+% (find-anggfile "MAXIMA/matrixify.mac")
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T  (find-angg "MAXIMA/matrixify.mac")
+%T load       ("~/MAXIMA/matrixify.mac");
+%T [Dx,Dy] : [x-x0,y-y0];
+%T [x0,y0] : [5,4];
+%T matrixify (x0-2,y0-2, x0+2,y0+2, Dy);
+%T matrixify (x0-2,y0-2, x0+2,y0+2, Dx*(Dx+Dy));
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.1-C3/")
+# (find-fline "~/LATEX/2022-1-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.1-C3/
+       cp -fv        $1.pdf ~/LATEX/2022-1-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-1-C3-VR veryclean
+make -f 2019.mk STEM=2022-1-C3-VR pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3vr"
+% ee-tla: "c3m221vr"
+% End:
