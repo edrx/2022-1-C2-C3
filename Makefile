@@ -19,11 +19,12 @@ compile_basic_texs:
 	lualatex 2022-1-C2-TFC1.tex
 	lualatex 2022-1-C2-VR.tex
 	lualatex 2022-1-C2-VSA.tex
+	lualatex 2022-1-C2-VSB.tex
 	lualatex 2022-1-C2-algumas-t-ints.tex
 	lualatex 2022-1-C2-der-fun-inv.tex
 	lualatex 2022-1-C2-dicas-pra-P1.tex
 	lualatex 2022-1-C2-dicas-pra-P2.tex
-	lualatex 2022-1-C2-dicas-pra-VSA
+	lualatex 2022-1-C2-dicas-pra-VSA.tex
 	lualatex 2022-1-C2-infs-e-sups.tex
 	lualatex 2022-1-C2-intro.tex
 	lualatex 2022-1-C2-primitivas.tex
@@ -32,6 +33,9 @@ compile_basic_texs:
 	lualatex 2022-1-C3-MT2.tex
 	lualatex 2022-1-C3-P1.tex
 	lualatex 2022-1-C3-P2.tex
+	lualatex 2022-1-C3-VR.tex
+	lualatex 2022-1-C3-VS.tex
+	lualatex 2022-1-C3-VSB.tex
 	lualatex 2022-1-C3-funcoes-homogeneas.tex
 	lualatex 2022-1-C3-notacao-de-fisicos.tex
 	lualatex 2022-1-C3-orbita.tex
@@ -44,11 +48,12 @@ compile_all_texs:
 	lualatex 2022-1-C2-TFC1.tex
 	lualatex 2022-1-C2-VR.tex
 	lualatex 2022-1-C2-VSA.tex
+	lualatex 2022-1-C2-VSB.tex
 	lualatex 2022-1-C2-algumas-t-ints.tex
 	lualatex 2022-1-C2-der-fun-inv.tex
 	lualatex 2022-1-C2-dicas-pra-P1.tex
 	lualatex 2022-1-C2-dicas-pra-P2.tex
-	lualatex 2022-1-C2-dicas-pra-VSA
+	lualatex 2022-1-C2-dicas-pra-VSA.tex
 	lualatex 2022-1-C2-infs-e-sups.tex
 	lualatex 2022-1-C2-intro.tex
 	lualatex 2022-1-C2-primitivas.tex
@@ -57,6 +62,9 @@ compile_all_texs:
 	lualatex 2022-1-C3-MT2.tex
 	lualatex 2022-1-C3-P1.tex
 	lualatex 2022-1-C3-P2.tex
+	lualatex 2022-1-C3-VR.tex
+	lualatex 2022-1-C3-VS.tex
+	lualatex 2022-1-C3-VSB.tex
 	lualatex 2022-1-C3-funcoes-homogeneas.tex
 	lualatex 2022-1-C3-notacao-de-fisicos.tex
 	lualatex 2022-1-C3-orbita.tex
