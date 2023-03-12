@@ -28,8 +28,6 @@
 % «.defs»	(to "defs")
 % «.title»	(to "title")
 % «.parts»	(to "parts")
-%
-% «.djvuize»	(to "djvuize")
 
 
 
@@ -152,10 +150,12 @@ Eduardo Ochs - RCN/PURO/UFF
 
 % (c3m221vsa "title")
 % (c3m221vsa "title" "Prova suplementar (VS)")
+% (c3m221tudop 65)
 \incl{2022-1-C3-VS}
 
 % (c3m221vsba "title")
 % (c3m221vsba "title" "VS extra - 31/ago/2022")
+% (c3m221tudop 69)
 \incl{2022-1-C3-VSB}
 
 
@@ -164,42 +164,6 @@ Eduardo Ochs - RCN/PURO/UFF
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
 \end{document}
-
-%  ____  _             _         
-% |  _ \(_)_   ___   _(_)_______ 
-% | | | | \ \ / / | | | |_  / _ \
-% | |_| | |\ V /| |_| | |/ /  __/
-% |____// | \_/  \__,_|_/___\___|
-%     |__/                       
-%
-% «djvuize»  (to ".djvuize")
-% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
-
-
-
-
-%  __  __       _        
-% |  \/  | __ _| | _____ 
-% | |\/| |/ _` | |/ / _ \
-% | |  | | (_| |   <  __/
-% |_|  |_|\__,_|_|\_\___|
-%                        
-% <make>
-
- (eepitch-shell)
- (eepitch-kill)
- (eepitch-shell)
-# See: (find-angg "2022-1-C2-C3/README.org")
-
-lualatex                  2022-1-C3-tudo.tex
-# (find-pdf-page "~/LATEX/2022-1-C3-tudo.pdf")
-
-# Upload pdf
-cd ~/LATEX/
-Scp-np 2022-1-C3-tudo.pdf $TWUP/LATEX/2022-1-C3-tudo.pdf
-Scp-np 2022-1-C3-tudo.pdf $TWUS/LATEX/2022-1-C3-tudo.pdf
-# Test the pdf (open the urls in a browser):
-# http://angg.twu.net/LATEX/2022-1-C3-tudo.pdf
 
 
 % Local Variables:

@@ -16,6 +16,7 @@
 # (defun cv () (interactive) (c) (v))
 # 
 # (find-mygitrepo-links "2022-1-C2-C3")
+# (find-C2C3git-links   "2022-1")
 # (find-orgnode "Table of Contents")
 #+OPTIONS: toc:nil num:nil
 
