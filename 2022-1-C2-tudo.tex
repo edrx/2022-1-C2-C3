@@ -21,16 +21,18 @@
 % http://angg.twu.net/LATEX/2022-1-C2-tudo.pdf
 % (find-angg "2022-1-C2-C3/README.org")
 % (find-angg "2022-1-C2-C3/Makefile")
+% (find-Deps1-links "TocLines1")
+% (find-Deps1-cps   "TocLines1")
+% (find-Deps1-anggs "TocLines1")
 % (find-LATEX "2019.mk")
-% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
-% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
 % (find-CN-aula-links "2022-1-C2-tudo" "2" "c2m221tudo" "c2tu")
+% (find-MM-tudo-links "22" "1" "C2")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
-% «.parts»	(to "parts")
-%
-% «.djvuize»	(to "djvuize")
+% «.defs»		(to "defs")
+% «.defs-toclines»	(to "defs-toclines")
+% «.title»		(to "title")
+% «.parts»		(to "parts")
+% «.writetoc»		(to "writetoc")
 
 
 
@@ -79,6 +81,14 @@
 \def\drafturl{http://angg.twu.net/2022.1-C2.html}
 \def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
 
+% «defs-toclines»  (to ".defs-toclines")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"} % (find-LATEX "dednat6load.lua")
+%L require "TocLines1"              -- (find-angg "LUA/TocLines1.lua")
+%L output(TocLines.texdefs)         -- (find-angg "LUA/TocLines1.lua" "texdefs")
+%L toclines = TocLines.new(status.filename)
+\pu
+
 
 
 %  _____ _ _   _                               
@@ -120,7 +130,6 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c2m221tudop 2 "parts")
 % (c2m221tudoa   "parts")
 % (find-angg ".emacs" "c2-2022-1")
-\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
 
 % (c2m221introa "title")
 % (c2m221introa "title" "Aulas 4 e 5: mais exercícios de substituição")
@@ -196,35 +205,12 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c2m221tudop 236)
 \incl{2022-1-C2-VSB}
 
+% «writetoc»  (to ".writetoc")
+\writetoc   % Writes to: (find-LATEX "2022-1-C2-tudo.mytoc")
+
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
 \end{document}
-
-%  ____  _             _         
-% |  _ \(_)_   ___   _(_)_______ 
-% | | | | \ \ / / | | | |_  / _ \
-% | |_| | |\ V /| |_| | |/ /  __/
-% |____// | \_/  \__,_|_/___\___|
-%     |__/                       
-%
-% «djvuize»  (to ".djvuize")
-% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
-
-
-%  __  __       _        
-% |  \/  | __ _| | _____ 
-% | |\/| |/ _` | |/ / _ \
-% | |  | | (_| |   <  __/
-% |_|  |_|\__,_|_|\_\___|
-%                        
-% <make>
-
- (eepitch-shell)
- (eepitch-kill)
- (eepitch-shell)
-cd ~/LATEX/
-lualatex                  2022-1-C2-tudo.tex
-# (find-pdf-page "~/LATEX/2022-1-C2-tudo.pdf")
 
 
 % Local Variables:

@@ -20,14 +20,18 @@
 %           file:///tmp/pen/2022-1-C3-tudo.pdf
 % http://angg.twu.net/LATEX/2022-1-C3-tudo.pdf
 % (find-angg "2022-1-C2-C3/README.org")
+% (find-Deps1-links "TocLines1")
+% (find-Deps1-cps   "TocLines1")
+% (find-Deps1-anggs "TocLines1")
 % (find-LATEX "2019.mk")
-% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
-% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
-% (find-CN-aula-links "2022-1-C3-tudo" "3" "c3m221tudo" "c3tu")
+% (find-CN-aula-links "2022-1-C3-tudo" "2" "c3m221tudo" "c3tu")
+% (find-MM-tudo-links "22" "1" "C3")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
-% «.parts»	(to "parts")
+% «.defs»		(to "defs")
+% «.defs-toclines»	(to "defs-toclines")
+% «.title»		(to "title")
+% «.parts»		(to "parts")
+% «.writetoc»		(to "writetoc")
 
 
 
@@ -73,6 +77,14 @@
 \def\drafturl{http://angg.twu.net/2022.1-C3.html}
 \def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
 
+% «defs-toclines»  (to ".defs-toclines")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"} % (find-LATEX "dednat6load.lua")
+%L require "TocLines1"              -- (find-angg "LUA/TocLines1.lua")
+%L output(TocLines.texdefs)         -- (find-angg "LUA/TocLines1.lua" "texdefs")
+%L toclines = TocLines.new(status.filename)
+\pu
+
 
 
 %  _____ _ _   _                               
@@ -113,8 +125,6 @@ Eduardo Ochs - RCN/PURO/UFF
 % «parts»  (to ".parts")
 % (c3m221tudop 2 "parts")
 % (c3m221tudoa   "parts")
-\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
-
 
 % (c3m221orbitaa "title")
 % (c3m221orbitaa "title" "Aulas 4 e 5: órbita")
@@ -158,8 +168,8 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c3m221tudop 69)
 \incl{2022-1-C3-VSB}
 
-
-
+% «writetoc»  (to ".writetoc")
+\writetoc   % Writes to: (find-LATEX "2022-1-C3-tudo.mytoc")
 
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
